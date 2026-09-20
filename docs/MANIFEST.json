@@ -703,6 +703,18 @@
       "bytes": 220,
       "sha256_16": "26540499e8d65780",
       "status": "ada"
+    },
+    {
+      "path": "README.md",
+      "bytes": 11031,
+      "sha256_16": "3a5d9e675ccf25d2",
+      "status": "ada"
+    },
+    {
+      "path": "docs/img/readme-hero.png",
+      "bytes": 361827,
+      "sha256_16": "57406739d75ff9e8",
+      "status": "ada"
     }
   ],
   "catatan_salinan": "Salinan ini tidak lengkap: berkas berstatus 'hilang' harus diimpor ulang dari idds-ui-pack asli. Paket tetap berfungsi tanpanya (font jatuh ke system-ui, sprite/indeks ikon tidak tersedia).",
