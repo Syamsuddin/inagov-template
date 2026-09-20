@@ -1,0 +1,586 @@
+/* ============================================================
+ * IDDS Design Tokens — TERKUNCI (anti-drift) — idds-ui-pack 1.3.1
+ *
+ * Berkas ini punya DUA lapisan dengan provenans berbeda:
+ *   [NPM]      primitif, spacing, radius, tipografi, 13 semantik inti, brand lembaga
+ *              → digenerate dari @idds/styles 1.6.36. JANGAN diedit manual.
+ *   [TURUNAN]  fallback :root, semantik tambahan, on-primary, shadow, focus,
+ *              weight, motion, z-index → ditetapkan paket ini (bukan npm),
+ *              setiap warna dihitung kontrasnya di data/aturan-kontras.json.
+ * Sumber kebenaran: data/dosir-ui-idds.json (npm), data/brand-hss.json,
+ *                   data/aturan-kontras.json (hasil scripts/build-kontras.py)
+ * ============================================================ */
+
+:root {
+  /* ---- palet primitif ---- */
+  --ina-neutral-25: #ffffff;
+  --ina-neutral-50: #f8f8f7;
+  --ina-neutral-100: #f2f2f2;
+  --ina-neutral-200: #e5e5e5;
+  --ina-neutral-300: #d4d4d4;
+  --ina-neutral-400: #a3a3a3;
+  --ina-neutral-500: #737373;
+  --ina-neutral-600: #525252;
+  --ina-neutral-700: #404040;
+  --ina-neutral-800: #1f1f1f;
+  --ina-neutral-900: #141414;
+  --ina-neutral-1000: #050505;
+  --ina-blue-50: #fafcff;
+  --ina-blue-100: #ecf3fe;
+  --ina-blue-200: #dceafe;
+  --ina-blue-300: #84b4fb;
+  --ina-blue-400: #4d93fc;
+  --ina-blue-500: #0968f6;
+  --ina-blue-600: #0049b8;
+  --ina-blue-700: #002a69;
+  --ina-blue-800: #0e192a;
+  --ina-blue-900: #070e17;
+  --ina-cyan-50: #fafeff;
+  --ina-cyan-100: #ebfaff;
+  --ina-cyan-200: #d2f3fe;
+  --ina-cyan-300: #83defc;
+  --ina-cyan-400: #51d0fb;
+  --ina-cyan-500: #09bbf6;
+  --ina-cyan-600: #008bb9;
+  --ina-cyan-700: #00506b;
+  --ina-cyan-800: #0a3442;
+  --ina-cyan-900: #032530;
+  --ina-teal-50: #faffff;
+  --ina-teal-100: #effbfb;
+  --ina-teal-200: #d7f4f6;
+  --ina-teal-300: #8edfe5;
+  --ina-teal-400: #44ccd5;
+  --ina-teal-500: #1bbfca;
+  --ina-teal-600: #006f93;
+  --ina-teal-700: #07465a;
+  --ina-teal-800: #04252f;
+  --ina-teal-900: #02161d;
+  --ina-green-50: #fafffa;
+  --ina-green-100: #edfded;
+  --ina-green-200: #e0fae0;
+  --ina-green-300: #a6f0a5;
+  --ina-green-400: #4ce160;
+  --ina-green-500: #3cc14e;
+  --ina-green-600: #288034;
+  --ina-green-700: #1b561a;
+  --ina-green-800: #0c310d;
+  --ina-green-900: #021d06;
+  --ina-lime-50: #fdfffa;
+  --ina-lime-100: #f8fded;
+  --ina-lime-200: #f2fcdf;
+  --ina-lime-300: #ddf6aa;
+  --ina-lime-400: #bbed56;
+  --ina-lime-500: #90c821;
+  --ina-lime-600: #5b7d17;
+  --ina-lime-700: #3b5110;
+  --ina-lime-800: #202d06;
+  --ina-lime-900: #141d02;
+  --ina-yellow-50: #fffefa;
+  --ina-yellow-100: #fff9eb;
+  --ina-yellow-200: #fff8d5;
+  --ina-yellow-300: #ffe58a;
+  --ina-yellow-400: #ffcc14;
+  --ina-yellow-500: #eebb04;
+  --ina-yellow-600: #855f00;
+  --ina-yellow-700: #553b06;
+  --ina-yellow-800: #312102;
+  --ina-yellow-900: #1c1402;
+  --ina-orange-50: #fffcfa;
+  --ina-orange-100: #fff5eb;
+  --ina-orange-200: #ffead3;
+  --ina-orange-300: #ffc382;
+  --ina-orange-400: #ff8806;
+  --ina-orange-500: #ec7303;
+  --ina-orange-600: #c15100;
+  --ina-orange-700: #562501;
+  --ina-orange-800: #2f1604;
+  --ina-orange-900: #170b02;
+  --ina-coral-50: #fffbfa;
+  --ina-coral-100: #ffefeb;
+  --ina-coral-200: #ffe1d7;
+  --ina-coral-300: #ffa78a;
+  --ina-coral-400: #ff6a38;
+  --ina-coral-500: #f3511b;
+  --ina-coral-600: #d03706;
+  --ina-coral-700: #5e1d08;
+  --ina-coral-800: #2f0e04;
+  --ina-coral-900: #1d0802;
+  --ina-red-50: #fffafa;
+  --ina-red-100: #fdeded;
+  --ina-red-200: #ffe0e0;
+  --ina-red-300: #ffa0a0;
+  --ina-red-400: #ff5c5c;
+  --ina-red-500: #f02d2d;
+  --ina-red-600: #d50b0b;
+  --ina-red-700: #570303;
+  --ina-red-800: #2a0303;
+  --ina-red-900: #1d0202;
+  --ina-pink-50: #fff5fa;
+  --ina-pink-100: #fdedf5;
+  --ina-pink-200: #fcdcec;
+  --ina-pink-300: #f79cc8;
+  --ina-pink-400: #f155a0;
+  --ina-pink-500: #e9358b;
+  --ina-pink-600: #a51359;
+  --ina-pink-700: #4b112d;
+  --ina-pink-800: #36061d;
+  --ina-pink-900: #1d020f;
+  --ina-magenta-50: #fefaff;
+  --ina-magenta-100: #fbebff;
+  --ina-magenta-200: #f5d2fe;
+  --ina-magenta-300: #e483fc;
+  --ina-magenta-400: #d951fb;
+  --ina-magenta-500: #c709f6;
+  --ina-magenta-600: #9400b9;
+  --ina-magenta-700: #56006b;
+  --ina-magenta-800: #370a42;
+  --ina-magenta-900: #270330;
+  --ina-violet-50: #fbfaff;
+  --ina-violet-100: #f7f6fe;
+  --ina-violet-200: #e2ddfd;
+  --ina-violet-300: #ad9efa;
+  --ina-violet-400: #8770ff;
+  --ina-violet-500: #583aee;
+  --ina-violet-600: #3b1fc6;
+  --ina-violet-700: #271a68;
+  --ina-violet-800: #140f2e;
+  --ina-violet-900: #06021d;
+  --ina-purple-50: #fdfaff;
+  --ina-purple-100: #f7ebff;
+  --ina-purple-200: #ecd2fe;
+  --ina-purple-300: #cc83fc;
+  --ina-purple-400: #b751fb;
+  --ina-purple-500: #9709f6;
+  --ina-purple-600: #6f00b9;
+  --ina-purple-700: #40006b;
+  --ina-purple-800: #2c0a42;
+  --ina-purple-900: #1e0330;
+  --ina-lilac-50: #fdfaff;
+  --ina-lilac-100: #faf5fe;
+  --ina-lilac-200: #efddfd;
+  --ina-lilac-300: #cc9ef0;
+  --ina-lilac-400: #b56bf0;
+  --ina-lilac-500: #8935cb;
+  --ina-lilac-600: #631f99;
+  --ina-lilac-700: #3e135f;
+  --ina-lilac-800: #1c042f;
+  --ina-lilac-900: #11021d;
+  --ina-indigo-50: #fafdff;
+  --ina-indigo-100: #ebf7ff;
+  --ina-indigo-200: #d3effe;
+  --ina-indigo-300: #80d0fd;
+  --ina-indigo-400: #0aa7ff;
+  --ina-indigo-500: #0099f0;
+  --ina-indigo-600: #0364ab;
+  --ina-indigo-700: #003c66;
+  --ina-indigo-800: #01243d;
+  --ina-indigo-900: #02121d;
+
+  /* ---- spacing [NPM] — disalin persis dari @idds/styles 1.6.36 base.css (skala rem) ----
+   * Keputusan 19 Sep 2026: nama & nilai mengikuti sumber INAgov asli, BUKAN nama laman Foundation
+   * (spacing-N = N px). Skala desain Foundation dipetakan: 2px=0-5 · 4=1 · 8=2 · 12=3 · 16=4 · 24=6 ·
+   * 32=8 · 40=10 · 48=12 · 56=14 · 64=16 · 80=20; 128px tidak punya token npm (maks 96 = spacing-24). */
+  --ina-spacing-0: 0rem; /* 0px */
+  --ina-spacing-0-5: 0.125rem; /* 2px */
+  --ina-spacing-1: 0.25rem; /* 4px */
+  --ina-spacing-1-5: 0.375rem; /* 6px */
+  --ina-spacing-2: 0.5rem; /* 8px */
+  --ina-spacing-2-5: 0.625rem; /* 10px */
+  --ina-spacing-3: 0.75rem; /* 12px */
+  --ina-spacing-3-5: 0.875rem; /* 14px */
+  --ina-spacing-4: 1rem; /* 16px */
+  --ina-spacing-4-5: 1.125rem; /* 18px */
+  --ina-spacing-5: 1.25rem; /* 20px */
+  --ina-spacing-5-5: 1.375rem; /* 22px */
+  --ina-spacing-6: 1.5rem; /* 24px */
+  --ina-spacing-6-5: 1.625rem; /* 26px */
+  --ina-spacing-7: 1.75rem; /* 28px */
+  --ina-spacing-7-5: 1.875rem; /* 30px */
+  --ina-spacing-8: 2rem; /* 32px */
+  --ina-spacing-8-5: 2.125rem; /* 34px */
+  --ina-spacing-9: 2.25rem; /* 36px */
+  --ina-spacing-9-5: 2.375rem; /* 38px */
+  --ina-spacing-10: 2.5rem; /* 40px */
+  --ina-spacing-10-5: 2.625rem; /* 42px */
+  --ina-spacing-11: 2.75rem; /* 44px */
+  --ina-spacing-11-5: 2.875rem; /* 46px */
+  --ina-spacing-12: 3rem; /* 48px */
+  --ina-spacing-12-5: 3.125rem; /* 50px */
+  --ina-spacing-13: 3.25rem; /* 52px */
+  --ina-spacing-13-5: 3.375rem; /* 54px */
+  --ina-spacing-14: 3.5rem; /* 56px */
+  --ina-spacing-14-5: 3.625rem; /* 58px */
+  --ina-spacing-15: 3.75rem; /* 60px */
+  --ina-spacing-15-5: 3.875rem; /* 62px */
+  --ina-spacing-16: 4rem; /* 64px */
+  --ina-spacing-16-5: 4.125rem; /* 66px */
+  --ina-spacing-17: 4.25rem; /* 68px */
+  --ina-spacing-17-5: 4.375rem; /* 70px */
+  --ina-spacing-18: 4.5rem; /* 72px */
+  --ina-spacing-18-5: 4.625rem; /* 74px */
+  --ina-spacing-19: 4.75rem; /* 76px */
+  --ina-spacing-19-5: 4.875rem; /* 78px */
+  --ina-spacing-20: 5rem; /* 80px */
+  --ina-spacing-20-5: 5.125rem; /* 82px */
+  --ina-spacing-21: 5.25rem; /* 84px */
+  --ina-spacing-21-5: 5.375rem; /* 86px */
+  --ina-spacing-22: 5.5rem; /* 88px */
+  --ina-spacing-22-5: 5.625rem; /* 90px */
+  --ina-spacing-23: 5.75rem; /* 92px */
+  --ina-spacing-23-5: 5.875rem; /* 94px */
+  --ina-spacing-24: 6rem; /* 96px */
+
+  /* ---- radius ---- */
+  --ina-radius-sm: 0.125rem;
+  --ina-radius-base: 0.25rem;
+  --ina-radius-md: 0.375rem;
+  --ina-radius-lg: 0.5rem;
+  --ina-radius-xl: 0.75rem;
+  --ina-radius-2xl: 1rem;
+  --ina-radius-full: 9999px;
+
+  /* ---- tipografi ---- */
+  --ina-font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --ina-type-display-large-size: 52px;
+  --ina-type-display-large-lh: 56px;
+  --ina-type-display-large-ls: -0.02em;
+  --ina-type-display-small-size: 44px;
+  --ina-type-display-small-lh: 48px;
+  --ina-type-display-small-ls: -0.02em;
+  --ina-type-h1-size: 40px;
+  --ina-type-h1-lh: 48px;
+  --ina-type-h2-size: 36px;
+  --ina-type-h2-lh: 44px;
+  --ina-type-h3-size: 32px;
+  --ina-type-h3-lh: 40px;
+  --ina-type-h4-size: 28px;
+  --ina-type-h4-lh: 36px;
+  --ina-type-h5-size: 24px;
+  --ina-type-h5-lh: 32px;
+  --ina-type-body-large-size: 20px;
+  --ina-type-body-large-lh: 28px;
+  --ina-type-body-size: 18px;
+  --ina-type-body-lh: 26px;
+  --ina-type-body-small-size: 16px;
+  --ina-type-body-small-lh: 24px;
+  --ina-type-caption-size: 14px;
+  --ina-type-caption-lh: 20px;
+  --ina-type-caption-small-size: 12px;
+  --ina-type-caption-small-lh: 16px;
+  --ina-type-caption-extra-small-size: 10px;
+  --ina-type-caption-extra-small-lh: 12px;
+
+  /* ---- ikon (resmi, PDF IDDS Okt 2025) ---- */
+  --ina-icon-24-stroke: 2;
+  --ina-icon-20-stroke: 1.5;
+  --ina-icon-16-stroke: 1.25;
+  --ina-icon-14-stroke: 1.25;
+  --ina-icon-12-stroke: 1.25;
+  --ina-icon-empty-state-size: 64px;
+  --ina-icon-empty-state-stroke: 5;
+}
+
+/* ---- [TURUNAN] fallback brand: tanpa data-brand, primary = netral ----
+ * Tanpa blok ini var(--ina-primary-primary) tidak terdefinisi dan tombol
+ * kehilangan warna. Netral gelap lolos kontras (putih 18,42) tapi tanpa identitas. */
+:root {
+  --ina-primary-25: var(--ina-neutral-25);
+  --ina-primary-50: var(--ina-neutral-50);
+  --ina-primary-100: var(--ina-neutral-100);
+  --ina-primary-200: var(--ina-neutral-200);
+  --ina-primary-300: var(--ina-neutral-300);
+  --ina-primary-400: var(--ina-neutral-400);
+  --ina-primary-500: var(--ina-neutral-500);
+  --ina-primary-600: var(--ina-neutral-600);
+  --ina-primary-700: var(--ina-neutral-700);
+  --ina-primary-800: var(--ina-neutral-800);
+  --ina-primary-900: var(--ina-neutral-900);
+  --ina-primary-primary: var(--ina-neutral-900); /* #141414 */
+}
+[data-theme="dark"]:not([data-brand]) {
+  --ina-primary-primary: var(--ina-neutral-100); /* #f2f2f2 */
+  --ina-content-on-primary: var(--ina-neutral-900);
+}
+
+:root,
+[data-theme="light"] {
+  --ina-background-primary: var(--ina-neutral-25); /* #ffffff */
+  --ina-background-secondary: var(--ina-neutral-50); /* #f8f8f7 */
+  --ina-background-tertiary: var(--ina-neutral-100); /* #f2f2f2 */
+  --ina-content-primary: var(--ina-neutral-800); /* #1f1f1f */
+  --ina-content-secondary: var(--ina-neutral-600); /* #525252 */
+  --ina-content-tertiary: var(--ina-neutral-400); /* #a3a3a3 */
+  --ina-content-guide: var(--ina-blue-500); /* #0968f6 */
+  --ina-content-negative: var(--ina-red-500); /* #f02d2d */
+  --ina-content-positive: var(--ina-green-600); /* #288034 */
+  --ina-stroke-primary: var(--ina-neutral-200); /* #e5e5e5 */
+  --ina-stroke-secondary: var(--ina-neutral-400); /* #a3a3a3 */
+  --ina-stroke-tertiary: var(--ina-neutral-800); /* #1f1f1f */
+  --ina-background-overlay: #1f1f1f7a;
+
+  /* ---- [TURUNAN] semantik tambahan — light (kontras vs bg-primary) ---- */
+  --ina-content-on-primary: var(--ina-neutral-25);      /* label di atas primary-primary */
+  --ina-content-negative-strong: var(--ina-red-600);    /* #d50b0b 5,41 — error ukuran body */
+  --ina-content-warning: var(--ina-yellow-600);         /* #855f00 5,78 */
+  --ina-content-placeholder: var(--ina-neutral-500);    /* #737373 4,74 */
+  --ina-content-disabled: var(--ina-neutral-400);       /* #a3a3a3 — BUKAN teks, hanya elemen nonaktif */
+  --ina-content-inverse: var(--ina-neutral-25);         /* teks di atas background-inverse */
+  --ina-background-brand: var(--ina-primary-primary);
+  --ina-background-brand-hover: var(--ina-primary-600);
+  --ina-background-brand-subtle: var(--ina-primary-50);
+  --ina-background-guide-subtle: var(--ina-blue-100);   /* #ecf3fe */
+  --ina-background-positive-subtle: var(--ina-green-100); /* #edfded */
+  --ina-background-negative-subtle: var(--ina-red-100); /* #fdeded */
+  --ina-background-warning-subtle: var(--ina-yellow-100); /* #fff9eb */
+  --ina-background-disabled: var(--ina-neutral-100);    /* #f2f2f2 */
+  --ina-background-inverse: var(--ina-neutral-800);     /* #1f1f1f — tooltip, toast */
+  --ina-stroke-input: var(--ina-neutral-500);           /* #737373 4,74 ≥3 — batas yang membawa makna */
+  --ina-stroke-brand: var(--ina-primary-primary);
+  --ina-stroke-focus: var(--ina-blue-500);              /* #0968f6 4,86 */
+  --ina-stroke-guide: var(--ina-blue-500);
+  --ina-stroke-positive: var(--ina-green-600);
+  --ina-stroke-negative: var(--ina-red-500);
+  --ina-stroke-warning: var(--ina-yellow-600);
+}
+
+[data-theme="dark"] {
+  --ina-background-primary: var(--ina-neutral-900); /* #141414 */
+  --ina-background-secondary: var(--ina-neutral-800); /* #1f1f1f */
+  --ina-background-tertiary: var(--ina-neutral-700); /* #404040 */
+  --ina-content-primary: var(--ina-neutral-25); /* #ffffff */
+  --ina-content-secondary: var(--ina-neutral-400); /* #a3a3a3 */
+  --ina-content-tertiary: var(--ina-neutral-500); /* #737373 */
+  --ina-content-guide: var(--ina-blue-400); /* #4d93fc */
+  --ina-content-negative: var(--ina-red-400); /* #ff5c5c */
+  --ina-content-positive: var(--ina-green-500); /* #3cc14e */
+  --ina-stroke-primary: var(--ina-neutral-700); /* #404040 */
+  --ina-stroke-secondary: var(--ina-neutral-400); /* #a3a3a3 */
+  --ina-stroke-tertiary: var(--ina-neutral-200); /* #e5e5e5 */
+  --ina-background-overlay: #1f1f1f7a;
+
+  /* ---- [TURUNAN] semantik tambahan — dark (kontras vs bg-primary #141414) ---- */
+  --ina-content-on-primary: var(--ina-neutral-25);      /* ditimpa per brand bila putih gagal */
+  --ina-content-negative-strong: var(--ina-red-400);    /* #ff5c5c 6,09 */
+  --ina-content-warning: var(--ina-yellow-400);         /* #ffcc14 12,19 */
+  --ina-content-placeholder: var(--ina-neutral-400);    /* #a3a3a3 7,30 */
+  --ina-content-disabled: var(--ina-neutral-500);       /* #737373 — BUKAN teks */
+  --ina-content-inverse: var(--ina-neutral-800);
+  --ina-background-brand: var(--ina-primary-primary);
+  --ina-background-brand-hover: var(--ina-primary-600);
+  --ina-background-brand-subtle: var(--ina-primary-900);
+  --ina-background-guide-subtle: var(--ina-blue-800);   /* #0e192a */
+  --ina-background-positive-subtle: var(--ina-green-800); /* #0c310d */
+  --ina-background-negative-subtle: var(--ina-red-800); /* #2a0303 */
+  --ina-background-warning-subtle: var(--ina-yellow-800); /* #312102 */
+  --ina-background-disabled: var(--ina-neutral-700);    /* #404040 */
+  --ina-background-inverse: var(--ina-neutral-100);     /* #f2f2f2 */
+  --ina-stroke-input: var(--ina-neutral-400);           /* #a3a3a3 7,30 */
+  --ina-stroke-brand: var(--ina-primary-primary);
+  --ina-stroke-focus: var(--ina-blue-400);              /* #4d93fc 6,05 */
+  --ina-stroke-guide: var(--ina-blue-400);
+  --ina-stroke-positive: var(--ina-green-500);
+  --ina-stroke-negative: var(--ina-red-400);
+  --ina-stroke-warning: var(--ina-yellow-400);
+}
+
+/* ---- [NPM] shadow, transisi, breakpoint — dari @idds/styles 1.6.36 base.css ----
+ * Ditemukan saat audit 19 Sep 2026 terhadap design.inadigital.go.id: npm TIDAK hanya
+ * punya shadow-sm. Nilai di bawah disalin apa adanya; jangan diedit manual. */
+:root {
+  --ina-shadow-color: 0, 0, 0;
+  --ina-shadow-sm: 0 1px 2px 0 rgba(var(--ina-shadow-color), 0.05);
+  --ina-shadow-base: 0 1px 3px 0 rgba(var(--ina-shadow-color), 0.1), 0 1px 2px -1px rgba(var(--ina-shadow-color), 0.1);
+  --ina-shadow-md: 0 4px 6px -1px rgba(var(--ina-shadow-color), 0.1), 0 2px 4px -2px rgba(var(--ina-shadow-color), 0.1);
+  --ina-shadow-lg: 0 10px 15px -3px rgba(var(--ina-shadow-color), 0.1), 0 4px 6px -4px rgba(var(--ina-shadow-color), 0.1);
+  --ina-shadow-xl: 0 20px 25px -5px rgba(var(--ina-shadow-color), 0.1), 0 8px 10px -6px rgba(var(--ina-shadow-color), 0.1);
+
+  --ina-transition-fast: 150ms ease-in-out;
+  --ina-transition-base: 200ms ease-in-out;
+  --ina-transition-slow: 300ms ease-in-out;
+
+  --ina-breakpoint-sm: 640px;
+  --ina-breakpoint-md: 768px;
+  --ina-breakpoint-lg: 1024px;
+  --ina-breakpoint-xl: 1280px;
+}
+
+/* ---- [TURUNAN] token non-warna ----
+ * Shadow-Focused (Foundation › Efek: "rapat dan jelas" — kartu, tombol, formulir) = shadow-sm,
+ *   nilai yang dipakai npm untuk .ina-table__container dan kartu.
+ * Shadow-Float   (Foundation › Efek: "menyebar dan ringan" — modal, dropdown, tooltip) = shadow-xl,
+ *   nilai yang dipakai npm untuk .ina-modal__dialog dan .ina-drawer__panel. Celah §9 #2 tertutup.
+ * focus-ring: cincin ganda (latar + stroke-focus) agar terlihat di semua warna latar.
+ * duration: fast/base/slow disamakan dengan --ina-transition-* npm (150/200/300);
+ *   easing tetap keputusan paket (npm memakai ease-in-out).
+ * weight/z-index: keputusan paket, bukan npm — ubah di sini, bukan di komponen. */
+:root {
+  --ina-shadow-focused: var(--ina-shadow-sm);
+  --ina-shadow-float: var(--ina-shadow-xl);
+  --ina-focus-ring: 0 0 0 2px var(--ina-background-primary), 0 0 0 4px var(--ina-stroke-focus);
+  --ina-focus-ring-offset: 2px;
+
+  --ina-weight-regular: 400;
+  --ina-weight-medium: 500;
+  --ina-weight-semibold: 600;
+  --ina-weight-bold: 700;
+  --ina-weight-heading: var(--ina-weight-semibold); /* display, h1–h5 */
+  --ina-weight-body: var(--ina-weight-regular);
+  --ina-weight-label: var(--ina-weight-medium);     /* tombol, label form, tab */
+
+  --ina-duration-fast: 150ms;   /* hover, focus — = npm transition-fast */
+  --ina-duration-base: 200ms;   /* dropdown, toggle, toast — = npm transition-base */
+  --ina-duration-slow: 300ms;   /* modal, drawer, bottom sheet — = npm transition-slow */
+  --ina-easing-standard: cubic-bezier(0.2, 0, 0, 1);
+  --ina-easing-exit: cubic-bezier(0.4, 0, 1, 1);
+
+  --ina-z-dropdown: 1000;
+  --ina-z-sticky: 1100;
+  --ina-z-drawer: 1200;
+  --ina-z-overlay: 1300;
+  --ina-z-modal: 1400;
+  --ina-z-toast: 1500;
+}
+
+/* ============ brand lembaga (resmi IDDS) ============ */
+[data-brand="inapas"] {
+  --ina-primary-25: #fef2f2;
+  --ina-primary-50: #f9dcdc;
+  --ina-primary-100: #f9cdc7;
+  --ina-primary-200: #ffa194;
+  --ina-primary-300: #ff5f42;
+  --ina-primary-400: #e8422d;
+  --ina-primary-500: #cc1515;
+  --ina-primary-600: #a00000;
+  --ina-primary-700: #680000;
+  --ina-primary-800: #290404;
+  --ina-primary-900: #140202;
+  --ina-primary-primary: #cc1515;
+}
+[data-theme="dark"][data-brand="inapas"] {
+  --ina-primary-primary: var(--ina-primary-400);
+  --ina-content-on-primary: var(--ina-neutral-900); /* putih hanya 4,00 di #e8422d; gelap 4,60 */
+  --ina-background-brand-hover: var(--ina-primary-300);
+}
+[data-brand="inagov"] {
+  --ina-primary-25: #f6f9ff;
+  --ina-primary-50: #eff5fd;
+  --ina-primary-100: #c0d7f9;
+  --ina-primary-200: #a1c4f5;
+  --ina-primary-300: #629cef;
+  --ina-primary-400: #196bcd;
+  --ina-primary-500: #0956c3;
+  --ina-primary-600: #0a489f;
+  --ina-primary-700: #083575;
+  --ina-primary-800: #022a5b;
+  --ina-primary-900: #041225;
+  --ina-primary-primary: #196bcd;
+}
+[data-theme="dark"][data-brand="inagov"] { --ina-primary-primary: var(--ina-primary-400); }
+[data-brand="inaku"] {
+  --ina-primary-25: #e8f1fc;
+  --ina-primary-50: #d9e9f9;
+  --ina-primary-100: #abd1ff;
+  --ina-primary-200: #629cef;
+  --ina-primary-300: #3a78c1;
+  --ina-primary-400: #194472;
+  --ina-primary-500: #06264d;
+  --ina-primary-600: #041d35;
+  --ina-primary-700: #020f1f;
+  --ina-primary-800: #020b17;
+  --ina-primary-900: #01080f;
+  --ina-primary-primary: #06264d;
+}
+[data-theme="dark"][data-brand="inaku"] { --ina-primary-primary: var(--ina-primary-300); }
+[data-brand="bgn"] {
+  --ina-primary-25: #ebf8ff;
+  --ina-primary-50: #d3eeff;
+  --ina-primary-100: #b1e2ff;
+  --ina-primary-200: #7bd4ff;
+  --ina-primary-300: #3eb8ff;
+  --ina-primary-400: #1194ff;
+  --ina-primary-500: #0070ff;
+  --ina-primary-600: #0058ff;
+  --ina-primary-700: #0048cf;
+  --ina-primary-800: #0641a2;
+  --ina-primary-900: #071e49;
+  --ina-primary-primary: #0058ff;
+}
+[data-brand="bkn"] {
+  --ina-primary-25: #fdf2f7;
+  --ina-primary-50: #fde6f1;
+  --ina-primary-100: #fdcde3;
+  --ina-primary-200: #fca5cb;
+  --ina-primary-300: #f96da7;
+  --ina-primary-400: #f24286;
+  --ina-primary-500: #de1d5e;
+  --ina-primary-600: #c41249;
+  --ina-primary-700: #a2123c;
+  --ina-primary-800: #871436;
+  --ina-primary-900: #53041a;
+  --ina-primary-primary: #de1d5e;
+}
+[data-brand="lan"] {
+  --ina-primary-25: #f3f6fc;
+  --ina-primary-50: #e5edf9;
+  --ina-primary-100: #c6daf1;
+  --ina-primary-200: #94bde5;
+  --ina-primary-300: #5b9bd5;
+  --ina-primary-400: #3781c7;
+  --ina-primary-500: #2663a3;
+  --ina-primary-600: #1f4f85;
+  --ina-primary-700: #1e446e;
+  --ina-primary-800: #1e3a5c;
+  --ina-primary-900: #14263d;
+  --ina-primary-primary: #2663a3;
+}
+[data-brand="panrb"] {
+  --ina-primary-25: #fdf3f3;
+  --ina-primary-50: #fce4e4;
+  --ina-primary-100: #facecf;
+  --ina-primary-200: #f5acad;
+  --ina-primary-300: #ed7c7e;
+  --ina-primary-400: #e15254;
+  --ina-primary-500: #cd3537;
+  --ina-primary-600: #b42b2d;
+  --ina-primary-700: #8f2527;
+  --ina-primary-800: #772526;
+  --ina-primary-900: #400f10;
+  --ina-primary-primary: #b42b2d;
+}
+[data-theme="dark"][data-brand="panrb"] {
+  --ina-primary-primary: var(--ina-primary-400);
+  --ina-content-on-primary: var(--ina-neutral-900); /* putih hanya 3,79 di #e15254; gelap 4,86 */
+  --ina-background-brand-hover: var(--ina-primary-300);
+}
+
+/* ============ brand daerah ============ */
+/* Brand Pemkab HSS — ramp dibangun skrip dari #0063a8 [TERVALIDASI]
+ * Profil lightness: median brand resmi IDDS (dosir-ui-idds.json)
+ * Ruang warna: OKLCH. Ramp JANGAN diedit manual — regenerate dengan build-brand.py.
+ * Aturan pemetaan dark (v1.3): langkah terdekat yang ≥4,5 vs label DAN ≥3 vs latar gelap.
+ */
+[data-brand="hss"] {
+  --ina-primary-25: #eff7ff;
+  --ina-primary-50: #dbedff;
+  --ina-primary-100: #bbddff;
+  --ina-primary-200: #8fc7ff;
+  --ina-primary-300: #54a1e9;
+  --ina-primary-400: #3a8bd3;
+  --ina-primary-500: #2172b5;
+  --ina-primary-600: #055691;
+  --ina-primary-700: #004578;
+  --ina-primary-800: #003b68;
+  --ina-primary-900: #002241;
+  --ina-primary-primary: #0063a8;
+  --ina-accent-yellow: #fff500;
+}
+/* dark → primary-500, BUKAN 400: label putih di 400 hanya 3,61 (gagal AA);
+ * di 500 = 5,07 vs putih dan 3,63 vs latar gelap — keduanya lolos. */
+[data-theme="dark"][data-brand="hss"] { --ina-primary-primary: var(--ina-primary-500); }
+
+/* Menambah daerah lain? JANGAN tulis tangan — jalankan:
+ *   python3 scripts/build-brand.py --hex "#XXXXXX" --name <slug> \
+ *     --label "<Nama>" --accent "#XXXXXX" \
+ *     --out-css assets/brand-<slug>.css --out-json data/brand-<slug>.json
+ * lalu tempel isi brand-<slug>.css di bawah baris ini.
+ */

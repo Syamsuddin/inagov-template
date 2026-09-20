@@ -1,0 +1,745 @@
+{
+  "nama": "idds-ui-pack",
+  "versi": "1.8.0",
+  "tujuan": "bahan referensi UI untuk skill VCBD di Claude Code",
+  "sistem_desain": "INA Digital Design System (IDDS)",
+  "klasifikasi": "Dokumen PDF induk berlabel RAHASIA/internal. Paket ini turunan untuk pemakaian internal instansi. JANGAN dipublikasikan ke repo publik.",
+  "brand_aktif": {
+    "slug": "hss",
+    "label": "Pemkab HSS",
+    "status": "TERVALIDASI",
+    "warna_dasar": "#0063a8",
+    "accent": "#fff500",
+    "sumber": "disampel dari berkas logo resmi (PNG) yang diunggah pengguna",
+    "warna_pendukung": {
+      "hijau_daun": "#00923f",
+      "biru_terang": "#0075ba",
+      "biru_atap": "#004a92",
+      "kuning_emas": "#f8c300"
+    },
+    "catatan": "HSS belum punya Perda lambang daerah (Raperda Sept 2026); nilai bisa berubah bila Perda menetapkan spesifikasi berbeda"
+  },
+  "sumber_terverifikasi": [
+    "https://design.inadigital.go.id (dokumentasi resmi)",
+    "npm @idds/styles (token warna, radius, spacing, brand)",
+    "npm @idds/react (kontrak varian komponen)",
+    "repo tabler-icons-main v3.46.0 (unggahan pengguna) - geometri & indeks ikon",
+    "arsip inter.zip Version 4.001;git-66647c0bb (unggahan pengguna) - metrik, sumbu, fitur OpenType",
+    "Dokumentasi_INA_Digital_Design_System.pdf (176 hal, Oktober 2025)"
+  ],
+  "rute_pemuatan": {
+    "selalu": [
+      "docs/26_UI_CONVENTIONS.md"
+    ],
+    "menulis CSS/komponen": [
+      "assets/idds-tokens.css",
+      "assets/idds-utilities.css"
+    ],
+    "memilih warna teks": [
+      "docs/data/aturan-kontras.json"
+    ],
+    "memilih ikon": [
+      "docs/data/dosir-ikon-tabler.json"
+    ],
+    "menyetel font": [
+      "docs/data/dosir-font-inter.json"
+    ],
+    "rujukan penuh": [
+      "docs/data/dosir-ui-idds.json",
+      "docs/data/dosir-kontras-idds.json",
+      "docs/data/brand-hss.json"
+    ],
+    "TIDAK dimuat agen": [
+      "docs/referensi/*"
+    ],
+    "mengubah token warna": [
+      "docs/scripts/build-kontras.py (jalankan ulang + --check)"
+    ],
+    "membangun halaman admin": [
+      "assets/idds-admin.css",
+      "assets/idds-admin.js",
+      "index.html (rujukan tata letak)",
+      "disposisi.html (rujukan alur persetujuan + modal)",
+      "cetak.html (rujukan lembar cetak)",
+      "skm.html (rujukan Likert & fieldset)",
+      "agenda.html (rujukan kalender)",
+      "kinerja.html (rujukan tree view)",
+      "dashboard-eksekutif.html (rujukan peta ubin)",
+      "kebijakan-privasi.html (rujukan dokumen prosa + daftar isi)"
+    ],
+    "contoh halaman siap pakai": [
+      "*.html"
+    ],
+    "membangun halaman publik (tanpa sidebar)": [
+      "assets/idds-admin.css (blok Fase 6 .ina-public)",
+      "publik-beranda.html (rujukan kerangka publik)"
+    ],
+    "membangun layar besar / kios": [
+      "kios-antrian.html",
+      "situation-room.html"
+    ]
+  },
+  "berkas": [
+    {
+      "path": "docs/INSTALL.md",
+      "bytes": 10464,
+      "sha256_16": "540c969026232eb7",
+      "status": "ada"
+    },
+    {
+      "path": "docs/README.md",
+      "bytes": 18593,
+      "sha256_16": "a96af73b1891d021",
+      "status": "ada"
+    },
+    {
+      "path": "docs/install.sh",
+      "bytes": 5151,
+      "sha256_16": "607a985ddaf65a5a",
+      "status": "ada"
+    },
+    {
+      "path": "assets/brand-hss.css",
+      "bytes": 980,
+      "sha256_16": "5bbf795d4498bf58",
+      "status": "ada"
+    },
+    {
+      "path": "assets/idds-tokens.css",
+      "bytes": 22779,
+      "sha256_16": "2cb5c9b561888ea6",
+      "status": "ada"
+    },
+    {
+      "path": "assets/idds-utilities.css",
+      "bytes": 5461,
+      "sha256_16": "662d067bdfc315a3",
+      "status": "diregenerasi-1.3.0"
+    },
+    {
+      "path": "assets/fonts/inter-latin.woff2",
+      "bytes": 75604,
+      "sha256_16": "3fca88c40990dc70",
+      "status": "hilang",
+      "catatan": "impor ulang dari paket asli 1.2.0 (hash = rilis 1.2.0)"
+    },
+    {
+      "path": "assets/img/tabler-sprite-starter.svg",
+      "bytes": 34487,
+      "sha256_16": "c7e88cbf1158950e",
+      "status": "hilang",
+      "catatan": "impor ulang dari paket asli 1.2.0 (hash = rilis 1.2.0)"
+    },
+    {
+      "path": "docs/data/aturan-kontras.json",
+      "bytes": 39776,
+      "sha256_16": "3cfbb8491eaa3bc6",
+      "status": "diregenerasi-1.3.0"
+    },
+    {
+      "path": "docs/data/brand-hss.json",
+      "bytes": 3120,
+      "sha256_16": "a9f6935b2e66104a",
+      "status": "ada"
+    },
+    {
+      "path": "docs/data/dosir-font-inter.json",
+      "bytes": 20105,
+      "sha256_16": "9fd03aead2d3c180",
+      "status": "hilang",
+      "catatan": "impor ulang dari paket asli 1.2.0 (hash = rilis 1.2.0)"
+    },
+    {
+      "path": "docs/data/dosir-ikon-tabler.json",
+      "bytes": 1544237,
+      "sha256_16": "d11dcf7461595bae",
+      "status": "hilang",
+      "catatan": "impor ulang dari paket asli 1.2.0 (hash = rilis 1.2.0)"
+    },
+    {
+      "path": "docs/data/dosir-kontras-idds.json",
+      "bytes": 18323,
+      "sha256_16": "63a6c69ca61e4f77",
+      "status": "hilang",
+      "catatan": "impor ulang dari paket asli 1.2.0 (hash = rilis 1.2.0)"
+    },
+    {
+      "path": "docs/data/dosir-ui-idds.json",
+      "bytes": 28517,
+      "sha256_16": "5ee51b07a8d0bf7e",
+      "status": "hilang",
+      "catatan": "impor ulang dari paket asli 1.2.0 (hash = rilis 1.2.0)"
+    },
+    {
+      "path": "docs/26_UI_CONVENTIONS.md",
+      "bytes": 33193,
+      "sha256_16": "f89000b3780d57aa",
+      "status": "ada"
+    },
+    {
+      "path": "docs/referensi/ADENDUM-01-IKONOGRAFI.md",
+      "bytes": 9048,
+      "sha256_16": "72cc350b47d3f03d",
+      "status": "hilang",
+      "catatan": "impor ulang dari paket asli 1.2.0 (hash = rilis 1.2.0)"
+    },
+    {
+      "path": "docs/referensi/ADENDUM-02-FONT-INTER.md",
+      "bytes": 10064,
+      "sha256_16": "a4e3ddc0cdd370ec",
+      "status": "hilang",
+      "catatan": "impor ulang dari paket asli 1.2.0 (hash = rilis 1.2.0)"
+    },
+    {
+      "path": "docs/referensi/ADENDUM-03-DOKUMENTASI-RESMI.md",
+      "bytes": 11820,
+      "sha256_16": "498858487c6f5262",
+      "status": "hilang",
+      "catatan": "impor ulang dari paket asli 1.2.0 (hash = rilis 1.2.0)"
+    },
+    {
+      "path": "docs/referensi/DOSIR-DESAIN-UI-IDDS.md",
+      "bytes": 16734,
+      "sha256_16": "80eb24359aad4eb1",
+      "status": "hilang",
+      "catatan": "impor ulang dari paket asli 1.2.0 (hash = rilis 1.2.0)"
+    },
+    {
+      "path": "docs/scripts/build-brand.py",
+      "bytes": 9412,
+      "sha256_16": "7754d6b44adb51e2",
+      "status": "hilang",
+      "catatan": "impor ulang dari paket asli 1.2.0 (hash = rilis 1.2.0)"
+    },
+    {
+      "path": "docs/scripts/build-kontras.py",
+      "bytes": 9482,
+      "sha256_16": "049f82a4b7f9c49d",
+      "status": "baru-1.3.0"
+    },
+    {
+      "path": "docs/scripts/build-sprite.py",
+      "bytes": 4343,
+      "sha256_16": "8fbf6a1d78d4326e",
+      "status": "hilang",
+      "catatan": "impor ulang dari paket asli 1.2.0 (hash = rilis 1.2.0)"
+    },
+    {
+      "path": "docs/scripts/verify.sh",
+      "bytes": 8578,
+      "sha256_16": "ba9a3c2d11fe5799",
+      "status": "ada"
+    },
+    {
+      "path": "assets/idds-admin.css",
+      "bytes": 114362,
+      "sha256_16": "9499c832d99c7528",
+      "status": "ada"
+    },
+    {
+      "path": "assets/idds-admin.js",
+      "bytes": 59223,
+      "sha256_16": "5a58416c6470a3db",
+      "status": "ada"
+    },
+    {
+      "path": "404.html",
+      "bytes": 2521,
+      "sha256_16": "17ed58e5f13fb375",
+      "status": "ada"
+    },
+    {
+      "path": "cards.html",
+      "bytes": 48963,
+      "sha256_16": "a7f9745126e41a11",
+      "status": "ada"
+    },
+    {
+      "path": "chat.html",
+      "bytes": 45822,
+      "sha256_16": "df56f01d4d9aa7bb",
+      "status": "ada"
+    },
+    {
+      "path": "components.html",
+      "bytes": 54008,
+      "sha256_16": "022f8eb4df1ab6c9",
+      "status": "ada"
+    },
+    {
+      "path": "dashboard-analytics.html",
+      "bytes": 46967,
+      "sha256_16": "13f5aac4b604a241",
+      "status": "ada"
+    },
+    {
+      "path": "forgot-password.html",
+      "bytes": 3701,
+      "sha256_16": "d266619b7c610ef8",
+      "status": "ada"
+    },
+    {
+      "path": "forms.html",
+      "bytes": 46890,
+      "sha256_16": "d1e37cadf6d0f132",
+      "status": "ada"
+    },
+    {
+      "path": "index.html",
+      "bytes": 50473,
+      "sha256_16": "59c3a9067af39d81",
+      "status": "ada"
+    },
+    {
+      "path": "katalog-artikel.html",
+      "bytes": 50031,
+      "sha256_16": "0d20a720348ceea2",
+      "status": "baru-1.3.1"
+    },
+    {
+      "path": "artikel.html",
+      "bytes": 33790,
+      "sha256_16": "3965be179f579598",
+      "status": "baru-1.3.1"
+    },
+    {
+      "path": "assets/artikel-data.js",
+      "bytes": 19398,
+      "sha256_16": "bea18b66c3cf4d9f",
+      "status": "baru-1.3.1"
+    },
+    {
+      "path": "assets/img/artikel/artikel-1.png",
+      "bytes": 155978,
+      "sha256_16": "35ce19e7f56cee9f",
+      "status": "baru-1.3.1"
+    },
+    {
+      "path": "assets/img/artikel/artikel-2.png",
+      "bytes": 135242,
+      "sha256_16": "38cf6ca81566b8cf",
+      "status": "baru-1.3.1"
+    },
+    {
+      "path": "assets/img/artikel/artikel-3.png",
+      "bytes": 147968,
+      "sha256_16": "5746204996e0bab4",
+      "status": "baru-1.3.1"
+    },
+    {
+      "path": "assets/img/artikel/artikel-4.png",
+      "bytes": 125877,
+      "sha256_16": "0b4dad09e0e29372",
+      "status": "baru-1.3.1"
+    },
+    {
+      "path": "assets/img/artikel/artikel-5.png",
+      "bytes": 147462,
+      "sha256_16": "eb748f453d450dd0",
+      "status": "baru-1.3.1"
+    },
+    {
+      "path": "assets/img/artikel/artikel-6.png",
+      "bytes": 126110,
+      "sha256_16": "46a12a68e3b01d98",
+      "status": "baru-1.3.1"
+    },
+    {
+      "path": "keuangan.html",
+      "bytes": 49172,
+      "sha256_16": "8d8cf3cc92810306",
+      "status": "ada"
+    },
+    {
+      "path": "lock-screen.html",
+      "bytes": 4580,
+      "sha256_16": "73849170e1a67433",
+      "status": "ada"
+    },
+    {
+      "path": "login.html",
+      "bytes": 6769,
+      "sha256_16": "cba10f0f69ba67a5",
+      "status": "ada"
+    },
+    {
+      "path": "mail.html",
+      "bytes": 59386,
+      "sha256_16": "8b5f299b2040d84f",
+      "status": "ada"
+    },
+    {
+      "path": "otp.html",
+      "bytes": 4105,
+      "sha256_16": "bdca3acdfa9c9ac0",
+      "status": "ada"
+    },
+    {
+      "path": "profile.html",
+      "bytes": 56575,
+      "sha256_16": "e00ad215b772d6d7",
+      "status": "ada"
+    },
+    {
+      "path": "register.html",
+      "bytes": 8693,
+      "sha256_16": "b858c7facc92caa1",
+      "status": "ada"
+    },
+    {
+      "path": "tables.html",
+      "bytes": 69681,
+      "sha256_16": "3e5097e02202c916",
+      "status": "ada"
+    },
+    {
+      "path": "layanan.html",
+      "bytes": 61046,
+      "sha256_16": "57088e85d5a60988",
+      "status": "ada"
+    },
+    {
+      "path": "layanan-detail.html",
+      "bytes": 53858,
+      "sha256_16": "d6368a158d4ab533",
+      "status": "ada"
+    },
+    {
+      "path": "permohonan.html",
+      "bytes": 53274,
+      "sha256_16": "7e55829802cfd2ec",
+      "status": "ada"
+    },
+    {
+      "path": "lacak.html",
+      "bytes": 50704,
+      "sha256_16": "d12f0cda7e1a8ff6",
+      "status": "ada"
+    },
+    {
+      "path": "disposisi.html",
+      "bytes": 66373,
+      "sha256_16": "2bad5f082a7e0b12",
+      "status": "ada"
+    },
+    {
+      "path": "pengguna.html",
+      "bytes": 63341,
+      "sha256_16": "ad8477ee1b10cea8",
+      "status": "ada"
+    },
+    {
+      "path": "peran.html",
+      "bytes": 52789,
+      "sha256_16": "5f99c222d6d908fe",
+      "status": "ada"
+    },
+    {
+      "path": "audit.html",
+      "bytes": 56564,
+      "sha256_16": "1c6a376fc9c4a70e",
+      "status": "ada"
+    },
+    {
+      "path": "pengaturan.html",
+      "bytes": 60782,
+      "sha256_16": "69628724507a29c2",
+      "status": "ada"
+    },
+    {
+      "path": "cetak.html",
+      "bytes": 41220,
+      "sha256_16": "d1fecca6708506d9",
+      "status": "ada"
+    },
+    {
+      "path": "403.html",
+      "bytes": 2794,
+      "sha256_16": "05835fd77f243fa1",
+      "status": "ada"
+    },
+    {
+      "path": "500.html",
+      "bytes": 2815,
+      "sha256_16": "9402122871a3e32b",
+      "status": "ada"
+    },
+    {
+      "path": "maintenance.html",
+      "bytes": 3504,
+      "sha256_16": "0d45565c23d40eaa",
+      "status": "ada"
+    },
+    {
+      "path": "portal.html",
+      "bytes": 49209,
+      "sha256_16": "d7f71c92e0e78ab0",
+      "status": "ada"
+    },
+    {
+      "path": "pengaduan.html",
+      "bytes": 55119,
+      "sha256_16": "14ba77cefd2fa70f",
+      "status": "ada"
+    },
+    {
+      "path": "pengaduan-detail.html",
+      "bytes": 50721,
+      "sha256_16": "82ccdfc6a21ab5d9",
+      "status": "ada"
+    },
+    {
+      "path": "skm.html",
+      "bytes": 49816,
+      "sha256_16": "04d052b5ecdc5652",
+      "status": "ada"
+    },
+    {
+      "path": "skm-hasil.html",
+      "bytes": 46716,
+      "sha256_16": "644cc3e3b59274f9",
+      "status": "ada"
+    },
+    {
+      "path": "ppid.html",
+      "bytes": 58804,
+      "sha256_16": "f09de69d7d6b02ff",
+      "status": "ada"
+    },
+    {
+      "path": "jdih.html",
+      "bytes": 65780,
+      "sha256_16": "7d5c2db81c4e0c80",
+      "status": "ada"
+    },
+    {
+      "path": "jdih-detail.html",
+      "bytes": 46097,
+      "sha256_16": "a90f22f66d4c45eb",
+      "status": "ada"
+    },
+    {
+      "path": "data.html",
+      "bytes": 64704,
+      "sha256_16": "094dc0975739fd2a",
+      "status": "ada"
+    },
+    {
+      "path": "dataset.html",
+      "bytes": 50379,
+      "sha256_16": "37a3ac403b07c373",
+      "status": "ada"
+    },
+    {
+      "path": "antrian.html",
+      "bytes": 48356,
+      "sha256_16": "9534957d22325da6",
+      "status": "ada"
+    },
+    {
+      "path": "naskah.html",
+      "bytes": 65776,
+      "sha256_16": "2397df388e6b6922",
+      "status": "ada"
+    },
+    {
+      "path": "tte.html",
+      "bytes": 51122,
+      "sha256_16": "94b4a6cc39ef3eba",
+      "status": "ada"
+    },
+    {
+      "path": "agenda.html",
+      "bytes": 54042,
+      "sha256_16": "61304a82dd42b346",
+      "status": "ada"
+    },
+    {
+      "path": "pegawai.html",
+      "bytes": 54886,
+      "sha256_16": "986e3a3809cfa531",
+      "status": "ada"
+    },
+    {
+      "path": "pegawai-detail.html",
+      "bytes": 57777,
+      "sha256_16": "81bbc2aa89b53373",
+      "status": "ada"
+    },
+    {
+      "path": "presensi.html",
+      "bytes": 78455,
+      "sha256_16": "f00c504e64d2cf7a",
+      "status": "ada"
+    },
+    {
+      "path": "cuti.html",
+      "bytes": 55409,
+      "sha256_16": "e44cbfde4dd5eb03",
+      "status": "ada"
+    },
+    {
+      "path": "kinerja.html",
+      "bytes": 56346,
+      "sha256_16": "1446300e28ed91d0",
+      "status": "ada"
+    },
+    {
+      "path": "monev.html",
+      "bytes": 65941,
+      "sha256_16": "e229bfe4d3723a3d",
+      "status": "ada"
+    },
+    {
+      "path": "aset.html",
+      "bytes": 68679,
+      "sha256_16": "f15305ba3f73b35a",
+      "status": "ada"
+    },
+    {
+      "path": "dashboard-eksekutif.html",
+      "bytes": 50894,
+      "sha256_16": "05fd6167a996e5d2",
+      "status": "ada"
+    },
+    {
+      "path": "pilih-unit.html",
+      "bytes": 5233,
+      "sha256_16": "478e75c6f59e54b1",
+      "status": "ada"
+    },
+    {
+      "path": "verifikasi-identitas.html",
+      "bytes": 8816,
+      "sha256_16": "e4f4c697f0a208ed",
+      "status": "ada"
+    },
+    {
+      "path": "persetujuan-privasi.html",
+      "bytes": 5226,
+      "sha256_16": "ba39e95f33729554",
+      "status": "ada"
+    },
+    {
+      "path": "onboarding.html",
+      "bytes": 14096,
+      "sha256_16": "733c35f17bb144f2",
+      "status": "ada"
+    },
+    {
+      "path": "notifikasi.html",
+      "bytes": 56759,
+      "sha256_16": "bbfa7cf3239cf0f9",
+      "status": "ada"
+    },
+    {
+      "path": "bantuan.html",
+      "bytes": 48707,
+      "sha256_16": "08931db2d5ca0b94",
+      "status": "ada"
+    },
+    {
+      "path": "tiket.html",
+      "bytes": 50984,
+      "sha256_16": "133cc63d6e3505bb",
+      "status": "ada"
+    },
+    {
+      "path": "kebijakan-privasi.html",
+      "bytes": 42900,
+      "sha256_16": "7f58829461fe7446",
+      "status": "ada"
+    },
+    {
+      "path": "publik-beranda.html",
+      "bytes": 23046,
+      "sha256_16": "5c3d1a7804d294ca",
+      "status": "ada"
+    },
+    {
+      "path": "publik-layanan.html",
+      "bytes": 33398,
+      "sha256_16": "23c85228f271d4af",
+      "status": "ada"
+    },
+    {
+      "path": "publik-lacak.html",
+      "bytes": 27344,
+      "sha256_16": "a212950206b4389a",
+      "status": "ada"
+    },
+    {
+      "path": "publik-pengaduan.html",
+      "bytes": 28400,
+      "sha256_16": "7a1d1ca89919921c",
+      "status": "ada"
+    },
+    {
+      "path": "kios-antrian.html",
+      "bytes": 5738,
+      "sha256_16": "6430760204f5a9c2",
+      "status": "ada"
+    },
+    {
+      "path": "situation-room.html",
+      "bytes": 16346,
+      "sha256_16": "28ad373d6ee909b2",
+      "status": "ada"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 4008,
+      "sha256_16": "88a881a99706cf59",
+      "status": "ada"
+    },
+    {
+      "path": "VERSION",
+      "bytes": 6,
+      "sha256_16": "3eb1ef94b5890ca7",
+      "status": "ada"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 220,
+      "sha256_16": "26540499e8d65780",
+      "status": "ada"
+    }
+  ],
+  "catatan_salinan": "Salinan ini tidak lengkap: berkas berstatus 'hilang' harus diimpor ulang dari idds-ui-pack asli. Paket tetap berfungsi tanpanya (font jatuh ke system-ui, sprite/indeks ikon tidak tersedia).",
+  "tata_letak": {
+    "root": "template HTML siap buka (index.html dst.) + assets/ yang dirujuk template",
+    "docs/": "seluruh dokumen, skrip, data, dan manifest paket — tidak dibutuhkan untuk menjalankan template"
+  },
+  "riwayat": [
+    {
+      "versi": "1.3.1",
+      "tanggal": "2026-09-19",
+      "ringkas": "Audit terhadap seluruh laman design.inadigital.go.id + @idds/styles 1.6.36: hierarki tombol, radius, ukuran input/modal/toast/avatar/checkbox, shadow float & breakpoint dari npm, sentence case label tombol, label sidebar ≤2 kata, glyph → ikon Tabler, OTP inputmode, paginasi tabel 30 baris + indikator halaman. Keputusan pengguna: token spacing = nama/nilai npm (migrasi atomik semua berkas), warna brand = npm, avatar hanya 16–48 (xl/2xl dihapus). + katalog-artikel.html (contoh penerapan /implementation), komponen Chip, Card media, Pagination default; perbaikan stroke ikon (px render → satuan viewBox) dan [hidden]. + artikel.html (detail, pola Blog Post) + assets/artikel-data.js; kartu katalog jadi tautan nyata (.ina-card-link)."
+    },
+    {
+      "versi": "1.4.0",
+      "tanggal": "2026-09-19",
+      "ringkas": "Fase 2 — 13 template layanan publik & tata kelola SPBE: layanan, layanan-detail (6 komponen standar pelayanan), permohonan (wizard 4 langkah), lacak, disposisi (persetujuan berjenjang + TTE), pengguna, peran (matriks izin), audit (diff sebelum–sesudah), pengaturan (5 tab), cetak (A4 + @media print), 403/500/maintenance. Sidebar disatukan di 31 laman (grup Layanan Publik & Tata Kelola Sistem). idds-admin.css +blok Fase 2 (service-meta, spec-list, reg-number, diff, matrix, print-sheet/kop/ttd, @media print), .ina-col-5/7, kv-grid minmax(0,1fr)."
+    },
+    {
+      "versi": "1.5.0",
+      "tanggal": "2026-09-19",
+      "ringkas": "Fase 3 — 11 template partisipasi & keterbukaan informasi: portal (hero, quicklinks), pengaduan + pengaduan-detail (SP4N-LAPOR!, SLA, pelapor terlindungi), skm (9 unsur Permenpan 14/2017, Likert) + skm-hasil (IKM, NRR per unsur), ppid (DIP 4 kategori, permohonan, keberatan), jdih + jdih-detail (metadata JDIHN), data + dataset (SDI, API, kamus data), antrian (reservasi slot, papan loket). Sidebar +2 submenu (Partisipasi Publik, Informasi Publik) di 42 laman. CSS blok Fase 3: hero, quicklinks, likert, queue-board, code, meta-row, chip-wrap, fieldset reset."
+    },
+    {
+      "versi": "1.6.0",
+      "tanggal": "2026-09-20",
+      "ringkas": "Fase 4 — 11 template administrasi internal: naskah (TNDE + klasifikasi arsip + SRIKANDI), tte (BSrE: pratinjau, posisi, sertifikat, passphrase, verifikasi), agenda (kalender bulan, undangan, konflik, wakil), pegawai (tree organisasi), pegawai-detail (HR 5 tab), presensi (matriks 30 hari, anomali, kunci rekap), cuti (kuota, persetujuan berjenjang), kinerja (pohon kinerja, PK, realisasi, umpan balik), monev (kurva S, hierarki program), aset (KIB A–F), dashboard-eksekutif (peta ubin kecamatan, RPJMD, peringkat OPD). Sidebar +grup Administrasi Internal (3 submenu) + Dashboard Eksekutif; label mail.html → Surel Dinas. CSS blok Fase 4: calendar, tree, tilemap, sign-page, attend, row-l1/2/3. JS: initTrees() (data-tree-toggle)."
+    },
+    {
+      "versi": "1.7.0",
+      "tanggal": "2026-09-20",
+      "ringkas": "Fase 5 — 8 template pendukung: pilih-unit (multi-OPD/peran), verifikasi-identitas (KTP + swafoto + Dukcapil), persetujuan-privasi (consent per tujuan UU 27/2022), onboarding (wizard 5 langkah instansi), notifikasi (pusat notifikasi + preferensi kanal), bantuan (FAQ, panduan, status), tiket (helpdesk + SLA + percakapan), kebijakan-privasi (10 bagian + TOC + hak subjek data). Sidebar: submenu Halaman Masuk +4, submenu Pusat Bantuan (4) di Tata Kelola; topbar 'Lihat semua notifikasi' → notifikasi.html di 61 laman. CSS blok Fase 5: auth-box-xl, choice, camera-frame, notif-item, doc/toc."
+    },
+    {
+      "versi": "1.8.0",
+      "tanggal": "2026-09-20",
+      "ringkas": "Fase 6 — kerangka publik tanpa sidebar (.ina-public: topbar, header lengket, nav horizontal + <details> menu mobile, footer 4 kolom, skip link) untuk publik-beranda, publik-layanan, publik-lacak, publik-pengaduan; mode layar besar (.ina-kiosk) untuk kios-antrian (papan loket) dan situation-room (tema gelap). Sidebar admin memuat tautan ke keenamnya. Generator: build.py public + pub_pre/pub_tail."
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light" data-brand="hss">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Halaman masuk Portal Terpadu ASN Pemkab Hulu Sungai Selatan dengan opsi SSO ASN Digital dan ID Induk — IDDS">
+  <title>Masuk — Portal Terpadu Pemkab HSS</title>
+  <link rel="stylesheet" href="assets/idds-tokens.css">
+  <link rel="stylesheet" href="assets/idds-utilities.css">
+  <link rel="stylesheet" href="assets/idds-admin.css">
+</head>
+<body class="ina-auth-page">
+  <button type="button" class="ina-icon-btn ina-auth-theme-toggle" data-toggle-theme aria-label="Ganti Mode Gelap/Terang">
+    <svg class="ina-icon ina-icon-20 ina-icon-moon" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"/></svg>
+    <svg class="ina-icon ina-icon-20 ina-icon-sun" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0M3 12h1M20 12h1M12 3v1M12 20v1M5.6 5.6l.7 .7M17.7 17.7l.7 .7M5.6 18.4l.7 -.7M17.7 6.3l.7 -.7"/></svg>
+  </button>
+
+  <div class="ina-auth-box">
+    <div class="ina-auth-header">
+      <div class="ina-brand-logo ina-brand-logo-lg">HSS</div>
+      <h1 class="ina-h4 ina-mt-1">Portal Terpadu ASN</h1>
+      <p class="ina-caption ina-text-muted">Pemerintah Kabupaten Hulu Sungai Selatan</p>
+    </div>
+
+    <div class="ina-alert ina-alert-warning" role="status" id="loginNotice">
+      <svg class="ina-icon ina-icon-20" aria-hidden="true" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0M12 8v4M12 16h.01"/></svg>
+      <div class="ina-alert-content">
+        <div class="ina-alert-desc">Sesi Anda berakhir karena tidak ada aktivitas selama 30 menit. Silakan masuk kembali.</div>
+      </div>
+      <button type="button" class="ina-alert-close" data-alert-dismiss aria-label="Tutup"><svg class="ina-icon ina-icon-16" aria-hidden="true" viewBox="0 0 24 24"><path d="M18 6l-12 12M6 6l12 12"/></svg></button>
+    </div>
+
+    <form class="ina-auth-form" onsubmit="event.preventDefault(); window.location.href='otp.html';" novalidate>
+      <div class="ina-form-group">
+        <label class="ina-form-label" for="loginUser">NIP / Nama Pengguna <span class="ina-form-required">*</span></label>
+        <div class="ina-input-group">
+          <svg class="ina-icon ina-icon-20 ina-input-icon-left" aria-hidden="true" viewBox="0 0 24 24"><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"/></svg>
+          <input type="text" class="ina-input ina-input-with-icon-left ina-tabular" id="loginUser" placeholder="19880412 201101 1 003" required autocomplete="username" inputmode="numeric">
+        </div>
+        <span class="ina-form-help">Gunakan NIP 18 digit tanpa spasi, atau nama pengguna SSO.</span>
+      </div>
+      <div class="ina-form-group">
+        <div class="ina-flex ina-justify-between ina-items-center">
+          <label class="ina-form-label" for="loginPass">Kata Sandi <span class="ina-form-required">*</span></label>
+          <a href="forgot-password.html" class="ina-caption-small">Lupa sandi?</a>
+        </div>
+        <div class="ina-input-group">
+          <svg class="ina-icon ina-icon-20 ina-input-icon-left" aria-hidden="true" viewBox="0 0 24 24"><path d="M5 11m0 2a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2zM8 11v-4a4 4 0 0 1 8 0v4"/></svg>
+          <input type="password" class="ina-input ina-input-with-icon-left ina-input-with-icon-right" id="loginPass" placeholder="••••••••••••" required autocomplete="current-password">
+          <button type="button" class="ina-input-icon-right ina-bg-none" data-toggle-password="loginPass" aria-label="Tampilkan sandi"><svg class="ina-icon ina-icon-20 ina-icon-eye" aria-hidden="true" viewBox="0 0 24 24"><path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6"/></svg><svg class="ina-icon ina-icon-20 ina-icon-eye-off" aria-hidden="true" viewBox="0 0 24 24" style="display:none"><path d="M10.585 10.587a2 2 0 0 0 2.829 2.828M16.681 16.673a8.717 8.717 0 0 1 -4.681 1.327c-3.6 0 -6.6 -2 -9 -6c1.272 -2.12 2.712 -3.678 4.32 -4.674m2.86 -1.146a9.055 9.055 0 0 1 1.82 -.18c3.6 0 6.6 2 9 6c-.666 1.11 -1.379 2.067 -2.138 2.87M3 3l18 18"/></svg></button>
+        </div>
+      </div>
+      <div class="ina-flex ina-justify-between ina-items-center">
+        <label class="ina-checkbox-label">
+          <input type="checkbox" class="ina-checkbox" checked>
+          <span>Ingat sesi saya (30 hari)</span>
+        </label>
+        <span class="ina-caption-small ina-text-muted ina-flex ina-items-center ina-gap-1"><svg class="ina-icon ina-icon-14" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3a12 12 0 0 0 8.5 3a12 12 0 0 1 -8.5 15a12 12 0 0 1 -8.5 -15a12 12 0 0 0 8.5 -3"/></svg> Terenkripsi</span>
+      </div>
+      <button type="submit" class="ina-btn ina-btn-primary ina-btn-lg ina-w-full">
+        <span>Masuk ke dashboard</span>
+        <svg class="ina-icon ina-icon-20" aria-hidden="true" viewBox="0 0 24 24"><path d="M9 6l6 6l-6 6"/></svg>
+      </button>
+      <div class="ina-divider-text">atau masuk dengan</div>
+      <div class="ina-grid ina-grid-2" style="gap:var(--ina-spacing-2);">
+        <button type="button" class="ina-btn ina-btn-secondary ina-btn-md" data-go="otp.html">
+          <svg class="ina-icon ina-icon-20" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3a12 12 0 0 0 8.5 3a12 12 0 0 1 -8.5 15a12 12 0 0 1 -8.5 -15a12 12 0 0 0 8.5 -3"/></svg>
+          <span>SSO ASN Digital</span>
+        </button>
+        <button type="button" class="ina-btn ina-btn-secondary ina-btn-md" data-go="otp.html">
+          <svg class="ina-icon ina-icon-20" aria-hidden="true" viewBox="0 0 24 24"><path d="M16.555 3.843l3.602 3.602a2.877 2.877 0 0 1 0 4.069l-2.643 2.643a2.877 2.877 0 0 1 -4.069 0l-.301 -.301l-6.558 6.558a2 2 0 0 1 -1.239 .578l-.175 .008h-1.172a1 1 0 0 1 -.993 -.883l-.007 -.117v-1.172a2 2 0 0 1 .467 -1.284l.119 -.13l.414 -.414h2v-2h2v-2l2.144 -2.144l-.301 -.301a2.877 2.877 0 0 1 0 -4.069l2.643 -2.643a2.877 2.877 0 0 1 4.069 0zM15 9h.01"/></svg>
+          <span>ID Induk (INApas)</span>
+        </button>
+      </div>
+    </form>
+    <div class="ina-auth-footer">
+      Belum memiliki akun terdaftar? <a href="register.html">Daftar Akun Baru</a>
+      <div class="ina-caption-extra-small ina-text-muted ina-mt-2">© 2026 Diskominfo Kab. HSS · IDDS v1.8.0 · <a href="#" data-toast="Bantuan: helpdesk@hulusungaiselatankab.go.id · (0517) 21014" data-toast-type="info">Bantuan</a></div>
+    </div>
+  </div>
+
+  <script src="assets/idds-admin.js"></script>
+</body>
+</html>

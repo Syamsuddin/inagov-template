@@ -1,0 +1,16 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Sumber berklasifikasi — JANGAN pernah ditambahkan
+*.pdf
+docs/data/dosir-*.json
+docs/referensi/
+.idds/
+
+# Artefak generator / cache
+graphify-out/
+node_modules/
+*.log

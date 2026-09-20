@@ -1,0 +1,77 @@
+/* ============================================================
+ * IDDS Utilities — idds-ui-pack 1.3.1
+ * Kelas tipografi, ikon, angka tabular, focus ring, reduced-motion.
+ * Semua nilai memanggil token di idds-tokens.css — tidak ada angka lepas.
+ * Regenerasi 1.3.0: berkas asli 1.2.0 hilang dari salinan; disusun ulang
+ * dari docs/26_UI_CONVENTIONS.md §3 dan §6. Hanya @font-face yang berisi path.
+ * ============================================================ */
+
+/* ---- font: self-host, variable 100–900, subset Latin ----
+ * Laravel  : public/fonts/inter-latin.woff2        → url('/fonts/…')
+ * --native : public/assets/fonts/inter-latin.woff2 → ganti ke url('/assets/fonts/…') */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('/fonts/inter-latin.woff2') format('woff2');
+}
+
+html {
+  font-family: var(--ina-font-family);
+  color: var(--ina-content-primary);
+  background: var(--ina-background-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---- skala tipografi (§3) — size / line-height / letter-spacing dari token ---- */
+.ina-display-large { font-size: var(--ina-type-display-large-size); line-height: var(--ina-type-display-large-lh); letter-spacing: var(--ina-type-display-large-ls); font-weight: var(--ina-weight-heading); }
+.ina-display-small { font-size: var(--ina-type-display-small-size); line-height: var(--ina-type-display-small-lh); letter-spacing: var(--ina-type-display-small-ls); font-weight: var(--ina-weight-heading); }
+.ina-h1 { font-size: var(--ina-type-h1-size); line-height: var(--ina-type-h1-lh); font-weight: var(--ina-weight-heading); }
+.ina-h2 { font-size: var(--ina-type-h2-size); line-height: var(--ina-type-h2-lh); font-weight: var(--ina-weight-heading); }
+.ina-h3 { font-size: var(--ina-type-h3-size); line-height: var(--ina-type-h3-lh); font-weight: var(--ina-weight-heading); }
+.ina-h4 { font-size: var(--ina-type-h4-size); line-height: var(--ina-type-h4-lh); font-weight: var(--ina-weight-heading); }
+.ina-h5 { font-size: var(--ina-type-h5-size); line-height: var(--ina-type-h5-lh); font-weight: var(--ina-weight-heading); }
+.ina-body-large { font-size: var(--ina-type-body-large-size); line-height: var(--ina-type-body-large-lh); font-weight: var(--ina-weight-body); }
+.ina-body { font-size: var(--ina-type-body-size); line-height: var(--ina-type-body-lh); font-weight: var(--ina-weight-body); }
+.ina-body-small { font-size: var(--ina-type-body-small-size); line-height: var(--ina-type-body-small-lh); font-weight: var(--ina-weight-body); }
+.ina-caption { font-size: var(--ina-type-caption-size); line-height: var(--ina-type-caption-lh); }
+.ina-caption-small { font-size: var(--ina-type-caption-small-size); line-height: var(--ina-type-caption-small-lh); }
+.ina-caption-extra-small { font-size: var(--ina-type-caption-extra-small-size); line-height: var(--ina-type-caption-extra-small-lh); }
+.ina-label { font-weight: var(--ina-weight-label); } /* tombol, label form, tab */
+
+/* angka tabel & kode identitas (NIP, NIK, nominal) — jangan pada prosa */
+.ina-tabular { font-variant-numeric: tabular-nums slashed-zero; }
+
+/* ---- ikon Tabler (§6): ukuran ↔ stroke resmi ----
+ * <svg class="ina-icon ina-icon-20" aria-hidden="true"><use href="/img/tabler-sprite.svg#tabler-user"/></svg> */
+.ina-icon { display: inline-block; width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; vertical-align: middle; flex-shrink: 0; }
+/* Token stroke = ketebalan yang DIRENDER (px). Tabler digambar di viewBox 24, jadi nilai stroke-width
+ * harus dikonversi: px_render × 24 / ukuran_render — tanpa ini ikon 64 px berstroke 13 px (tampak terisi). */
+.ina-icon-24 { width: 24px; height: 24px; stroke-width: var(--ina-icon-24-stroke); }
+.ina-icon-20 { width: 20px; height: 20px; stroke-width: calc(var(--ina-icon-20-stroke) * 24 / 20); }
+.ina-icon-16 { width: 16px; height: 16px; stroke-width: calc(var(--ina-icon-16-stroke) * 24 / 16); }
+.ina-icon-14 { width: 14px; height: 14px; stroke-width: calc(var(--ina-icon-14-stroke) * 24 / 14); }
+.ina-icon-12 { width: 12px; height: 12px; stroke-width: calc(var(--ina-icon-12-stroke) * 24 / 12); }
+.ina-icon-empty-state { width: var(--ina-icon-empty-state-size); height: var(--ina-icon-empty-state-size); stroke-width: calc(var(--ina-icon-empty-state-stroke) * 24 / 64); }
+
+/* atribut hidden harus menang atas display komponen (kartu flex, grid, dsb.) */
+[hidden] { display: none !important; }
+
+/* ---- focus ring: hanya saat navigasi keyboard, wajib untuk semua elemen interaktif ---- */
+.ina-focusable:focus-visible,
+a:focus-visible, button:focus-visible, input:focus-visible,
+select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
+  outline: none;
+  box-shadow: var(--ina-focus-ring);
+  border-radius: var(--ina-radius-base);
+}
+
+/* ---- transisi standar; dimatikan bila pengguna meminta ---- */
+.ina-transition { transition-duration: var(--ina-duration-base); transition-timing-function: var(--ina-easing-standard); }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
+
+/* ---- teks hanya untuk pembaca layar ---- */
+.ina-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }

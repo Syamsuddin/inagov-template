@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light" data-brand="hss">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Akses ditolak (403) — pola Empty State IDDS, Portal Terpadu Pemkab HSS">
+  <title>403 — Akses Ditolak — Pemkab HSS</title>
+  <link rel="stylesheet" href="assets/idds-tokens.css">
+  <link rel="stylesheet" href="assets/idds-utilities.css">
+  <link rel="stylesheet" href="assets/idds-admin.css">
+</head>
+<body class="ina-auth-page">
+  <button type="button" class="ina-icon-btn ina-auth-theme-toggle" data-toggle-theme aria-label="Ganti Mode Gelap/Terang">
+    <svg class="ina-icon ina-icon-20 ina-icon-moon" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"/></svg>
+    <svg class="ina-icon ina-icon-20 ina-icon-sun" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0M3 12h1M20 12h1M12 3v1M12 20v1M5.6 5.6l.7 .7M17.7 17.7l.7 .7M5.6 18.4l.7 -.7M17.7 6.3l.7 -.7"/></svg>
+  </button>
+
+  <div class="ina-card ina-modal-md ina-w-full">
+    <main class="ina-empty-state">
+      <svg class="ina-icon ina-icon-empty-state ina-empty-state-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3a12 12 0 0 0 8.5 3a12 12 0 0 1 -8.5 15a12 12 0 0 1 -8.5 -15a12 12 0 0 0 8.5 -3M12 11m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0M12 12l0 2.5"/></svg>
+      <h1 class="ina-empty-state-title">403: Anda Tidak Memiliki Akses</h1>
+      <p class="ina-empty-state-desc">Akun <strong>Nurul Hidayah</strong> (Verifikator · DPMPTSP) tidak memiliki izin <span class="ina-tabular">sistem.peran</span> untuk membuka laman ini. Bila Anda merasa seharusnya berwenang, ajukan permintaan akses ke Admin SKPD Anda. Kode rujukan: <span class="ina-tabular">HSS-403-7C1D</span></p>
+      <div class="ina-flex ina-gap-3 ina-flex-wrap ina-justify-center">
+        <a href="index.html" class="ina-btn ina-btn-primary ina-btn-lg">
+          <svg class="ina-icon ina-icon-20" aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12l14 0M5 12l6 6M5 12l6 -6"/></svg>
+          <span>Kembali ke beranda</span>
+        </a>
+        <button type="button" class="ina-btn ina-btn-secondary ina-btn-lg" data-toast="Permintaan akses dikirim ke Admin SKPD (R. Hidayat). Anda akan diberi tahu lewat surel." data-toast-type="success">Minta akses</button>
+        <a href="login.html" class="ina-btn ina-btn-tertiary ina-btn-lg">Masuk dengan akun lain</a>
+      </div>
+      <div class="ina-caption-small ina-text-muted ina-mt-2">Percobaan akses ini tercatat di <a href="audit.html">log audit</a> sesuai kebijakan keamanan informasi.</div>
+    </main>
+  </div>
+
+  <script src="assets/idds-admin.js"></script>
+</body>
+</html>

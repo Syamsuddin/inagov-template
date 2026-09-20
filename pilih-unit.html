@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light" data-brand="hss">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Pilih unit kerja/peran setelah masuk — multi-OPD, delegasi, akses nonaktif — IDDS Pemkab HSS">
+  <title>Pilih Unit Kerja — Pemkab HSS</title>
+  <link rel="stylesheet" href="assets/idds-tokens.css">
+  <link rel="stylesheet" href="assets/idds-utilities.css">
+  <link rel="stylesheet" href="assets/idds-admin.css">
+</head>
+<body class="ina-auth-page">
+  <button type="button" class="ina-icon-btn ina-auth-theme-toggle" data-toggle-theme aria-label="Ganti Mode Gelap/Terang">
+    <svg class="ina-icon ina-icon-20 ina-icon-moon" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"/></svg>
+    <svg class="ina-icon ina-icon-20 ina-icon-sun" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0M3 12h1M20 12h1M12 3v1M12 20v1M5.6 5.6l.7 .7M17.7 17.7l.7 .7M5.6 18.4l.7 -.7M17.7 6.3l.7 -.7"/></svg>
+  </button>
+
+  <div class="ina-auth-box ina-auth-box-wide">
+    <div class="ina-auth-header">
+      <div class="ina-avatar ina-avatar-lg">AS</div>
+      <h1 class="ina-h4 ina-mt-1">Selamat datang, Ahmad Syahrani</h1>
+      <p class="ina-caption ina-text-muted">Akun Anda terdaftar pada 4 unit kerja/peran. Pilih konteks kerja untuk melanjutkan — dapat diganti kapan saja dari menu pengguna.</p>
+    </div>
+    <form class="ina-auth-form" onsubmit="event.preventDefault(); window.location.href='index.html';">
+      <div class="ina-choice-list" role="radiogroup" aria-label="Unit kerja">
+        <label class="ina-choice"><input type="radio" class="ina-radio" name="unit" checked><div class="ina-stat-icon-wrap ina-stat-icon-primary ina-stat-icon-sm"><svg class="ina-icon ina-icon-16" aria-hidden="true" viewBox="0 0 24 24"><path d="M3 21l18 0M9 8l1 0M9 12l1 0M9 16l1 0M14 8l1 0M14 12l1 0M14 16l1 0M5 21v-16a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v16"/></svg></div><div class="ina-choice-body"><div class="ina-choice-title">Dinas Komunikasi dan Informatika</div><div class="ina-choice-desc">Kepala Bidang Aptika · peran Admin SKPD · terakhir dipakai hari ini</div></div><span class="ina-badge ina-badge-sm ina-badge-soft-brand">Utama</span></label>
+        <label class="ina-choice"><input type="radio" class="ina-radio" name="unit"><div class="ina-stat-icon-wrap ina-stat-icon-info ina-stat-icon-sm"><svg class="ina-icon ina-icon-16" aria-hidden="true" viewBox="0 0 24 24"><path d="M4 4h6v6h-6zM14 4h6v6h-6zM4 14h6v6h-6zM14 14h6v6h-6z"/></svg></div><div class="ina-choice-body"><div class="ina-choice-title">DPMPTSP — Mal Pelayanan Publik</div><div class="ina-choice-desc">Verifikator (delegasi sementara) · berlaku s.d. 30 Sep 2026</div></div><span class="ina-badge ina-badge-sm ina-badge-soft-warning">Delegasi</span></label>
+        <label class="ina-choice"><input type="radio" class="ina-radio" name="unit"><div class="ina-stat-icon-wrap ina-stat-icon-success ina-stat-icon-sm"><svg class="ina-icon ina-icon-16" aria-hidden="true" viewBox="0 0 24 24"><path d="M9 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2M16 3.13a4 4 0 0 1 0 7.75M21 21v-2a4 4 0 0 0 -3 -3.85"/></svg></div><div class="ina-choice-body"><div class="ina-choice-title">Tim Koordinasi SPBE Kabupaten</div><div class="ina-choice-desc">Sekretaris tim · lintas OPD · SK 188.45/318/2026</div></div><span class="ina-badge ina-badge-sm ina-badge-soft-neutral">Lintas OPD</span></label>
+        <label class="ina-choice"><input type="radio" class="ina-radio" name="unit" disabled><div class="ina-stat-icon-wrap ina-stat-icon-warning ina-stat-icon-sm"><svg class="ina-icon ina-icon-16" aria-hidden="true" viewBox="0 0 24 24"><path d="M3 7m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2zM8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2M12 12l0 .01M3 13a20 20 0 0 0 18 0"/></svg></div><div class="ina-choice-body"><div class="ina-choice-title">BKPSDM — Operator e-Kinerja</div><div class="ina-choice-desc">Akses dicabut 1 Agu 2026 (mutasi) · hubungi Admin SKPD bila masih diperlukan</div></div><span class="ina-badge ina-badge-sm ina-badge-soft-neutral">Nonaktif</span></label>
+      </div>
+      <label class="ina-checkbox-label"><input type="checkbox" class="ina-checkbox" checked><span>Jadikan pilihan ini bawaan saat masuk berikutnya</span></label>
+      <button type="submit" class="ina-btn ina-btn-primary ina-btn-lg ina-w-full"><span>Lanjut ke dashboard</span><svg class="ina-icon ina-icon-20" aria-hidden="true" viewBox="0 0 24 24"><path d="M9 6l6 6l-6 6"/></svg></button>
+      <a href="login.html" class="ina-btn ina-btn-tertiary ina-btn-md ina-w-full">Keluar dan masuk dengan akun lain</a>
+    </form>
+    <div class="ina-auth-footer">
+      Peran tidak sesuai? <a href="tiket.html">Ajukan tiket akses</a>
+      <div class="ina-caption-extra-small ina-text-muted ina-mt-2">© 2026 Diskominfo Kab. HSS · IDDS v1.8.0 · <a href="bantuan.html">Bantuan</a> · <a href="kebijakan-privasi.html">Privasi</a></div>
+    </div>
+  </div>
+
+  <script src="assets/idds-admin.js"></script>
+</body>
+</html>

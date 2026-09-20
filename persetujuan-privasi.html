@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light" data-brand="hss">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Persetujuan pemrosesan data pribadi per tujuan sesuai UU 27/2022 PDP — IDDS Pemkab HSS">
+  <title>Persetujuan Privasi — Pemkab HSS</title>
+  <link rel="stylesheet" href="assets/idds-tokens.css">
+  <link rel="stylesheet" href="assets/idds-utilities.css">
+  <link rel="stylesheet" href="assets/idds-admin.css">
+</head>
+<body class="ina-auth-page">
+  <button type="button" class="ina-icon-btn ina-auth-theme-toggle" data-toggle-theme aria-label="Ganti Mode Gelap/Terang">
+    <svg class="ina-icon ina-icon-20 ina-icon-moon" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"/></svg>
+    <svg class="ina-icon ina-icon-20 ina-icon-sun" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0M3 12h1M20 12h1M12 3v1M12 20v1M5.6 5.6l.7 .7M17.7 17.7l.7 .7M5.6 18.4l.7 -.7M17.7 6.3l.7 -.7"/></svg>
+  </button>
+
+  <div class="ina-auth-box ina-auth-box-wide">
+    <div class="ina-auth-header">
+      <div class="ina-brand-logo ina-brand-logo-lg">HSS</div>
+      <h1 class="ina-h4 ina-mt-1">Persetujuan pemrosesan data pribadi</h1>
+      <p class="ina-caption ina-text-muted">Sesuai UU 27/2022 tentang Pelindungan Data Pribadi, kami meminta persetujuan Anda yang jelas dan terpisah untuk tiap tujuan. Anda dapat menariknya kapan saja dari pengaturan akun.</p>
+    </div>
+    <form class="ina-auth-form" onsubmit="event.preventDefault(); window.location.href='pilih-unit.html';">
+      <div class="ina-card ina-card-flat"><div class="ina-card-body ina-kv-grid ina-kv-grid-wide">
+        <span class="ina-label">Pengendali data</span><span>Pemerintah Kab. Hulu Sungai Selatan c.q. Diskominfo</span>
+        <span class="ina-label">Data yang diproses</span><span>NIK, nama, kontak, alamat, dokumen permohonan, riwayat aktivitas</span>
+        <span class="ina-label">Retensi</span><span>Selama akun aktif + 5 tahun (JRA), lalu dimusnahkan/dianonimkan</span>
+        <span class="ina-label">Pejabat PDP</span><span>dpo@hulusungaiselatankab.go.id</span>
+      </div></div>
+      <div class="ina-choice-list">
+        <label class="ina-choice"><input type="checkbox" class="ina-checkbox" checked disabled><div class="ina-choice-body"><div class="ina-choice-title">Pemrosesan untuk penyelenggaraan layanan (wajib)</div><div class="ina-choice-desc">Dasar: pelaksanaan tugas pelayanan publik. Tanpa ini layanan tidak dapat diberikan.</div></div><span class="ina-badge ina-badge-sm ina-badge-soft-neutral">Wajib</span></label>
+        <label class="ina-choice"><input type="checkbox" class="ina-checkbox" checked><div class="ina-choice-body"><div class="ina-choice-title">Notifikasi status melalui WhatsApp dan surel</div><div class="ina-choice-desc">Nomor dan surel dipakai hanya untuk pemberitahuan permohonan, aduan, dan tenggat.</div></div></label>
+        <label class="ina-choice"><input type="checkbox" class="ina-checkbox" checked><div class="ina-choice-body"><div class="ina-choice-title">Berbagi data antar-perangkat daerah untuk layanan terpadu</div><div class="ina-choice-desc">Agar Anda tidak mengunggah dokumen yang sama berulang (mis. KTP untuk DPMPTSP dan Disdukcapil) — melalui SPLP.</div></div></label>
+        <label class="ina-choice"><input type="checkbox" class="ina-checkbox"><div class="ina-choice-body"><div class="ina-choice-title">Statistik pemanfaatan layanan (anonim)</div><div class="ina-choice-desc">Data agregat untuk perbaikan layanan; tidak dapat dikaitkan kembali ke Anda.</div></div></label>
+        <label class="ina-choice"><input type="checkbox" class="ina-checkbox"><div class="ina-choice-body"><div class="ina-choice-title">Undangan survei &amp; informasi program Pemda</div><div class="ina-choice-desc">Maksimal 2 pesan per bulan; dapat berhenti kapan saja.</div></div></label>
+      </div>
+      <label class="ina-checkbox-label"><input type="checkbox" class="ina-checkbox" required><span>Saya telah membaca <a href="kebijakan-privasi.html">Kebijakan Privasi</a> versi 2.1 (berlaku 1 Sep 2026) dan memahami hak-hak saya sebagai subjek data.</span></label>
+      <button type="submit" class="ina-btn ina-btn-primary ina-btn-lg ina-w-full">Setuju dan lanjutkan</button>
+      <div class="ina-flex ina-justify-between ina-gap-2 ina-flex-wrap">
+        <button type="button" class="ina-btn ina-btn-tertiary ina-btn-md" data-toast="Hanya pemrosesan wajib yang aktif; Anda tetap dapat memakai layanan." data-toast-type="info">Hanya yang wajib</button>
+        <a href="login.html" class="ina-btn ina-btn-tertiary ina-btn-md">Tidak setuju, keluar</a>
+      </div>
+    </form>
+    <div class="ina-auth-footer">
+      Persetujuan dicatat dengan waktu dan versi kebijakan; salinan dikirim ke surel Anda.
+      <div class="ina-caption-extra-small ina-text-muted ina-mt-2">© 2026 Diskominfo Kab. HSS · IDDS v1.8.0 · <a href="bantuan.html">Bantuan</a> · <a href="kebijakan-privasi.html">Privasi</a></div>
+    </div>
+  </div>
+
+  <script src="assets/idds-admin.js"></script>
+</body>
+</html>

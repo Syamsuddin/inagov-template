@@ -1,0 +1,23 @@
+/* Brand Pemkab HSS — ramp dibangun skrip dari #0063a8 [TERVALIDASI]
+ * Profil lightness: median brand resmi IDDS (dosir-ui-idds.json)
+ * Ruang warna: OKLCH. Ramp JANGAN diedit manual — regenerate dengan build-brand.py.
+ * Aturan pemetaan dark (v1.3): langkah terdekat yang ≥4,5 vs label DAN ≥3 vs latar gelap.
+ */
+[data-brand="hss"] {
+  --ina-primary-25: #eff7ff;
+  --ina-primary-50: #dbedff;
+  --ina-primary-100: #bbddff;
+  --ina-primary-200: #8fc7ff;
+  --ina-primary-300: #54a1e9;
+  --ina-primary-400: #3a8bd3;
+  --ina-primary-500: #2172b5;
+  --ina-primary-600: #055691;
+  --ina-primary-700: #004578;
+  --ina-primary-800: #003b68;
+  --ina-primary-900: #002241;
+  --ina-primary-primary: #0063a8;
+  --ina-accent-yellow: #fff500;
+}
+/* dark → primary-500, BUKAN 400: label putih di 400 hanya 3,61 (gagal AA);
+ * di 500 = 5,07 vs putih dan 3,63 vs latar gelap — keduanya lolos. */
+[data-theme="dark"][data-brand="hss"] { --ina-primary-primary: var(--ina-primary-500); }

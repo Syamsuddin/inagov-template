@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light" data-brand="hss">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Pemeliharaan terjadwal — pola Empty State IDDS, Portal Terpadu Pemkab HSS">
+  <title>Pemeliharaan Sistem — Pemkab HSS</title>
+  <link rel="stylesheet" href="assets/idds-tokens.css">
+  <link rel="stylesheet" href="assets/idds-utilities.css">
+  <link rel="stylesheet" href="assets/idds-admin.css">
+</head>
+<body class="ina-auth-page">
+  <button type="button" class="ina-icon-btn ina-auth-theme-toggle" data-toggle-theme aria-label="Ganti Mode Gelap/Terang">
+    <svg class="ina-icon ina-icon-20 ina-icon-moon" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"/></svg>
+    <svg class="ina-icon ina-icon-20 ina-icon-sun" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0M3 12h1M20 12h1M12 3v1M12 20v1M5.6 5.6l.7 .7M17.7 17.7l.7 .7M5.6 18.4l.7 -.7M17.7 6.3l.7 -.7"/></svg>
+  </button>
+
+  <div class="ina-card ina-modal-md ina-w-full">
+    <main class="ina-empty-state">
+      <svg class="ina-icon ina-icon-empty-state ina-empty-state-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M7 10h3v-3l-3.5 -3.5a6 6 0 0 1 8 8l6 6a2 2 0 0 1 -3 3l-6 -6a6 6 0 0 1 -8 -8l3.5 3.5"/></svg>
+      <h1 class="ina-empty-state-title">Sistem Sedang Dalam Pemeliharaan</h1>
+      <p class="ina-empty-state-desc">Pembaruan sistem terjadwal. Permohonan yang sudah masuk tetap aman dan diproses setelah pemeliharaan selesai. Tenggat layanan tidak dihitung selama periode ini.</p>
+      <div class="ina-card ina-card-flat ina-w-full">
+        <div class="ina-card-body ina-kv-grid ina-kv-grid-wide ina-text-left">
+          <span class="ina-label">Mulai</span><span class="ina-tabular">Sabtu, 27 September 2026, 22.00 WITA</span>
+          <span class="ina-label">Perkiraan selesai</span><span class="ina-tabular">Minggu, 28 September 2026, 02.00 WITA</span>
+          <span class="ina-label">Cakupan</span><span>Portal layanan, disposisi, dan API SPLP · layanan darurat via telepon tetap tersedia</span>
+        </div>
+      </div>
+      <div class="ina-progress-labeled ina-w-full">
+        <div class="ina-progress-label-row"><span>Kemajuan pemeliharaan</span><span class="ina-tabular ina-label">65%</span></div>
+        <div class="ina-progress-bar"><div class="ina-progress-fill ina-progress-fill-brand" style="width:65%;"></div></div>
+      </div>
+      <div class="ina-flex ina-gap-3 ina-flex-wrap ina-justify-center">
+        <button type="button" class="ina-btn ina-btn-primary ina-btn-lg" onclick="location.reload()">
+          <svg class="ina-icon ina-icon-20" aria-hidden="true" viewBox="0 0 24 24"><path d="M20 11a8.1 8.1 0 0 0 -15.5 -2m-.5 -4v4h4M4 13a8.1 8.1 0 0 0 15.5 2m.5 4v-4h-4"/></svg>
+          <span>Periksa kembali</span>
+        </button>
+        <button type="button" class="ina-btn ina-btn-secondary ina-btn-lg" data-toast="Anda akan diberi tahu lewat WhatsApp saat sistem kembali aktif." data-toast-type="success">Beri tahu saya</button>
+      </div>
+      <div class="ina-caption-small ina-text-muted ina-mt-2">Layanan darurat: Helpdesk Diskominfo <span class="ina-tabular">(0517) 21014</span> · Administrator dapat <a href="login.html">masuk</a> melalui jalur pemeliharaan.</div>
+    </main>
+  </div>
+
+  <script src="assets/idds-admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light" data-brand="hss">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Papan antrian layar besar Mal Pelayanan Publik: nomor dipanggil, berikutnya, status 6 loket, informasi berjalan — mode kios IDDS Pemkab HSS">
+  <title>Papan Antrian MPP — Pemkab HSS</title>
+  <link rel="stylesheet" href="assets/idds-tokens.css">
+  <link rel="stylesheet" href="assets/idds-utilities.css">
+  <link rel="stylesheet" href="assets/idds-admin.css">
+</head>
+<body>
+  <div class="ina-kiosk">
+    <header class="ina-kiosk-header">
+      <div class="ina-flex ina-items-center ina-gap-4"><div class="ina-brand-logo ina-brand-logo-lg">HSS</div><div><div class="ina-h4">Mal Pelayanan Publik Kabupaten HSS</div><div class="ina-caption">Papan antrian · Jl. Jend. Sudirman No. 1, Kandangan</div></div></div>
+      <div class="ina-text-right"><div class="ina-kiosk-clock" id="inaClock">Minggu, 20 September 2026 pukul 09.41 WITA</div><div class="ina-caption">Diperbarui otomatis tiap 5 detik</div></div>
+    </header>
+    <main class="ina-kiosk-main" aria-live="polite">
+      <div class="ina-kiosk-call">
+        <div class="ina-kiosk-cell ina-calling">
+          <div class="ina-kiosk-label">Nomor dipanggil</div>
+          <div class="ina-kiosk-number">A-031</div>
+          <div class="ina-h3">Silakan menuju Loket A · Perizinan</div>
+          <div class="ina-caption">Nomor yang tidak hadir setelah 3 panggilan dilewati; pemegang reservasi didahulukan</div>
+        </div>
+        <div class="ina-kiosk-cell">
+          <div class="ina-kiosk-label">Berikutnya</div>
+          <div class="ina-flex ina-justify-center ina-gap-6 ina-flex-wrap">
+            <div><div class="ina-kiosk-number-sm">A-032</div><div class="ina-caption">Loket A</div></div>
+            <div><div class="ina-kiosk-number-sm">B-119</div><div class="ina-caption">Loket B</div></div>
+            <div><div class="ina-kiosk-number-sm">C-065</div><div class="ina-caption">Loket C</div></div>
+          </div>
+          <div class="ina-grid ina-grid-3 ina-mt-4" style="gap:var(--ina-spacing-4);">
+            <div><div class="ina-h3 ina-tabular">23</div><div class="ina-caption ina-text-muted">Menunggu</div></div>
+            <div><div class="ina-h3 ina-tabular">18 mnt</div><div class="ina-caption ina-text-muted">Estimasi tunggu</div></div>
+            <div><div class="ina-h3 ina-tabular">6 / 8</div><div class="ina-caption ina-text-muted">Loket aktif</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="ina-kiosk-grid">
+      <div class="ina-kiosk-cell ina-calling">
+        <div class="ina-kiosk-label">Loket A</div>
+        <div class="ina-caption">Perizinan (DPMPTSP)</div>
+        <div class="ina-kiosk-number-sm">A-031</div>
+        <div class="ina-flex ina-items-center ina-justify-center ina-gap-3"><span class="ina-badge ina-badge-md ina-badge-fill-warning">Memanggil</span><span class="ina-caption ina-tabular">7 menunggu</span></div>
+      </div>
+      <div class="ina-kiosk-cell">
+        <div class="ina-kiosk-label">Loket B</div>
+        <div class="ina-caption">Kependudukan (Disdukcapil)</div>
+        <div class="ina-kiosk-number-sm">B-118</div>
+        <div class="ina-flex ina-items-center ina-justify-center ina-gap-3"><span class="ina-badge ina-badge-md ina-badge-soft-success">Melayani</span><span class="ina-caption ina-tabular">11 menunggu</span></div>
+      </div>
+      <div class="ina-kiosk-cell">
+        <div class="ina-kiosk-label">Loket C</div>
+        <div class="ina-caption">Pajak &amp; retribusi (BPKPD)</div>
+        <div class="ina-kiosk-number-sm">C-064</div>
+        <div class="ina-flex ina-items-center ina-justify-center ina-gap-3"><span class="ina-badge ina-badge-md ina-badge-soft-success">Melayani</span><span class="ina-caption ina-tabular">3 menunggu</span></div>
+      </div>
+      <div class="ina-kiosk-cell">
+        <div class="ina-kiosk-label">Loket D</div>
+        <div class="ina-caption">BPJS Kesehatan</div>
+        <div class="ina-kiosk-number-sm">D-022</div>
+        <div class="ina-flex ina-items-center ina-justify-center ina-gap-3"><span class="ina-badge ina-badge-md ina-badge-soft-success">Melayani</span><span class="ina-caption ina-tabular">2 menunggu</span></div>
+      </div>
+      <div class="ina-kiosk-cell">
+        <div class="ina-kiosk-label">Loket E</div>
+        <div class="ina-caption">Samsat</div>
+        <div class="ina-kiosk-number-sm">—</div>
+        <div class="ina-flex ina-items-center ina-justify-center ina-gap-3"><span class="ina-badge ina-badge-md ina-badge-soft-warning">Istirahat</span><span class="ina-caption ina-tabular">0 menunggu</span></div>
+      </div>
+      <div class="ina-kiosk-cell">
+        <div class="ina-kiosk-label">Loket F</div>
+        <div class="ina-caption">Kepegawaian (BKPSDM)</div>
+        <div class="ina-kiosk-number-sm">F-009</div>
+        <div class="ina-flex ina-items-center ina-justify-center ina-gap-3"><span class="ina-badge ina-badge-md ina-badge-soft-success">Melayani</span><span class="ina-caption ina-tabular">0 menunggu</span></div>
+      </div>
+      </div>
+    </main>
+    <div class="ina-kiosk-ticker" aria-label="Informasi berjalan">
+      <span>Ambil nomor antrian di anjungan atau pindai QR reservasi ·</span>
+      <span>Prioritas lansia, ibu hamil, dan penyandang disabilitas tanpa reservasi ·</span>
+      <span>Jam layanan Senin–Kamis 08.00–15.00, Jumat 08.00–11.00 ·</span>
+      <span>Layanan gratis kecuali retribusi/pajak daerah — tolak pungutan liar, lapor ke 0811-5100-112</span>
+    </div>
+  </div>
+  <script src="assets/idds-admin.js"></script>
+</body>
+</html>

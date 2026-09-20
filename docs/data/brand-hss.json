@@ -1,0 +1,135 @@
+{
+ "brand": "hss",
+ "label": "Pemkab HSS",
+ "status": "TERVALIDASI",
+ "warna_dasar": "#0063a8",
+ "accent": "#fff500",
+ "metode": {
+  "ruang_warna": "OKLCH",
+  "profil_lightness": "median brand resmi IDDS (dosir-ui-idds.json)",
+  "langkah_terdekat_warna_dasar": "600"
+ },
+ "primary_ramp": {
+  "25": "#eff7ff",
+  "50": "#dbedff",
+  "100": "#bbddff",
+  "200": "#8fc7ff",
+  "300": "#54a1e9",
+  "400": "#3a8bd3",
+  "500": "#2172b5",
+  "600": "#055691",
+  "700": "#004578",
+  "800": "#003b68",
+  "900": "#002241"
+ },
+ "primary_primary": {
+  "hex": "#0063a8",
+  "kontras_teks_putih": 6.27,
+  "vonis": "AA",
+  "layak_button_primary": true
+ },
+ "dark_mode_primary_dipetakan_ke": "primary-500",
+ "laporan_kontras": [
+  {
+   "langkah": "25",
+   "hex": "#eff7ff",
+   "oklch_L": 0.9724,
+   "kontras_vs_putih": 1.08,
+   "vonis_teks_putih": "GAGAL",
+   "kontras_vs_gelap": 17.04,
+   "vonis_teks_gelap": "AAA"
+  },
+  {
+   "langkah": "50",
+   "hex": "#dbedff",
+   "oklch_L": 0.9382,
+   "kontras_vs_putih": 1.2,
+   "vonis_teks_putih": "GAGAL",
+   "kontras_vs_gelap": 15.41,
+   "vonis_teks_gelap": "AAA"
+  },
+  {
+   "langkah": "100",
+   "hex": "#bbddff",
+   "oklch_L": 0.8841,
+   "kontras_vs_putih": 1.41,
+   "vonis_teks_putih": "GAGAL",
+   "kontras_vs_gelap": 13.07,
+   "vonis_teks_gelap": "AAA"
+  },
+  {
+   "langkah": "200",
+   "hex": "#8fc7ff",
+   "oklch_L": 0.8119,
+   "kontras_vs_putih": 1.78,
+   "vonis_teks_putih": "GAGAL",
+   "kontras_vs_gelap": 10.34,
+   "vonis_teks_gelap": "AAA"
+  },
+  {
+   "langkah": "300",
+   "hex": "#54a1e9",
+   "oklch_L": 0.6912,
+   "kontras_vs_putih": 2.74,
+   "vonis_teks_putih": "GAGAL",
+   "kontras_vs_gelap": 6.71,
+   "vonis_teks_gelap": "AA"
+  },
+  {
+   "langkah": "400",
+   "hex": "#3a8bd3",
+   "oklch_L": 0.6207,
+   "kontras_vs_putih": 3.61,
+   "vonis_teks_putih": "AA-large",
+   "kontras_vs_gelap": 5.1,
+   "vonis_teks_gelap": "AA"
+  },
+  {
+   "langkah": "500",
+   "hex": "#2172b5",
+   "oklch_L": 0.5384,
+   "kontras_vs_putih": 5.07,
+   "vonis_teks_putih": "AA",
+   "kontras_vs_gelap": 3.63,
+   "vonis_teks_gelap": "AA-large"
+  },
+  {
+   "langkah": "600",
+   "hex": "#055691",
+   "oklch_L": 0.4432,
+   "kontras_vs_putih": 7.65,
+   "vonis_teks_putih": "AAA",
+   "kontras_vs_gelap": 2.41,
+   "vonis_teks_gelap": "GAGAL"
+  },
+  {
+   "langkah": "700",
+   "hex": "#004578",
+   "oklch_L": 0.3827,
+   "kontras_vs_putih": 9.89,
+   "vonis_teks_putih": "AAA",
+   "kontras_vs_gelap": 1.86,
+   "vonis_teks_gelap": "GAGAL"
+  },
+  {
+   "langkah": "800",
+   "hex": "#003b68",
+   "oklch_L": 0.3454,
+   "kontras_vs_putih": 11.5,
+   "vonis_teks_putih": "AAA",
+   "kontras_vs_gelap": 1.6,
+   "vonis_teks_gelap": "GAGAL"
+  },
+  {
+   "langkah": "900",
+   "hex": "#002241",
+   "oklch_L": 0.2482,
+   "kontras_vs_putih": 16.09,
+   "vonis_teks_putih": "AAA",
+   "kontras_vs_gelap": 1.14,
+   "vonis_teks_gelap": "GAGAL"
+  }
+ ],
+ "dark_mode_alasan": "primary-400 (#3a8bd3): label putih 3,61 — GAGAL AA. primary-500 (#2172b5): 5,07 vs putih, 3,63 vs latar gelap #141414 — lolos keduanya.",
+ "aturan_pemetaan_dark": "langkah terdekat ke warna dasar yang ≥4,5 vs content-on-primary DAN ≥3 vs background-primary dark"
+}
