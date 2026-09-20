@@ -2,6 +2,10 @@
 
 Format mengikuti [Keep a Changelog](https://keepachangelog.com/id/1.1.0/); versi mengikuti SemVer. Riwayat rinci per berkas dikelola di manifest paket (tidak diunggah).
 
+## [1.9.1] — 2026-09-20
+
+Sidebar disusun ulang menjadi 6 grup fungsional selaras modul `pages/`: Beranda · Layanan Publik (Layanan Terpadu, Partisipasi, Informasi Publik, Portal Warga) · Administrasi Pemerintahan (Persuratan & Disposisi, Agenda, Kepegawaian, Keuangan & Perencanaan, Pesan SKPD) · Tata Kelola Sistem (Administrasi Sistem, Pusat Bantuan, Layar Besar) · Akun (Profil, Autentikasi) · Pengembang (Komponen & Contoh, Halaman Status). Seluruh 67 laman tercakup; 4.822 tautan relatif diverifikasi.
+
 ## [1.9.0] — 2026-09-20
 
 Susunan berkas baru: hanya `index.html` di akar; 66 laman lain dipindah ke `pages/<modul>/` (17 modul) dengan seluruh tautan relatif ditulis ulang (4.630 tautan diverifikasi). `idds-admin.js` menghitung `ASSET_BASE` dari `src` skripnya sehingga gambar artikel tetap ditemukan dari subfolder.
@@ -30,5 +34,6 @@ Fase 2 — 13 template layanan publik & tata kelola SPBE: layanan, layanan-detai
 
 Audit terhadap seluruh laman design.inadigital.go.id + @idds/styles 1.6.36: hierarki tombol, radius, ukuran input/modal/toast/avatar/checkbox, shadow float & breakpoint dari npm, sentence case label tombol, label sidebar ≤2 kata, glyph → ikon Tabler, OTP inputmode, paginasi tabel 30 baris + indikator halaman. Keputusan pengguna: token spacing = nama/nilai npm (migrasi atomik semua berkas), warna brand = npm, avatar hanya 16–48 (xl/2xl dihapus). + katalog-artikel.html (contoh penerapan /implementation), komponen Chip, Card media, Pagination default; perbaikan stroke ikon (px render → satuan viewBox) dan [hidden]. + artikel.html (detail, pola Blog Post) + assets/artikel-data.js; kartu katalog jadi tautan nyata (.ina-card-link).
 
+[1.9.1]: https://github.com/Syamsuddin/inagov-template/releases/tag/v1.9.1
 [1.9.0]: https://github.com/Syamsuddin/inagov-template/releases/tag/v1.9.0
 [1.8.0]: https://github.com/Syamsuddin/inagov-template/releases/tag/v1.8.0
