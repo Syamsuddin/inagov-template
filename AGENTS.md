@@ -14,7 +14,7 @@ Patuhi tanpa perlu dikonfirmasi ulang. Panduan lengkap: `panduan/vibe-coding.md`
 3. Tanpa build, tanpa CDN, tanpa pustaka JS/CSS pihak ketiga. Ikon = SVG inline Tabler (`viewBox="0 0 24 24"`, kelas `ina-icon ina-icon-16|20|24`, `aria-hidden="true"`), bukan emoji/glyph.
 4. Tautan relatif: laman di `pages/<modul>/` memakai `../../assets/…` dan `../<modul>/<laman>.html`; `index.html` memakai `assets/…` dan `pages/…`.
 5. Label tombol **Sentence case** ("Simpan perubahan"); nama menu/tab/produk boleh Title Case. Satu `ina-btn-primary` per layar; aksi merusak = `ina-btn-danger` + modal konfirmasi.
-6. Teks tidak boleh memakai `--ina-content-tertiary`/`disabled` sebagai warna; nonaktif memakai `background-disabled`, bukan `opacity`; fokus tidak boleh `outline:none`.
+6. Teks tidak boleh memakai `--ina-content-tertiary`/`disabled` sebagai warna; nonaktif memakai `background-disabled`, bukan `opacity`; fokus tidak boleh `outline:none`. Teks berwarna brand memakai `--ina-content-brand` (**bukan** `--ina-background-brand` — itu token latar, gagal AA di tema gelap); teks sekunder di atas `background-tertiary`/`disabled` memakai `--ina-content-on-tertiary`; teks info di `guide-subtle` memakai `--ina-content-guide-strong`.
 7. Angka/kode identitas (NIP, NIK, nomor surat, rupiah) memakai kelas `ina-tabular`. Label sidebar ≤ 2 kata; badge ≤ 2 kata.
 8. Data contoh **fiktif** (nama, NIP, telepon, surel, angka) — jangan pernah memakai data orang nyata.
 9. Setiap laman admin memuat kerangka yang sama (sidebar, topbar `Ctrl+K`, footer). Ubah sidebar di semua laman sekaligus, bukan satu laman saja.
@@ -24,7 +24,10 @@ Patuhi tanpa perlu dikonfirmasi ulang. Panduan lengkap: `panduan/vibe-coding.md`
 Modal `data-modal-target`/`data-modal-close`; toast `data-toast` + `data-toast-type`; tab `data-tab-group`/`data-tab-target`; accordion `data-single`; stepper `data-stepper` + `data-step-next/prev`; dropzone `data-file-list`; tabel `data-table-search`/`data-table-filter="kolom"`/`th[data-sort]`/bulk `data-bulk-*`; chip `data-chip-group`/`data-chip-filter="#grid"` + `[data-category]`; paginasi `data-paginate`/`data-pagination-for`; chart `<canvas data-chart="line|bar|donut" data-labels data-series|data-values data-roles data-max>`; tree `data-tree-toggle`; sakelar `data-switch-label`; form demo `data-demo-submit`; navigasi `data-go`.
 
 ## Sebelum menyatakan selesai
+- `python3 scripts/audit-ui.py` → "OK: tidak ada pelanggaran keras" (67+ laman: literal, kelas asing, tautan mati, glyph, primary ganda, label sidebar/badge, a11y dasar); `python3 docs/scripts/build-kontras.py --check` (paket dokumentasi, didistribusikan terpisah) → hijau bila `idds-tokens.css` disentuh.
 - `grep -nE '#[0-9a-fA-F]{3,8}\b|\b(rgb|hsl)a?\(' <berkas>` → kosong.
 - `grep -nE '[0-9]+px' <berkas> | grep -vE '\b(0|1)px'` → kosong (kecuali atribut `width/height` gambar).
+- `grep -nE '(^|[^-])color: ?var\(--ina-background-brand\)' <berkas> assets/idds-admin.css` → kosong (teks brand = `content-brand`).
+- `grep -nE '[●✓✕↑↓↕→]' <berkas>` → hanya di `.ina-kbd` atau prosa, bukan sebagai ikon.
 - Semua `href`/`src` menunjuk berkas yang ada; tidak ada `[ISI:]`, `Lorem`, atau placeholder tertinggal.
 - Buka di peramban: tanpa galat konsol, `typeof InaToast === "object"`, sidebar item aktif benar.

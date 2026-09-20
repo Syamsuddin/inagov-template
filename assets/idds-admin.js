@@ -48,9 +48,7 @@
     warning: '--ina-content-warning',
     danger: '--ina-content-negative',
     info: '--ina-content-guide',
-    neutral: '--ina-stroke-secondary',
-    primary200: '--ina-primary-200',
-    primary700: '--ina-primary-700'
+    neutral: '--ina-stroke-secondary'
   };
   function roleColor(role) {
     // fallback: warna teks dokumen bila token tidak terdefinisi (tanpa hex literal)

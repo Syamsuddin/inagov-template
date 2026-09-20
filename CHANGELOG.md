@@ -2,6 +2,10 @@
 
 Format mengikuti [Keep a Changelog](https://keepachangelog.com/id/1.1.0/); versi mengikuti SemVer. Riwayat rinci per berkas dikelola di manifest paket (tidak diunggah).
 
+## [1.9.3] — 2026-09-20
+
+Audit kepatuhan kontrak desain (67 laman × 1280/768/480 × terang/gelap, 8 brand) dan penambalannya. **Token [TURUNAN] baru** di `idds-tokens.css`: `content-brand` (teks berwarna brand — nav/tab/chip aktif, badge soft brand, `.ina-text-brand`; sebelumnya memakai `background-brand` yang di tema gelap hanya 2,4–3,6:1 pada 7 dari 8 brand), `content-on-tertiary` (teks sekunder di atas `background-tertiary`/`disabled`; `content-secondary` gelap hanya 4,11), `content-guide-strong`, `content-on-accent`, fallback `accent-yellow`. 24 aturan `color:` komponen dialihkan ke `content-brand`, 10 komponen berlatar tersier ke `content-on-tertiary`; avatar, `.ina-form-required`, badge/alert info, papan loket, hari-ini-libur kalender, skip link, `primary-*` di hero keuangan & lampiran chat diperbaiki. `build-kontras.py --check` kini menguji `content-brand` di 8 brand × 2 tema + pasangan turunan sebagai aturan keras. Glyph `● ↑ ↓ ✓ ↕` diganti Tabler SVG/`.ina-status-dot` (49 laman + indikator urut tabel). Inter di-*self-host* (`assets/fonts/`, OFL). Label sidebar >2 kata (11) dan badge >2 kata (10) dipendekkan; utilitas `ina-mt/mb-5/6`; `mail.html` satu primary; `situation-room`/`cetak` tanpa gulir horizontal di 480; `<input type="file">` diberi `aria-label`. AGENTS.md aturan 6 + panduan §6 diperluas.
+
 ## [1.9.2] — 2026-09-20
 
 Panduan vibe coding (`panduan/vibe-coding.md`): persiapan VS Code/Antigravity/Claude Code, 6 prompt siap pakai, peta laman rujukan, Definition of Done dengan perintah pemeriksaan, integrasi PHP/Laravel, masalah umum. `AGENTS.md` di akar sebagai aturan agen yang dibaca IDE agentik. README: bagian "Vibe coding dengan agen AI" + tombol ke panduan.

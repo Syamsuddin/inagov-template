@@ -126,7 +126,7 @@ a:hover {
   height: 40px;
   border-radius: var(--ina-radius-full);
   background-color: var(--ina-background-brand-subtle);
-  color: var(--ina-content-guide);
+  color: var(--ina-content-brand);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -244,12 +244,12 @@ a:hover {
 
 .ina-nav-link.ina-active {
   background-color: var(--ina-background-brand-subtle);
-  color: var(--ina-background-brand);
+  color: var(--ina-content-brand);
   font-weight: var(--ina-weight-heading);
 }
 
 .ina-nav-link.ina-active .ina-icon {
-  color: var(--ina-background-brand);
+  color: var(--ina-content-brand);
 }
 
 .ina-nav-link .ina-nav-icon {
@@ -311,7 +311,7 @@ a:hover {
 }
 
 .ina-submenu-link.ina-active {
-  color: var(--ina-background-brand);
+  color: var(--ina-content-brand);
   font-weight: var(--ina-weight-label);
   background-color: var(--ina-background-brand-subtle);
 }
@@ -695,7 +695,7 @@ a:hover {
 
 .ina-stat-icon-primary {
   background-color: var(--ina-background-brand-subtle);
-  color: var(--ina-background-brand);
+  color: var(--ina-content-brand);
 }
 
 .ina-stat-icon-success {
@@ -839,10 +839,10 @@ a:hover {
 
 .ina-btn:disabled,
 .ina-btn.ina-disabled {
-  /* label tetap terbaca (content-secondary ≥ 4,5 di background-disabled);
-   * content-disabled tidak dipakai sebagai warna teks (§2.2) */
+  /* label tetap terbaca: content-on-tertiary (6,98 light / 6,99 dark di background-disabled);
+   * content-secondary gelap hanya 4,11 di sana; content-disabled bukan warna teks (§2.2) */
   background-color: var(--ina-background-disabled) !important;
-  color: var(--ina-content-secondary) !important;
+  color: var(--ina-content-on-tertiary) !important;
   border-color: var(--ina-stroke-primary) !important;
   cursor: not-allowed;
   pointer-events: none;
@@ -866,7 +866,7 @@ a:hover {
 /* Badge Soft Types */
 .ina-badge-soft-brand {
   background-color: var(--ina-background-brand-subtle);
-  color: var(--ina-background-brand);
+  color: var(--ina-content-brand);
 }
 
 .ina-badge-soft-success {
@@ -886,12 +886,12 @@ a:hover {
 
 .ina-badge-soft-info {
   background-color: var(--ina-background-guide-subtle);
-  color: var(--ina-content-guide);
+  color: var(--ina-content-guide-strong);
 }
 
 .ina-badge-soft-neutral {
   background-color: var(--ina-background-tertiary);
-  color: var(--ina-content-secondary);
+  color: var(--ina-content-on-tertiary);
 }
 
 /* Badge Fill Types */
@@ -935,7 +935,7 @@ a:hover {
 .ina-alert-info {
   background-color: var(--ina-background-guide-subtle);
   border-color: var(--ina-stroke-guide);
-  color: var(--ina-content-guide);
+  color: var(--ina-content-guide-strong);
 }
 
 .ina-alert-success {
@@ -991,7 +991,7 @@ a:hover {
 }
 
 .ina-form-required {
-  color: var(--ina-content-negative);
+  color: var(--ina-content-negative-strong); /* content-negative light hanya 4,10 (§5) */
 }
 
 .ina-input,
@@ -1287,7 +1287,7 @@ a:hover {
 }
 
 .ina-tab-btn.ina-active {
-  color: var(--ina-background-brand);
+  color: var(--ina-content-brand);
   border-bottom-color: var(--ina-stroke-brand);
   font-weight: var(--ina-weight-heading);
 }
@@ -1778,7 +1778,7 @@ a:hover {
 .ina-select:disabled,
 .ina-textarea:disabled {
   background-color: var(--ina-background-disabled);
-  color: var(--ina-content-secondary);
+  color: var(--ina-content-on-tertiary);
   border-color: var(--ina-stroke-primary);
   cursor: not-allowed;
 }
@@ -2061,7 +2061,7 @@ a:hover {
   height: 32px;
   border-radius: var(--ina-radius-full);
   background-color: var(--ina-background-brand-subtle);
-  color: var(--ina-background-brand);
+  color: var(--ina-content-brand);
   border: 1px solid var(--ina-stroke-primary);
   display: flex;
   align-items: center;
@@ -2104,18 +2104,38 @@ a:hover {
 }
 
 .ina-table th[data-sort]:hover {
-  color: var(--ina-background-brand);
+  color: var(--ina-content-brand);
 }
 
 .ina-table th[data-sort]::after {
-  content: "↕";
+  /* Tabler arrows-sort lewat mask, bukan glyph ↕ (§10.6) */
+  content: "";
+  display: inline-block;
+  width: var(--ina-spacing-3);
+  height: var(--ina-spacing-3);
   margin-left: var(--ina-spacing-1);
-  color: var(--ina-content-secondary);
-  font-size: var(--ina-type-caption-small-size);
+  vertical-align: middle;
+  background-color: var(--ina-content-secondary);
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M3 9l4 -4l4 4M7 5v14M21 15l-4 4l-4 -4M17 19v-14'/></svg>") center / contain no-repeat;
+  mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M3 9l4 -4l4 4M7 5v14M21 15l-4 4l-4 -4M17 19v-14'/></svg>") center / contain no-repeat;
 }
 
-.ina-table th[data-sort][aria-sort="ascending"]::after { content: "↑"; color: var(--ina-background-brand); }
-.ina-table th[data-sort][aria-sort="descending"]::after { content: "↓"; color: var(--ina-background-brand); }
+/* indikator urut: Tabler arrow-up/arrow-down lewat mask, bukan glyph ↑↓ (§10.6) */
+.ina-table th[data-sort][aria-sort="ascending"]::after,
+.ina-table th[data-sort][aria-sort="descending"]::after {
+  content: "";
+  display: inline-block;
+  width: var(--ina-spacing-3);
+  height: var(--ina-spacing-3);
+  vertical-align: middle;
+  background-color: var(--ina-content-brand);
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 5l0 14M18 11l-6 -6M6 11l6 -6'/></svg>") center / contain no-repeat;
+  mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 5l0 14M18 11l-6 -6M6 11l6 -6'/></svg>") center / contain no-repeat;
+}
+.ina-table th[data-sort][aria-sort="descending"]::after {
+  -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 5l0 14M18 13l-6 6M6 13l6 6'/></svg>");
+  mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 5l0 14M18 13l-6 6M6 13l6 6'/></svg>");
+}
 
 .ina-table .ina-td-num,
 .ina-table .ina-th-num {
@@ -2222,7 +2242,7 @@ a:hover {
 .ina-chip-item[aria-pressed="true"] {
   background-color: var(--ina-background-brand-subtle);
   border-color: var(--ina-stroke-brand);
-  color: var(--ina-background-brand);
+  color: var(--ina-content-brand);
 }
 .ina-chip-filled .ina-chip-item { background-color: var(--ina-background-tertiary); border-color: transparent; }
 .ina-chip-filled .ina-chip-item.ina-active,
@@ -2234,7 +2254,7 @@ a:hover {
 .ina-chip-item:disabled {
   background-color: var(--ina-background-disabled);
   border-color: var(--ina-stroke-primary);
-  color: var(--ina-content-secondary);
+  color: var(--ina-content-on-tertiary);
   cursor: not-allowed;
 }
 
@@ -2251,17 +2271,17 @@ a:hover {
 .ina-card-media {
   aspect-ratio: 328 / 202; /* rasio foto artikel playground /implementation (328×202) */
   background-color: var(--ina-background-tertiary);
-  color: var(--ina-content-secondary);
+  color: var(--ina-content-on-tertiary);
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
 }
 .ina-card-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.ina-card-media-guide    { background-color: var(--ina-background-guide-subtle);    color: var(--ina-content-guide); }
+.ina-card-media-guide    { background-color: var(--ina-background-guide-subtle);    color: var(--ina-content-guide-strong); }
 .ina-card-media-positive { background-color: var(--ina-background-positive-subtle); color: var(--ina-content-positive); }
 .ina-card-media-warning  { background-color: var(--ina-background-warning-subtle);  color: var(--ina-content-warning); }
-.ina-card-media-brand    { background-color: var(--ina-background-brand-subtle);    color: var(--ina-background-brand); }
+.ina-card-media-brand    { background-color: var(--ina-background-brand-subtle);    color: var(--ina-content-brand); }
 .ina-card-desc {
   font-size: var(--ina-type-body-small-size);
   line-height: var(--ina-type-body-small-lh);
@@ -2327,7 +2347,7 @@ a:hover {
   -moz-appearance: textfield;
 }
 .ina-page-input::-webkit-outer-spin-button, .ina-page-input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
-.ina-page-btn:disabled { color: var(--ina-content-secondary); background-color: var(--ina-background-disabled); cursor: not-allowed; }
+.ina-page-btn:disabled { color: var(--ina-content-on-tertiary); background-color: var(--ina-background-disabled); cursor: not-allowed; }
 
 /* ---- Spinner & Skeleton (Progress Indicators) ---- */
 .ina-spinner {
@@ -2481,7 +2501,7 @@ a:hover {
 .ina-legend-info    { background-color: var(--ina-content-guide); }
 .ina-legend-neutral { background-color: var(--ina-stroke-secondary); }
 
-.ina-text-brand   { color: var(--ina-background-brand); }
+.ina-text-brand   { color: var(--ina-content-brand); }
 .ina-text-success { color: var(--ina-content-positive); }
 .ina-text-warning { color: var(--ina-content-warning); }
 .ina-text-danger  { color: var(--ina-content-negative-strong); }
@@ -2490,11 +2510,11 @@ a:hover {
 
 /* ---- Hero Brand: progress di atas latar brand memakai ramp brand ---- */
 .ina-finance-card-hero .ina-progress-bar {
-  background-color: var(--ina-primary-800);
+  background-color: var(--ina-background-brand-hover); /* semantik, bukan primary-800 (§2) */
 }
 
 .ina-finance-card-hero .ina-progress-fill {
-  background-color: var(--ina-primary-100);
+  background-color: var(--ina-content-on-primary);
 }
 
 .ina-finance-card-hero .ina-caption-small,
@@ -2507,7 +2527,7 @@ a:hover {
   align-self: center;
   padding: var(--ina-spacing-0-5) var(--ina-spacing-3);
   background-color: var(--ina-background-tertiary);
-  color: var(--ina-content-secondary);
+  color: var(--ina-content-on-tertiary);
   border-radius: var(--ina-radius-full);
   font-size: var(--ina-type-caption-extra-small-size);
 }
@@ -2525,15 +2545,15 @@ a:hover {
 }
 
 .ina-message-outgoing .ina-message-attachment {
-  background-color: var(--ina-primary-700);
-  border-color: var(--ina-primary-600);
-  color: var(--ina-primary-25);
+  background-color: var(--ina-background-brand-hover); /* label vs hover diuji build-kontras.py (semantik, bukan primary-700) */
+  border-color: var(--ina-background-brand-hover);
+  color: var(--ina-content-on-primary);
 }
 
 .ina-message-sender {
   font-size: var(--ina-type-caption-extra-small-size);
   font-weight: var(--ina-weight-label);
-  color: var(--ina-background-brand);
+  color: var(--ina-content-brand);
 }
 
 .ina-chat-typing {
@@ -2587,7 +2607,7 @@ a:hover {
 
 .ina-mail-folder-link.ina-active {
   background-color: var(--ina-background-brand-subtle);
-  color: var(--ina-background-brand);
+  color: var(--ina-content-brand);
 }
 
 .ina-mail-folder-link .ina-nav-link-text {
@@ -2644,9 +2664,13 @@ a:hover {
 .ina-mt-2 { margin-top: var(--ina-spacing-2); }
 .ina-mt-3 { margin-top: var(--ina-spacing-3); }
 .ina-mt-4 { margin-top: var(--ina-spacing-4); }
+.ina-mt-5 { margin-top: var(--ina-spacing-5); }
+.ina-mt-6 { margin-top: var(--ina-spacing-6); }
 .ina-mb-1 { margin-bottom: var(--ina-spacing-1); }
 .ina-mb-2 { margin-bottom: var(--ina-spacing-2); }
 .ina-mb-4 { margin-bottom: var(--ina-spacing-4); }
+.ina-mb-5 { margin-bottom: var(--ina-spacing-5); }
+.ina-mb-6 { margin-bottom: var(--ina-spacing-6); }
 .ina-w-full { width: 100%; }
 .ina-flex-1 { flex: 1; min-width: 0; }
 .ina-text-center { text-align: center; }
@@ -2666,7 +2690,7 @@ a:hover {
 .ina-brand-logo-lg { width: 48px; height: 48px; font-size: var(--ina-type-h5-size); }
 .ina-status-dot-lg { width: 14px; height: 14px; }
 .ina-status-dot-xl { width: 16px; height: 16px; }
-.ina-status-dot-inline { position: static; }
+.ina-status-dot-inline { position: static; display: inline-block; vertical-align: middle; }
 /* lebar = npm .ina-modal__dialog--size-{sm,md,lg,xl} */
 .ina-modal-sm { max-width: 480px; }
 .ina-modal-md { max-width: 640px; }
@@ -2740,7 +2764,7 @@ a:hover {
   flex-shrink: 0;
   border-radius: var(--ina-radius-full);
   background-color: var(--ina-background-brand-subtle);
-  color: var(--ina-background-brand);
+  color: var(--ina-content-brand);
   font-weight: var(--ina-weight-semibold);
   font-size: var(--ina-type-caption-size);
   display: flex;
@@ -2756,7 +2780,7 @@ a:hover {
   line-height: var(--ina-type-h3-lh);
   font-weight: var(--ina-weight-bold);
   letter-spacing: var(--ina-spacing-0-5);
-  color: var(--ina-background-brand);
+  color: var(--ina-content-brand);
 }
 
 /* Diff audit: sebelum / sesudah */
@@ -2836,6 +2860,7 @@ a:hover {
 .ina-kop-alamat { font-size: var(--ina-type-caption-small-size); line-height: var(--ina-type-caption-small-lh); color: var(--ina-content-secondary); }
 .ina-print-title { text-align: center; font-weight: var(--ina-weight-bold); text-transform: uppercase; text-decoration: underline; font-size: var(--ina-type-body-size); }
 .ina-print-subtitle { text-align: center; margin-bottom: var(--ina-spacing-6); }
+.ina-print-table-wrap { overflow-x: auto; } /* tabel lebar bergulir di dalam lembar, bukan lamannya (§10.1) */
 .ina-print-table { width: 100%; border-collapse: collapse; font-size: var(--ina-type-caption-size); line-height: var(--ina-type-caption-lh); }
 .ina-print-table th, .ina-print-table td { border: 1px solid var(--ina-content-primary); padding: var(--ina-spacing-1-5) var(--ina-spacing-2); vertical-align: top; }
 .ina-print-table th { background-color: var(--ina-background-secondary); font-weight: var(--ina-weight-semibold); text-align: center; }
@@ -2923,7 +2948,7 @@ a:hover {
   transition: var(--ina-transition-fast);
 }
 .ina-likert-opt:hover { background-color: var(--ina-background-secondary); }
-.ina-likert-opt:has(input:checked) { border-color: var(--ina-stroke-brand); background-color: var(--ina-background-brand-subtle); color: var(--ina-background-brand); font-weight: var(--ina-weight-label); }
+.ina-likert-opt:has(input:checked) { border-color: var(--ina-stroke-brand); background-color: var(--ina-background-brand-subtle); color: var(--ina-content-brand); font-weight: var(--ina-weight-label); }
 .ina-likert-opt:has(input:focus-visible) { outline: var(--ina-focus-ring); outline-offset: var(--ina-focus-ring-offset); }
 .ina-likert-num { font-size: var(--ina-type-h4-size); line-height: var(--ina-type-h4-lh); font-weight: var(--ina-weight-bold); }
 
@@ -2941,11 +2966,11 @@ legend.ina-form-label { padding: var(--ina-spacing-0); display: flex; align-item
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: var(--ina-spacing-4);
 }
-.ina-queue-cell { text-align: center; padding: var(--ina-spacing-3); border-radius: var(--ina-radius-md); background-color: var(--ina-background-overlay); }
-.ina-queue-cell.ina-active { outline: 1px solid var(--ina-accent-yellow); }
+.ina-queue-cell { text-align: center; padding: var(--ina-spacing-3); border-radius: var(--ina-radius-md); background-color: var(--ina-background-overlay); min-width: 0; overflow: hidden; }
+.ina-queue-cell.ina-active { background-color: var(--ina-accent-yellow); color: var(--ina-content-on-accent); } /* latar kuning + teks gelap; kuning sebagai teks di sel overlay hanya 2,89 di dark */
 .ina-queue-label { font-size: var(--ina-type-caption-small-size); line-height: var(--ina-type-caption-small-lh); text-transform: uppercase; letter-spacing: var(--ina-spacing-0-5); margin-bottom: var(--ina-spacing-1); }
-.ina-queue-number { font-size: var(--ina-type-display-small-size); line-height: var(--ina-type-display-small-lh); font-weight: var(--ina-weight-heading); font-variant-numeric: tabular-nums; white-space: nowrap; }
-.ina-queue-number.ina-queue-calling { color: var(--ina-accent-yellow); }
+.ina-queue-number { font-size: var(--ina-type-h2-size); line-height: var(--ina-type-h2-lh); font-weight: var(--ina-weight-heading); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.ina-queue-number.ina-queue-calling { color: inherit; }
 
 /* Blok kode (contoh API katalog data) — memakai font sistem IDDS + angka tabular */
 .ina-code {
@@ -2973,15 +2998,15 @@ legend.ina-form-label { padding: var(--ina-spacing-0); display: flex; align-item
 .ina-calendar-head { background-color: var(--ina-background-secondary); padding: var(--ina-spacing-2); text-align: center; font-size: var(--ina-type-caption-small-size); line-height: var(--ina-type-caption-small-lh); font-weight: var(--ina-weight-label); text-transform: uppercase; color: var(--ina-content-secondary); }
 .ina-calendar-day { background-color: var(--ina-background-primary); min-height: var(--ina-spacing-24); padding: var(--ina-spacing-1-5); display: flex; flex-direction: column; gap: var(--ina-spacing-1); font-size: var(--ina-type-caption-small-size); line-height: var(--ina-type-caption-small-lh); }
 .ina-calendar-day.ina-muted { background-color: var(--ina-background-secondary); color: var(--ina-content-secondary); }
-.ina-calendar-day.ina-today .ina-calendar-date { background-color: var(--ina-background-brand); color: var(--ina-content-on-primary); }
 .ina-calendar-day.ina-holiday .ina-calendar-date { color: var(--ina-content-negative-strong); }
+.ina-calendar-day.ina-today .ina-calendar-date { background-color: var(--ina-background-brand); color: var(--ina-content-on-primary); } /* ditulis setelah .ina-holiday agar hari ini yang libur tetap terbaca (merah di brand = 1,16) */
 .ina-calendar-date { width: var(--ina-spacing-6); height: var(--ina-spacing-6); border-radius: var(--ina-radius-full); display: inline-flex; align-items: center; justify-content: center; font-weight: var(--ina-weight-label); font-variant-numeric: tabular-nums; }
 .ina-cal-event { display: block; padding: var(--ina-spacing-0-5) var(--ina-spacing-1-5); border-radius: var(--ina-radius-sm); font-size: var(--ina-type-caption-extra-small-size); line-height: var(--ina-type-caption-extra-small-lh); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-decoration: none; cursor: pointer; border-left: var(--ina-spacing-0-5) solid transparent; }
-.ina-cal-event-brand   { background-color: var(--ina-background-brand-subtle);    color: var(--ina-background-brand);   border-left-color: var(--ina-background-brand); }
+.ina-cal-event-brand   { background-color: var(--ina-background-brand-subtle);    color: var(--ina-content-brand);   border-left-color: var(--ina-background-brand); }
 .ina-cal-event-success { background-color: var(--ina-background-positive-subtle); color: var(--ina-content-positive);   border-left-color: var(--ina-content-positive); }
 .ina-cal-event-warning { background-color: var(--ina-background-warning-subtle);  color: var(--ina-content-warning);    border-left-color: var(--ina-content-warning); }
 .ina-cal-event-danger  { background-color: var(--ina-background-negative-subtle); color: var(--ina-content-negative-strong); border-left-color: var(--ina-content-negative); }
-.ina-cal-event-neutral { background-color: var(--ina-background-tertiary);        color: var(--ina-content-secondary);  border-left-color: var(--ina-stroke-secondary); }
+.ina-cal-event-neutral { background-color: var(--ina-background-tertiary);        color: var(--ina-content-on-tertiary);  border-left-color: var(--ina-stroke-secondary); }
 .ina-cal-more, .ina-cal-count { font-size: var(--ina-type-caption-extra-small-size); color: var(--ina-content-secondary); }
 .ina-cal-count { display: none; }
 
@@ -3024,7 +3049,7 @@ legend.ina-form-label { padding: var(--ina-spacing-0); display: flex; align-item
 /* Halaman dokumen TTE: lembar skala kecil + kotak posisi tanda tangan */
 .ina-sign-page { position: relative; background-color: var(--ina-background-primary); border: 1px solid var(--ina-stroke-primary); box-shadow: var(--ina-shadow-md); aspect-ratio: 210 / 297; width: 100%; max-width: 520px; margin: var(--ina-spacing-0) auto; padding: var(--ina-spacing-8) var(--ina-spacing-8); overflow: hidden; }
 .ina-sign-line { height: var(--ina-spacing-2); border-radius: var(--ina-radius-sm); background-color: var(--ina-background-tertiary); margin-bottom: var(--ina-spacing-2); }
-.ina-sign-box { position: absolute; width: 34%; padding: var(--ina-spacing-2); border: var(--ina-spacing-0-5) dashed var(--ina-stroke-brand); border-radius: var(--ina-radius-md); background-color: var(--ina-background-brand-subtle); color: var(--ina-background-brand); font-size: var(--ina-type-caption-extra-small-size); line-height: var(--ina-type-caption-extra-small-lh); display: flex; gap: var(--ina-spacing-2); align-items: center; cursor: move; }
+.ina-sign-box { position: absolute; width: 34%; padding: var(--ina-spacing-2); border: var(--ina-spacing-0-5) dashed var(--ina-stroke-brand); border-radius: var(--ina-radius-md); background-color: var(--ina-background-brand-subtle); color: var(--ina-content-brand); font-size: var(--ina-type-caption-extra-small-size); line-height: var(--ina-type-caption-extra-small-lh); display: flex; gap: var(--ina-spacing-2); align-items: center; cursor: move; }
 .ina-sign-box.ina-signed { border-style: solid; border-color: var(--ina-stroke-positive); background-color: var(--ina-background-positive-subtle); color: var(--ina-content-positive); cursor: default; }
 .ina-sign-page-num { position: absolute; right: var(--ina-spacing-3); bottom: var(--ina-spacing-2); font-size: var(--ina-type-caption-extra-small-size); color: var(--ina-content-secondary); }
 
@@ -3034,8 +3059,9 @@ legend.ina-form-label { padding: var(--ina-spacing-0); display: flex; align-item
 .ina-attend-h { background-color: var(--ina-background-positive-subtle); color: var(--ina-content-positive); }
 .ina-attend-t { background-color: var(--ina-background-warning-subtle); color: var(--ina-content-warning); }
 .ina-attend-a { background-color: var(--ina-background-negative-subtle); color: var(--ina-content-negative-strong); }
-.ina-attend-c { background-color: var(--ina-background-brand-subtle); color: var(--ina-background-brand); }
-.ina-attend-l { background-color: var(--ina-background-tertiary); color: var(--ina-content-secondary); }
+.ina-attend-c { background-color: var(--ina-background-brand-subtle); color: var(--ina-content-brand); }
+.ina-attend-l { background-color: var(--ina-background-tertiary); color: var(--ina-content-on-tertiary); }
+.ina-attend-f { background-color: var(--ina-background-secondary); color: var(--ina-content-on-tertiary); } /* hari belum berjalan */
 
 /* Baris hierarki program → kegiatan → sub kegiatan (indentasi per level) */
 .ina-row-l1 > td:first-child { font-weight: var(--ina-weight-semibold); }
@@ -3064,10 +3090,11 @@ legend.ina-form-label { padding: var(--ina-spacing-0); display: flex; align-item
 .ina-choice:hover { background-color: var(--ina-background-secondary); }
 .ina-choice:has(input:checked) { border-color: var(--ina-stroke-brand); background-color: var(--ina-background-brand-subtle); }
 .ina-choice:has(input:focus-visible) { outline: var(--ina-focus-ring); outline-offset: var(--ina-focus-ring-offset); }
-.ina-choice:has(input:disabled) { background-color: var(--ina-background-disabled); color: var(--ina-content-secondary); cursor: not-allowed; }
+.ina-choice:has(input:disabled) { background-color: var(--ina-background-disabled); color: var(--ina-content-on-tertiary); cursor: not-allowed; }
 .ina-choice-body { flex: 1; min-width: 0; }
 .ina-choice-title { font-size: var(--ina-type-body-small-size); line-height: var(--ina-type-body-small-lh); font-weight: var(--ina-weight-label); }
 .ina-choice-desc { font-size: var(--ina-type-caption-small-size); line-height: var(--ina-type-caption-small-lh); color: var(--ina-content-secondary); }
+.ina-choice:has(input:disabled) .ina-choice-desc { color: var(--ina-content-on-tertiary); }
 
 /* Bingkai kamera swafoto / dokumen */
 .ina-camera-frame {
@@ -3107,7 +3134,7 @@ legend.ina-form-label { padding: var(--ina-spacing-0); display: flex; align-item
 .ina-doc ul, .ina-doc ol { padding-left: var(--ina-spacing-6); display: flex; flex-direction: column; gap: var(--ina-spacing-1); }
 .ina-toc { position: sticky; top: var(--ina-spacing-20); display: flex; flex-direction: column; gap: var(--ina-spacing-1); }
 .ina-toc a { display: block; padding: var(--ina-spacing-1-5) var(--ina-spacing-3); border-left: var(--ina-spacing-0-5) solid var(--ina-stroke-primary); font-size: var(--ina-type-caption-size); line-height: var(--ina-type-caption-lh); color: var(--ina-content-secondary); text-decoration: none; }
-.ina-toc a:hover, .ina-toc a.ina-active { border-left-color: var(--ina-background-brand); color: var(--ina-background-brand); }
+.ina-toc a:hover, .ina-toc a.ina-active { border-left-color: var(--ina-background-brand); color: var(--ina-content-brand); }
 
 /* ---- Fase 6 — Kerangka publik & mode layar besar (v1.8.0) ---- */
 /* Kerangka publik: tanpa sidebar; header horizontal, konten terpusat, footer kolom */
@@ -3120,7 +3147,7 @@ legend.ina-form-label { padding: var(--ina-spacing-0); display: flex; align-item
 .ina-public-nav { display: flex; align-items: center; gap: var(--ina-spacing-1); margin-left: auto; }
 .ina-public-nav a { display: inline-flex; align-items: center; gap: var(--ina-spacing-1); padding: var(--ina-spacing-2) var(--ina-spacing-3); border-radius: var(--ina-radius-md); font-size: var(--ina-type-body-small-size); line-height: var(--ina-type-body-small-lh); font-weight: var(--ina-weight-label); color: var(--ina-content-primary); text-decoration: none; }
 .ina-public-nav a:hover { background-color: var(--ina-background-secondary); }
-.ina-public-nav a.ina-active { color: var(--ina-background-brand); background-color: var(--ina-background-brand-subtle); }
+.ina-public-nav a.ina-active { color: var(--ina-content-brand); background-color: var(--ina-background-brand-subtle); }
 .ina-public-nav a:focus-visible { outline: var(--ina-focus-ring); outline-offset: var(--ina-focus-ring-offset); }
 .ina-public-menu { display: none; margin-left: auto; }
 .ina-public-menu summary { list-style: none; cursor: pointer; }
@@ -3136,12 +3163,12 @@ legend.ina-form-label { padding: var(--ina-spacing-0); display: flex; align-item
 .ina-public-footer-links { display: flex; flex-direction: column; gap: var(--ina-spacing-2); font-size: var(--ina-type-body-small-size); line-height: var(--ina-type-body-small-lh); }
 .ina-public-footer-bottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: var(--ina-spacing-3); margin-top: var(--ina-spacing-8); padding-top: var(--ina-spacing-4); border-top: 1px solid var(--ina-stroke-tertiary); font-size: var(--ina-type-caption-small-size); line-height: var(--ina-type-caption-small-lh); }
 .ina-skip-link { position: absolute; left: var(--ina-spacing-2); top: calc(-1 * var(--ina-spacing-20)); padding: var(--ina-spacing-2) var(--ina-spacing-3); background-color: var(--ina-background-brand); color: var(--ina-content-on-primary); border-radius: var(--ina-radius-md); z-index: var(--ina-z-toast); }
-.ina-skip-link:focus { top: var(--ina-spacing-2); outline: var(--ina-focus-ring); outline-offset: var(--ina-focus-ring-offset); }
+.ina-skip-link:focus { top: var(--ina-spacing-2); box-shadow: var(--ina-focus-ring); }
 
 /* Mode kios / layar besar: tanpa chrome, kontras tinggi, angka display */
 .ina-kiosk { min-height: 100vh; display: flex; flex-direction: column; background-color: var(--ina-background-primary); }
 .ina-kiosk-header { display: flex; align-items: center; justify-content: space-between; gap: var(--ina-spacing-4); padding: var(--ina-spacing-4) var(--ina-spacing-8); background-color: var(--ina-background-brand); color: var(--ina-content-on-primary); }
-.ina-kiosk-header .ina-brand-logo { background-color: var(--ina-background-primary); color: var(--ina-background-brand); }
+.ina-kiosk-header .ina-brand-logo { background-color: var(--ina-background-primary); color: var(--ina-content-brand); }
 .ina-kiosk-clock { font-size: var(--ina-type-h2-size); line-height: var(--ina-type-h2-lh); font-weight: var(--ina-weight-bold); font-variant-numeric: tabular-nums; }
 .ina-kiosk-main { flex: 1; padding: var(--ina-spacing-6) var(--ina-spacing-8); display: flex; flex-direction: column; gap: var(--ina-spacing-6); }
 .ina-kiosk-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--ina-spacing-6); }
@@ -3221,6 +3248,10 @@ legend.ina-form-label { padding: var(--ina-spacing-0); display: flex; align-item
   .ina-hero { padding: var(--ina-spacing-6) var(--ina-spacing-4); }
   .ina-print-sheet { padding: var(--ina-spacing-4); min-height: 0; }
   .ina-kop { flex-direction: column; }
+  .ina-kiosk-header { flex-wrap: wrap; padding: var(--ina-spacing-3) var(--ina-spacing-4); }
+  .ina-kiosk-header .ina-text-right { text-align: left; }
+  .ina-kiosk-clock { font-size: var(--ina-type-h4-size); line-height: var(--ina-type-h4-lh); }
+  .ina-kiosk-ticker { padding: var(--ina-spacing-2) var(--ina-spacing-4); }
 }
 
 @media (max-width: 480px) {

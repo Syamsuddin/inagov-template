@@ -99,7 +99,7 @@ Panduan lengkap memuat persiapan per IDE, 6 prompt yang terbukti bekerja (laman 
 |---|---|
 | Token | Warna, spasi, radius, tipografi, bayangan, z-index — semua dari `assets/idds-tokens.css` (kunci `@idds/styles` 1.6.36 + lapisan semantik turunan). Kode tidak boleh memanggil token primitif (`blue-500`) maupun nilai literal. |
 | Brand | 8 brand siap pakai (HSS, INA Gov, PAN-RB, BKN, LAN, INApas, INAku, BGN). Brand daerah baru diturunkan dari satu hex logo sebagai ramp 11 langkah di ruang OKLCH (lihat pola `assets/brand-hss.css`). |
-| Kontras | Setiap pasangan label–latar diuji WCAG 2.1 AA untuk tema terang dan gelap. Latar kuning wajib teks gelap. |
+| Kontras | Setiap pasangan label–latar diuji WCAG 2.1 AA untuk tema terang dan gelap (`build-kontras.py --check` di paket dokumentasi, 8 brand × 2 tema; audit laman: `scripts/audit-ui.py`). Teks berwarna brand memakai `content-brand`, bukan `background-brand`. Latar kuning wajib teks gelap. |
 | Tombol | Hierarki mengikuti npm (`primary` / `secondary` / `tertiary` / `danger`), label **Sentence case**, satu primary button per layar. |
 | Ikon | Tabler Icons (MIT), inline SVG, ukuran & stroke sesuai tabel konvensi; tanpa emoji/glyph. |
 | Aksesibilitas | Focus ring token pada semua elemen interaktif, `aria-*` pada kontrol, skip link di kerangka publik, `prefers-reduced-motion` dihormati. |
@@ -107,11 +107,11 @@ Panduan lengkap memuat persiapan per IDE, 6 prompt yang terbukti bekerja (laman 
 
 ## Mengganti brand ke daerah Anda
 
-Brand didefinisikan sebagai blok CSS terpisah (`assets/brand-hss.css`) berisi ramp 11 langkah `primary-25…950` plus pemetaan `primary-primary` untuk tema terang dan gelap, dan diaktifkan lewat `data-brand="…"` pada `<html>`. Untuk daerah lain:
+Brand adalah blok `[data-brand="…"]` di `assets/idds-tokens.css` berisi ramp 11 langkah `primary-25…900` plus pemetaan `primary-primary` dan `content-brand` untuk tema terang dan gelap, diaktifkan lewat `data-brand="…"` pada `<html>`. `assets/brand-hss.css` adalah keluaran generator yang sama untuk HSS (rujukan pola; salinan aktifnya sudah tertanam di `idds-tokens.css`, tidak perlu dimuat laman). Untuk daerah lain:
 
 1. Sampel warna utama dan aksen **dari berkas logo**, bukan dari deskripsi verbal lambang (deskripsi sering menyebut "biru tua" padahal artwork-nya biru sedang).
 2. Turunkan ramp 11 langkah di ruang OKLCH dengan profil lightness yang sama seperti ramp brand resmi IDDS, tulis ke `assets/brand-<nama>.css` mengikuti pola berkas HSS, lalu daftarkan di `idds-tokens.css`.
-3. Uji kontras setiap pasangan label–latar (label putih di atas `primary-primary` ≥ 4,5:1 di tema terang; tema gelap memakai langkah ramp yang lebih terang). Untuk HSS, `primary-500` dipakai di tema gelap karena `primary-400` hanya 3,61:1.
+3. Uji kontras setiap pasangan label–latar dengan `build-kontras.py --check` (paket dokumentasi): label di atas `primary-primary` ≥ 4,5:1, dan `content-brand` ≥ 4,5:1 di atas `background-primary/secondary/tertiary` dan `brand-subtle` (tema gelap biasanya `primary-200`). Untuk HSS, `primary-500` dipakai di tema gelap karena `primary-400` hanya 3,61:1.
 
 ## Struktur repositori
 
@@ -142,9 +142,11 @@ Hanya `index.html` yang berada di akar; 66 laman lain dikelompokkan per modul di
 │   ├── idds-utilities.css tipografi, ikon, focus ring
 │   ├── idds-admin.css     tata letak + komponen (Fase 1–6), semua lewat token
 │   ├── idds-admin.js      tema, brand, sidebar, modal, toast, chart, tabel, stepper, tree, …
-│   ├── brand-hss.css      blok brand contoh
+│   ├── brand-hss.css      keluaran generator brand HSS (rujukan; aktifnya di idds-tokens.css)
 │   ├── artikel-data.js    data contoh katalog/detail artikel
+│   ├── fonts/             Inter variable self-host (woff2, OFL 1.1)
 │   └── img/               foto artikel contoh, gambar README
+├── scripts/audit-ui.py    audit statis kontrak desain seluruh laman (gerbang DoD)
 ├── panduan/vibe-coding.md  panduan vibe coding (VS Code, Antigravity, Claude Code)
 ├── AGENTS.md              aturan agen AI (dibaca IDE agentik)
 ├── CHANGELOG.md · VERSION · LICENSE

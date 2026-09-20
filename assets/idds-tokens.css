@@ -11,6 +11,25 @@
  *                   data/aturan-kontras.json (hasil scripts/build-kontras.py)
  * ============================================================ */
 
+/* ---- [TURUNAN] Inter self-host (§11 DoD: bukan dari CDN) — berkas di assets/fonts/, lisensi OFL 1.1 ----
+ * Variable font (wght 100–900) subset latin + latin-ext; jalur relatif terhadap berkas CSS ini. */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("fonts/inter-latin-wght-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("fonts/inter-latin-ext-wght-normal.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
 :root {
   /* ---- palet primitif ---- */
   --ina-neutral-25: #ffffff;
@@ -328,6 +347,11 @@
   --ina-background-brand: var(--ina-primary-primary);
   --ina-background-brand-hover: var(--ina-primary-600);
   --ina-background-brand-subtle: var(--ina-primary-50);
+  --ina-content-brand: var(--ina-primary-primary);      /* [TURUNAN] TEKS berwarna brand (nav/tab aktif, badge soft, .ina-text-brand) — bukan background-brand */
+  --ina-content-on-tertiary: var(--ina-neutral-600);    /* [TURUNAN] teks sekunder di atas background-tertiary/disabled (6,98) */
+  --ina-content-guide-strong: var(--ina-blue-600);      /* [TURUNAN] teks info ukuran body di atas guide-subtle (7,11); content-guide hanya 4,35 */
+  --ina-accent-yellow: var(--ina-yellow-400);           /* [TURUNAN] fallback aksen; brand boleh menimpa (hss: #fff500) */
+  --ina-content-on-accent: var(--ina-neutral-900);      /* [TURUNAN] latar kuning wajib teks gelap (≥13) */
   --ina-background-guide-subtle: var(--ina-blue-100);   /* #ecf3fe */
   --ina-background-positive-subtle: var(--ina-green-100); /* #edfded */
   --ina-background-negative-subtle: var(--ina-red-100); /* #fdeded */
@@ -368,6 +392,10 @@
   --ina-background-brand: var(--ina-primary-primary);
   --ina-background-brand-hover: var(--ina-primary-600);
   --ina-background-brand-subtle: var(--ina-primary-900);
+  --ina-content-brand: var(--ina-primary-200);          /* [TURUNAN] primary-primary gelap hanya 2,4–3,6 sebagai teks; 200 ≥4,5 di semua brand kecuali override di bawah */
+  --ina-content-on-tertiary: var(--ina-neutral-300);    /* [TURUNAN] content-secondary (#a3a3a3) di #404040 hanya 4,11; #d4d4d4 = 6,99 */
+  --ina-content-guide-strong: var(--ina-blue-300);      /* [TURUNAN] #84b4fb di guide-subtle gelap ≥7 */
+  --ina-content-on-accent: var(--ina-neutral-900);
   --ina-background-guide-subtle: var(--ina-blue-800);   /* #0e192a */
   --ina-background-positive-subtle: var(--ina-green-800); /* #0c310d */
   --ina-background-negative-subtle: var(--ina-red-800); /* #2a0303 */
@@ -456,8 +484,10 @@
   --ina-primary-900: #140202;
   --ina-primary-primary: #cc1515;
 }
+[data-brand="inapas"] { --ina-content-brand: var(--ina-primary-600); } /* primary #cc1515 di primary-50 hanya 4,42; 600 = 6,53 */
 [data-theme="dark"][data-brand="inapas"] {
   --ina-primary-primary: var(--ina-primary-400);
+  --ina-content-brand: var(--ina-primary-200);
   --ina-content-on-primary: var(--ina-neutral-900); /* putih hanya 4,00 di #e8422d; gelap 4,60 */
   --ina-background-brand-hover: var(--ina-primary-300);
 }
@@ -490,7 +520,8 @@
   --ina-primary-900: #01080f;
   --ina-primary-primary: #06264d;
 }
-[data-theme="dark"][data-brand="inaku"] { --ina-primary-primary: var(--ina-primary-300); }
+[data-theme="dark"][data-brand="inaku"] { --ina-primary-primary: var(--ina-primary-300); --ina-content-brand: var(--ina-primary-100); } /* 200 (#629cef) di #404040 hanya 3,9 */
+[data-theme="dark"][data-brand="bgn"] { --ina-content-brand: var(--ina-primary-300); } /* 400 (#1194ff) di #404040 gagal; 300 = 4,69 */
 [data-brand="bgn"] {
   --ina-primary-25: #ebf8ff;
   --ina-primary-50: #d3eeff;
@@ -519,6 +550,8 @@
   --ina-primary-900: #53041a;
   --ina-primary-primary: #de1d5e;
 }
+[data-brand="bkn"] { --ina-content-brand: var(--ina-primary-600); } /* primary #de1d5e di putih hanya 4,73/di primary-50 4,0; 600 = 5,03 */
+[data-theme="dark"][data-brand="bkn"] { --ina-content-brand: var(--ina-primary-200); } /* #fca5cb ≥5,6 di semua latar gelap */
 [data-brand="lan"] {
   --ina-primary-25: #f3f6fc;
   --ina-primary-50: #e5edf9;

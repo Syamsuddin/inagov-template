@@ -1,4 +1,6 @@
 /* Brand Pemkab HSS — ramp dibangun skrip dari #0063a8 [TERVALIDASI]
+ * CATATAN: berkas ini rujukan pola keluaran generator; salinan AKTIF ada di idds-tokens.css
+ * (blok [data-brand="hss"], termasuk --ina-content-brand). Laman tidak memuat berkas ini.
  * Profil lightness: median brand resmi IDDS (dosir-ui-idds.json)
  * Ruang warna: OKLCH. Ramp JANGAN diedit manual — regenerate dengan build-brand.py.
  * Aturan pemetaan dark (v1.3): langkah terdekat yang ≥4,5 vs label DAN ≥3 vs latar gelap.

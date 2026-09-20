@@ -77,11 +77,12 @@ idds-admin.css sebelum "Responsive Breakpoints", tanpa nilai px/hex literal, den
 
 **3.4 Mengganti brand ke daerah lain**
 ```
-Buat assets/brand-«nama».css mengikuti struktur assets/brand-hss.css: ramp primary-25…950 dari warna
+Tambahkan blok [data-brand="«nama»"] di assets/idds-tokens.css mengikuti pola blok hss: ramp primary-25…900 dari warna
 utama «#hex» (turunkan di ruang OKLCH, profil lightness sama dengan ramp HSS), pemetaan
 primary-primary untuk tema terang dan gelap (pilih langkah ramp yang label putihnya ≥ 4,5:1),
-accent «#hex». Daftarkan di idds-tokens.css dan opsi pemilih brand di topbar. Laporkan angka kontras
-tiap pasangan yang Anda hitung.
+accent «#hex», dan content-brand (terang: langkah ≥4,5 di putih & primary-50; gelap: biasanya primary-200).
+Daftarkan opsi pemilih brand di topbar dan BRANDS di idds-admin.js, lalu jalankan
+python3 docs/scripts/build-kontras.py --check dan laporkan hasilnya.
 ```
 
 **3.5 Konversi ke Laravel Blade**
@@ -148,7 +149,8 @@ Sebuah laman boleh disebut selesai hanya bila:
 - [ ] Tidak ada token primitif (`--ina-blue-*`, `--ina-neutral-*`, `--ina-primary-NNN`) di laman
 - [ ] Semua kelas `ina-*` yang dipakai memang ada di `idds-admin.css`/`idds-utilities.css`
 - [ ] Semua `href`/`src`/`data-go` menunjuk berkas yang ada; jalur relatif sesuai kedalaman folder
-- [ ] Satu `ina-btn-primary` per layar; label tombol Sentence case; ikon Tabler SVG
+- [ ] Satu `ina-btn-primary` per layar; label tombol Sentence case; ikon Tabler SVG (bukan glyph `● ✓ ↑ →`)
+- [ ] Teks berwarna brand memakai `--ina-content-brand` (bukan `--ina-background-brand`); teks di `background-tertiary` memakai `--ina-content-on-tertiary`
 - [ ] Sidebar identik dengan laman lain; item aktif benar; submenu induk terbuka
 - [ ] Diuji tema terang & gelap; lebar 1280/768/480 tanpa gulir horizontal
 - [ ] Tidak ada galat konsol; `typeof InaToast === "object"`
@@ -157,12 +159,15 @@ Sebuah laman boleh disebut selesai hanya bila:
 Perintah cepat (jalankan di akar repo):
 
 ```bash
+python3 scripts/audit-ui.py            # seluruh laman: keluar 0 = tidak ada pelanggaran keras
 f=pages/«modul»/«nama».html
 grep -nE '#[0-9a-fA-F]{3,8}\b|\b(rgb|hsl)a?\(' $f | grep -vE 'href="#|id="'      # harus kosong
 grep -nE '[0-9]+px' $f | grep -vE '\b(0|1)px|width=|height='                       # harus kosong
 grep -oE 'class="[^"]+"' $f | tr ' "' '\n\n' | grep '^ina-' | sort -u | while read c; do grep -q "\.$c\b" assets/idds-admin.css assets/idds-utilities.css || echo "kelas asing: $c"; done
 # kelas ina-icon-moon/sun, ina-icon-eye/eye-off, ina-table-row-checkbox adalah pengait JS — bukan pelanggaran
 grep -c 'ina-btn-primary' $f   # hitungan termasuk tombol di dalam modal; yang tampak bersamaan di layar harus ≤ 1
+grep -nE '(^|[^-])color: ?var\(--ina-background-brand\)' $f assets/idds-admin.css   # harus kosong
+python3 docs/scripts/build-kontras.py --check   # wajib hijau setelah menyentuh idds-tokens.css
 ```
 
 ---
