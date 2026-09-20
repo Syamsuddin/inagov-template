@@ -37,7 +37,7 @@ cd inagov-template
 open index.html          # macOS · Windows: start index.html · Linux: xdg-open index.html
 ```
 
-Untuk memasang ke proyek aplikasi, salin folder `assets/` ke direktori publik proyek (mis. `public/assets/`) dan muat tiga stylesheet + satu skrip seperti pada `<head>` dan akhir `<body>` tiap laman:
+Semua laman lain ada di `pages/<modul>/` dan dapat dicapai dari sidebar. Untuk memasang ke proyek aplikasi, salin folder `assets/` ke direktori publik proyek (mis. `public/assets/`) dan muat tiga stylesheet + satu skrip seperti pada `<head>` dan akhir `<body>` tiap laman (sesuaikan awalan jalur relatifnya):
 
 ```html
 <link rel="stylesheet" href="assets/idds-tokens.css">
@@ -92,8 +92,28 @@ Brand didefinisikan sebagai blok CSS terpisah (`assets/brand-hss.css`) berisi ra
 
 ## Struktur repositori
 
+Hanya `index.html` yang berada di akar; 66 laman lain dikelompokkan per modul di `pages/`, dan semua tautan di dalamnya relatif (`../../assets/…`, `../auth/login.html`) sehingga bisa dibuka dari `file://` maupun disajikan dari subdirektori mana pun.
+
 ```
-├── *.html                 67 laman — buka langsung
+├── index.html             dashboard utama — titik masuk
+├── pages/
+│   ├── auth/              login, register, forgot-password, otp, lock-screen, pilih-unit, verifikasi-identitas, persetujuan-privasi, onboarding
+│   ├── dashboard/         dashboard-analytics, dashboard-eksekutif, keuangan
+│   ├── ui-kit/            tables, cards, forms, components
+│   ├── artikel/           katalog-artikel, artikel
+│   ├── komunikasi/        chat, mail
+│   ├── akun/              profile, notifikasi
+│   ├── layanan/           layanan, layanan-detail, permohonan, lacak, antrian
+│   ├── partisipasi/       pengaduan, pengaduan-detail, skm, skm-hasil
+│   ├── informasi/         portal, ppid, jdih, jdih-detail, data, dataset
+│   ├── tata-kelola/       disposisi, pengguna, peran, audit, pengaturan, cetak
+│   ├── kesekretariatan/   naskah, tte, agenda
+│   ├── kepegawaian/       pegawai, pegawai-detail, presensi, cuti, kinerja
+│   ├── perencanaan/       monev, aset
+│   ├── bantuan/           bantuan, tiket, kebijakan-privasi
+│   ├── status/            404, 403, 500, maintenance
+│   ├── publik/            publik-beranda, publik-layanan, publik-lacak, publik-pengaduan
+│   └── kios/              kios-antrian, situation-room
 ├── assets/
 │   ├── idds-tokens.css    token TERKUNCI + lapisan semantik, brand terpasang
 │   ├── idds-utilities.css tipografi, ikon, focus ring

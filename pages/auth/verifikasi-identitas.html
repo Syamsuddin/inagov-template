@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light" data-brand="hss">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Verifikasi identitas akun warga: data KTP, swafoto dengan uji keaslian, hasil pencocokan Dukcapil — IDDS Pemkab HSS">
+  <title>Verifikasi Identitas — Pemkab HSS</title>
+  <link rel="stylesheet" href="../../assets/idds-tokens.css">
+  <link rel="stylesheet" href="../../assets/idds-utilities.css">
+  <link rel="stylesheet" href="../../assets/idds-admin.css">
+</head>
+<body class="ina-auth-page">
+  <button type="button" class="ina-icon-btn ina-auth-theme-toggle" data-toggle-theme aria-label="Ganti Mode Gelap/Terang">
+    <svg class="ina-icon ina-icon-20 ina-icon-moon" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"/></svg>
+    <svg class="ina-icon ina-icon-20 ina-icon-sun" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0M3 12h1M20 12h1M12 3v1M12 20v1M5.6 5.6l.7 .7M17.7 17.7l.7 .7M5.6 18.4l.7 -.7M17.7 6.3l.7 -.7"/></svg>
+  </button>
+
+  <div class="ina-auth-box ina-auth-box-xl">
+    <div class="ina-auth-header">
+      <div class="ina-brand-logo ina-brand-logo-lg">HSS</div>
+      <h1 class="ina-h4 ina-mt-1">Verifikasi identitas akun warga</h1>
+      <p class="ina-caption ina-text-muted">Dicocokkan dengan data Dukcapil melalui layanan pemanfaatan NIK. Foto tidak disimpan setelah verifikasi selesai (UU 27/2022).</p>
+    </div>
+    <div class="ina-auth-form" data-stepper data-finish-message="Verifikasi selesai. Akun Anda kini berstatus terverifikasi.">
+      <div class="ina-stepper" aria-label="Langkah verifikasi">
+        <div class="ina-step ina-active"><div class="ina-step-indicator">1</div><span>Data KTP</span></div>
+        <div class="ina-step"><div class="ina-step-indicator">2</div><span>Swafoto</span></div>
+        <div class="ina-step"><div class="ina-step-indicator">3</div><span>Hasil</span></div>
+      </div>
+      <div class="ina-step-panel ina-active">
+        <div class="ina-grid ina-grid-2" style="gap:var(--ina-spacing-4);">
+          <div class="ina-form-group"><label class="ina-form-label" for="vNik">NIK <span class="ina-form-required">*</span></label><input type="text" class="ina-input ina-tabular" id="vNik" value="6306031204880002" inputmode="numeric" pattern="[0-9]{16}" required></div>
+          <div class="ina-form-group"><label class="ina-form-label" for="vKk">Nomor KK <span class="ina-form-required">*</span></label><input type="text" class="ina-input ina-tabular" id="vKk" inputmode="numeric" pattern="[0-9]{16}" placeholder="16 digit" required></div>
+          <div class="ina-form-group"><label class="ina-form-label" for="vNama">Nama sesuai KTP <span class="ina-form-required">*</span></label><input type="text" class="ina-input" id="vNama" value="Muhammad Rizki Aditya" required></div>
+          <div class="ina-form-group"><label class="ina-form-label" for="vLahir">Tanggal lahir <span class="ina-form-required">*</span></label><input type="date" class="ina-input ina-tabular" id="vLahir" value="1988-04-12" required></div>
+        </div>
+        <div class="ina-grid ina-grid-2" style="gap:var(--ina-spacing-4);">
+          <div class="ina-dropzone ina-dropzone-compact" tabindex="0" role="button" aria-label="Unggah foto KTP" data-file-list="vKtpList"><input type="file" accept="image/*" capture="environment"><svg class="ina-icon ina-icon-24" aria-hidden="true" viewBox="0 0 24 24"><path d="M3 4m0 3a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v10a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3zM9 10m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0M15 8l2 0M15 12l2 0M7 16l10 0"/></svg><div class="ina-label ina-text-brand">Foto KTP-el</div><div class="ina-caption-small">Seluruh kartu terlihat, tanpa pantulan</div></div>
+          <div class="ina-alert ina-alert-info"><svg class="ina-icon ina-icon-20" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 9v4M12 17h.01M12 3a9 9 0 1 0 9 9a9 9 0 0 0 -9 -9"/></svg><div class="ina-alert-content"><div class="ina-alert-desc">OCR membaca KTP dan membandingkan dengan isian. Data Dukcapil yang menang bila berbeda.</div></div></div>
+        </div>
+        <div class="ina-file-list" id="vKtpList"></div>
+      </div>
+      <div class="ina-step-panel">
+        <div class="ina-grid ina-grid-2" style="gap:var(--ina-spacing-4);">
+          <div class="ina-camera-frame" role="img" aria-label="Pratinjau kamera untuk swafoto">
+            <svg class="ina-camera-guide" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid meet" aria-hidden="true"><ellipse class="ina-guide-shape" cx="200" cy="150" rx="95" ry="125"/></svg>
+            <svg class="ina-icon ina-icon-24" aria-hidden="true" viewBox="0 0 24 24"><path d="M5 7h1a2 2 0 0 0 2 -2a1 1 0 0 1 1 -1h6a1 1 0 0 1 1 1a2 2 0 0 0 2 2h1a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-9a2 2 0 0 1 2 -2M9 13a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"/></svg>
+            <span class="ina-caption">Posisikan wajah di dalam bingkai</span>
+            <span class="ina-caption-small">Kamera aktif setelah izin diberikan</span>
+          </div>
+          <div class="ina-flex-col ina-gap-3">
+            <div class="ina-label">Sebelum mengambil foto</div>
+            <div class="ina-flex ina-gap-2 ina-items-start"><svg class="ina-icon ina-icon-16 ina-text-success" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0M9 12l2 2l4 -4"/></svg><span class="ina-caption">Pencahayaan cukup, wajah tidak tertutup masker/kacamata hitam</span></div>
+            <div class="ina-flex ina-gap-2 ina-items-start"><svg class="ina-icon ina-icon-16 ina-text-success" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0M9 12l2 2l4 -4"/></svg><span class="ina-caption">Ikuti instruksi kedip/tengok untuk uji keaslian (liveness)</span></div>
+            <div class="ina-flex ina-gap-2 ina-items-start"><svg class="ina-icon ina-icon-16 ina-text-success" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0M9 12l2 2l4 -4"/></svg><span class="ina-caption">Foto diproses di server Pemda, tidak dibagikan ke pihak ketiga</span></div>
+            <button type="button" class="ina-btn ina-btn-secondary ina-btn-md ina-fit" data-toast="Foto diambil; keaslian terdeteksi (kedipan ✓)." data-toast-type="success"><svg class="ina-icon ina-icon-16" aria-hidden="true" viewBox="0 0 24 24"><path d="M5 7h1a2 2 0 0 0 2 -2a1 1 0 0 1 1 -1h6a1 1 0 0 1 1 1a2 2 0 0 0 2 2h1a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-9a2 2 0 0 1 2 -2M9 13a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"/></svg> Ambil foto</button>
+            <a href="#" class="ina-caption-small" data-toast="Alternatif: verifikasi tatap muka di Disdukcapil/MPP dengan membawa KTP-el." data-toast-type="info">Tidak bisa memakai kamera?</a>
+          </div>
+        </div>
+      </div>
+      <div class="ina-step-panel">
+        <div class="ina-empty-state" style="padding:var(--ina-spacing-4);">
+          <div class="ina-stat-icon-wrap ina-stat-icon-success ina-stat-icon-lg"><svg class="ina-icon ina-icon-24" aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12l5 5l10 -10"/></svg></div>
+          <h2 class="ina-empty-state-title">Identitas terverifikasi</h2>
+          <p class="ina-empty-state-desc">Data KTP cocok dengan Dukcapil dan wajah sesuai foto KTP-el. Akun Anda dapat mengajukan seluruh layanan daring tanpa verifikasi ulang.</p>
+        </div>
+        <div class="ina-kv-grid ina-kv-grid-wide">
+          <span class="ina-label">Kecocokan data</span><span class="ina-text-success">NIK, nama, tanggal lahir — cocok</span>
+          <span class="ina-label">Kecocokan wajah</span><span class="ina-text-success ina-tabular">98,2% · keaslian ✓</span>
+          <span class="ina-label">Nomor verifikasi</span><span class="ina-tabular">VF-2026-09-118204</span>
+          <span class="ina-label">Berlaku</span><span>Sampai ada perubahan data kependudukan</span>
+        </div>
+      </div>
+      <div class="ina-flex ina-justify-between ina-gap-2">
+        <button type="button" class="ina-btn ina-btn-tertiary ina-btn-md" data-step-prev>Kembali</button>
+        <button type="button" class="ina-btn ina-btn-primary ina-btn-md" data-step-next data-next-label="Lanjut" data-finish-label="Selesai">Lanjut</button>
+      </div>
+    </div>
+    <div class="ina-auth-footer">
+      Data tidak cocok? <a href="../bantuan/tiket.html">Hubungi helpdesk</a> atau datang ke Disdukcapil.
+      <div class="ina-caption-extra-small ina-text-muted ina-mt-2">© 2026 Diskominfo Kab. HSS · IDDS v1.9.0 · <a href="../bantuan/bantuan.html">Bantuan</a> · <a href="../bantuan/kebijakan-privasi.html">Privasi</a></div>
+    </div>
+  </div>
+
+  <script src="../../assets/idds-admin.js"></script>
+</body>
+</html>

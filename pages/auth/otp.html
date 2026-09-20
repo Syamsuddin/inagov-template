@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light" data-brand="hss">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Verifikasi 2FA 6 digit OTP dengan auto-focus input dan timer kirim ulang — Portal Terpadu Pemkab HSS">
+  <title>Verifikasi OTP — Portal Terpadu Pemkab HSS</title>
+  <link rel="stylesheet" href="../../assets/idds-tokens.css">
+  <link rel="stylesheet" href="../../assets/idds-utilities.css">
+  <link rel="stylesheet" href="../../assets/idds-admin.css">
+</head>
+<body class="ina-auth-page">
+  <button type="button" class="ina-icon-btn ina-auth-theme-toggle" data-toggle-theme aria-label="Ganti Mode Gelap/Terang">
+    <svg class="ina-icon ina-icon-20 ina-icon-moon" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"/></svg>
+    <svg class="ina-icon ina-icon-20 ina-icon-sun" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0M3 12h1M20 12h1M12 3v1M12 20v1M5.6 5.6l.7 .7M17.7 17.7l.7 .7M5.6 18.4l.7 -.7M17.7 6.3l.7 -.7"/></svg>
+  </button>
+
+  <div class="ina-auth-box">
+    <div class="ina-auth-header">
+      <div class="ina-brand-logo ina-brand-logo-lg">HSS</div>
+      <h1 class="ina-h4 ina-mt-1">Verifikasi Keamanan (2FA)</h1>
+      <p class="ina-caption ina-text-muted">Masukkan 6 digit kode OTP yang dikirim ke aplikasi autentikator atau WhatsApp dinas Anda.</p>
+    </div>
+
+    <form class="ina-auth-form" onsubmit="event.preventDefault(); window.location.href='../../index.html';">
+      <div class="ina-otp-group" role="group" aria-label="Kode OTP 6 digit">
+        <input type="text" inputmode="numeric" pattern="[0-9]" maxlength="1" autocomplete="one-time-code" class="ina-otp-input ina-tabular" aria-label="Digit 1" autofocus>
+        <input type="text" inputmode="numeric" pattern="[0-9]" maxlength="1" autocomplete="off" class="ina-otp-input ina-tabular" aria-label="Digit 2">
+        <input type="text" inputmode="numeric" pattern="[0-9]" maxlength="1" autocomplete="off" class="ina-otp-input ina-tabular" aria-label="Digit 3">
+        <input type="text" inputmode="numeric" pattern="[0-9]" maxlength="1" autocomplete="off" class="ina-otp-input ina-tabular" aria-label="Digit 4">
+        <input type="text" inputmode="numeric" pattern="[0-9]" maxlength="1" autocomplete="off" class="ina-otp-input ina-tabular" aria-label="Digit 5">
+        <input type="text" inputmode="numeric" pattern="[0-9]" maxlength="1" autocomplete="off" class="ina-otp-input ina-tabular" aria-label="Digit 6">
+      </div>
+      <div class="ina-text-center ina-caption-small ina-text-muted">
+        Kirim ulang kode dalam <strong class="ina-tabular ina-text-brand" id="otpTimer" data-seconds="60">01:00</strong>
+        <div class="ina-mt-1"><button type="button" class="ina-btn-link ina-caption-small" id="otpResend" disabled>Kirim ulang kode</button></div>
+      </div>
+      <button type="submit" class="ina-btn ina-btn-primary ina-btn-lg ina-w-full">
+        <svg class="ina-icon ina-icon-20" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3a12 12 0 0 0 8.5 3a12 12 0 0 1 -8.5 15a12 12 0 0 1 -8.5 -15a12 12 0 0 0 8.5 -3"/></svg>
+        <span>Verifikasi & masuk</span>
+      </button>
+      <div class="ina-divider-text">metode lain</div>
+      <div class="ina-flex ina-gap-2 ina-justify-center ina-flex-wrap">
+        <button type="button" class="ina-btn ina-btn-tertiary ina-btn-sm" data-toast="Kode dikirim via WhatsApp." data-toast-type="success">WhatsApp</button>
+        <button type="button" class="ina-btn ina-btn-tertiary ina-btn-sm" data-toast="Kode dikirim via email dinas." data-toast-type="success">Email</button>
+        <button type="button" class="ina-btn ina-btn-tertiary ina-btn-sm" data-toast="Masukkan salah satu kode cadangan." data-toast-type="info">Kode cadangan</button>
+      </div>
+      <a href="login.html" class="ina-btn-link ina-caption-small ina-text-center">Kembali ke halaman masuk</a>
+    </form>
+  </div>
+
+  <script src="../../assets/idds-admin.js"></script>
+</body>
+</html>

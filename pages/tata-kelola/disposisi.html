@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light" data-brand="hss">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Disposisi dan persetujuan berjenjang: setujui, kembalikan, tolak, teruskan, delegasi, dengan TTE — IDDS Pemkab HSS">
+  <title>Disposisi & Persetujuan — IDDS Admin Dashboard Pemkab HSS</title>
+  <link rel="stylesheet" href="../../assets/idds-tokens.css">
+  <link rel="stylesheet" href="../../assets/idds-utilities.css">
+  <link rel="stylesheet" href="../../assets/idds-admin.css">
+</head>
+<body>
+  <div class="ina-app">
+    <!-- Mobile Sidebar Backdrop -->
+    <div class="ina-sidebar-backdrop"></div>
+
+    <!-- Sidebar Navigation -->
+    <aside class="ina-sidebar" aria-label="Navigasi Utama">
+      <div class="ina-sidebar-brand">
+        <a href="../../index.html" class="ina-brand-link">
+          <div class="ina-brand-logo">HSS</div>
+          <div>
+            <div class="ina-brand-title">Pemkab HSS</div>
+            <div class="ina-brand-subtitle">Portal Layanan Terpadu</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="ina-sidebar-user">
+        <div class="ina-avatar">
+          AS
+          <span class="ina-status-dot ina-status-online" title="Online"></span>
+        </div>
+        <div class="ina-user-info">
+          <span class="ina-user-name">Ahmad Syahrani</span>
+          <span class="ina-user-role">Administrator Utama</span>
+        </div>
+      </div>
+
+      <ul class="ina-sidebar-nav">
+        <li class="ina-nav-group-label">Menu Utama</li>
+        <li class="ina-nav-item">
+          <a href="../../index.html" class="ina-nav-link">
+            <svg class="ina-icon ina-icon-20 ina-nav-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M3 13a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1zM15 9a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1zM9 5a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v14a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"/></svg>
+            <span class="ina-nav-link-text">Dashboard Utama</span>
+          </a>
+        </li>
+        <li class="ina-nav-item">
+          <a href="../dashboard/dashboard-analytics.html" class="ina-nav-link">
+            <svg class="ina-icon ina-icon-20 ina-nav-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M3 3v18h18M20 18v3M16 16v5M12 13v8M8 18v3M4 21h17"/></svg>
+            <span class="ina-nav-link-text">Analitik & Kinerja</span>
+          </a>
+        </li>
+        <li class="ina-nav-item">
+          <a href="../dashboard/dashboard-eksekutif.html" class="ina-nav-link">
+            <svg class="ina-icon ina-icon-20 ina-nav-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M3 5a1 1 0 0 1 1 -1h16a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-16a1 1 0 0 1 -1 -1v-10zM7 20h10M9 16v4M15 16v4M8 12l3 -3l2 2l4 -4"/></svg>
+            <span class="ina-nav-link-text">Dashboard Eksekutif</span>
+            <span class="ina-badge ina-badge-sm ina-badge-soft-warning">Bupati</span>
+          </a>
+        </li>
+        <li class="ina-nav-item">
+          <a href="../dashboard/keuangan.html" class="ina-nav-link">
+            <svg class="ina-icon ina-icon-20 ina-nav-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M17 8v-3a1 1 0 0 0 -1 -1h-10a2 2 0 0 0 0 4h12a1 1 0 0 1 1 1v3m0 4v3a1 1 0 0 1 -1 1h-12a2 2 0 0 1 -2 -2v-12M20 12v4h-4a2 2 0 0 1 0 -4h4"/></svg>
+            <span class="ina-nav-link-text">Keuangan & APBD</span>
+            <span class="ina-badge ina-badge-sm ina-badge-soft-brand">SP2D</span>
+          </a>
+        </li>
+        <li class="ina-nav-group-label">Layanan Publik</li>
+        <li class="ina-nav-item" data-submenu>
+          <button type="button" class="ina-nav-link">
+            <svg class="ina-icon ina-icon-20 ina-nav-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M4 4h6v6h-6zM14 4h6v6h-6zM4 14h6v6h-6zM14 14h6v6h-6z"/></svg>
+            <span class="ina-nav-link-text">Layanan Terpadu</span>
+            <svg class="ina-icon ina-icon-16 ina-nav-chevron" aria-hidden="true" viewBox="0 0 24 24"><path d="M9 6l6 6l-6 6"/></svg>
+          </button>
+          <div class="ina-submenu">
+            <a href="../layanan/layanan.html" class="ina-submenu-link">Katalog Layanan</a>
+            <a href="../layanan/layanan-detail.html" class="ina-submenu-link">Standar Pelayanan</a>
+            <a href="../layanan/permohonan.html" class="ina-submenu-link">Permohonan Baru</a>
+            <a href="../layanan/lacak.html" class="ina-submenu-link">Lacak Permohonan</a>
+          </div>
+        </li>
+        <li class="ina-nav-item">
+          <a href="disposisi.html" class="ina-nav-link ina-active" aria-current="page">
+            <svg class="ina-icon ina-icon-20 ina-nav-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M3.5 5.5l1.5 1.5l2.5 -2.5M3.5 11.5l1.5 1.5l2.5 -2.5M3.5 17.5l1.5 1.5l2.5 -2.5M11 6l9 0M11 12l9 0M11 18l9 0"/></svg>
+            <span class="ina-nav-link-text">Disposisi Berkas</span>
+            <span class="ina-badge ina-badge-sm ina-badge-fill-warning">5</span>
+          </a>
+        </li>
+        <li class="ina-nav-item" data-submenu>
+          <button type="button" class="ina-nav-link">
+            <svg class="ina-icon ina-icon-20 ina-nav-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M8 9h8M8 13h6M9 18h-3a3 3 0 0 1 -3 -3v-8a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v8a3 3 0 0 1 -3 3h-3l-3 3l-3 -3"/></svg>
+            <span class="ina-nav-link-text">Partisipasi Publik</span>
+            <svg class="ina-icon ina-icon-16 ina-nav-chevron" aria-hidden="true" viewBox="0 0 24 24"><path d="M9 6l6 6l-6 6"/></svg>
+          </button>
+          <div class="ina-submenu">
+            <a href="../partisipasi/pengaduan.html" class="ina-submenu-link">Pengaduan Masyarakat</a>
+            <a href="../partisipasi/pengaduan-detail.html" class="ina-submenu-link">Tindak Lanjut Aduan</a>
+            <a href="../partisipasi/skm.html" class="ina-submenu-link">Survei Kepuasan</a>
+            <a href="../partisipasi/skm-hasil.html" class="ina-submenu-link">Hasil SKM / IKM</a>
+            <a href="../layanan/antrian.html" class="ina-submenu-link">Antrian & Reservasi</a>
+          </div>
+        </li>
+        <li class="ina-nav-item" data-submenu>
+          <button type="button" class="ina-nav-link">
+            <svg class="ina-icon ina-icon-20 ina-nav-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0M3.6 9h16.8M3.6 15h16.8M11.5 3a17 17 0 0 0 0 18M12.5 3a17 17 0 0 1 0 18"/></svg>
+            <span class="ina-nav-link-text">Informasi Publik</span>
+            <svg class="ina-icon ina-icon-16 ina-nav-chevron" aria-hidden="true" viewBox="0 0 24 24"><path d="M9 6l6 6l-6 6"/></svg>
+          </button>
+          <div class="ina-submenu">
+            <a href="../informasi/portal.html" class="ina-submenu-link">Beranda Portal</a>
+            <a href="../publik/publik-beranda.html" class="ina-submenu-link">Portal Publik (tanpa sidebar)</a>
+            <a href="../informasi/ppid.html" class="ina-submenu-link">PPID</a>
+            <a href="../informasi/jdih.html" class="ina-submenu-link">JDIH</a>
+            <a href="../informasi/jdih-detail.html" class="ina-submenu-link">Detail Produk Hukum</a>
+            <a href="../informasi/data.html" class="ina-submenu-link">Katalog Data</a>
+            <a href="../informasi/dataset.html" class="ina-submenu-link">Detail Dataset</a>
+          </div>
+        </li>
+        <li class="ina-nav-group-label">Aplikasi & Komunikasi</li>
+        <li class="ina-nav-item">
+          <a href="../komunikasi/mail.html" class="ina-nav-link">
+            <svg class="ina-icon ina-icon-20 ina-nav-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10zM3 7l9 6l9 -6"/></svg>
+            <span class="ina-nav-link-text">Surel Dinas</span>
+            <span class="ina-badge ina-badge-sm ina-badge-fill-danger">4</span>
+          </a>
+        </li>
+        <li class="ina-nav-item">
+          <a href="../komunikasi/chat.html" class="ina-nav-link">
+            <svg class="ina-icon ina-icon-20 ina-nav-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M3 20l1.3 -3.9a9 8 0 1 1 3.4 2.9l-4.7 1zM12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"/></svg>
+            <span class="ina-nav-link-text">Pesan SKPD</span>
+            <span class="ina-badge ina-badge-sm ina-badge-soft-success">3</span>
+          </a>
+        </li>
+        <li class="ina-nav-group-label">Administrasi Internal</li>
+        <li class="ina-nav-item" data-submenu>
+          <button type="button" class="ina-nav-link">
+            <svg class="ina-icon ina-icon-20 ina-nav-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M14 3v4a1 1 0 0 0 1 1h4M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2zM9 9l1 0M9 13l6 0M9 17l6 0"/></svg>
+            <span class="ina-nav-link-text">Kesekretariatan</span>
+            <svg class="ina-icon ina-icon-16 ina-nav-chevron" aria-hidden="true" viewBox="0 0 24 24"><path d="M9 6l6 6l-6 6"/></svg>
+          </button>
+          <div class="ina-submenu">
+            <a href="../kesekretariatan/naskah.html" class="ina-submenu-link">Naskah Dinas</a>
+            <a href="../kesekretariatan/tte.html" class="ina-submenu-link">Tanda Tangan Elektronik</a>
+            <a href="../kesekretariatan/agenda.html" class="ina-submenu-link">Agenda Pimpinan</a>
+          </div>
+        </li>
+        <li class="ina-nav-item" data-submenu>
+          <button type="button" class="ina-nav-link">
+            <svg class="ina-icon ina-icon-20 ina-nav-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M9 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2M16 3.13a4 4 0 0 1 0 7.75M21 21v-2a4 4 0 0 0 -3 -3.85"/></svg>
+            <span class="ina-nav-link-text">Kepegawaian</span>
+            <svg class="ina-icon ina-icon-16 ina-nav-chevron" aria-hidden="true" viewBox="0 0 24 24"><path d="M9 6l6 6l-6 6"/></svg>
+          </button>
+          <div class="ina-submenu">
+            <a href="../kepegawaian/pegawai.html" class="ina-submenu-link">Direktori Pegawai</a>
+            <a href="../kepegawaian/pegawai-detail.html" class="ina-submenu-link">Profil Pegawai (HR)</a>
+            <a href="../kepegawaian/presensi.html" class="ina-submenu-link">Presensi</a>
+            <a href="../kepegawaian/cuti.html" class="ina-submenu-link">Cuti</a>
+            <a href="../kepegawaian/kinerja.html" class="ina-submenu-link">Kinerja &amp; SKP</a>
+          </div>
+        </li>
+        <li class="ina-nav-item" data-submenu>
+          <button type="button" class="ina-nav-link">
+            <svg class="ina-icon ina-icon-20 ina-nav-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M3 3v18h18M20 18v3M16 16v5M12 13v8M8 18v3M4 21h17"/></svg>
+            <span class="ina-nav-link-text">Perencanaan & Aset</span>
+            <svg class="ina-icon ina-icon-16 ina-nav-chevron" aria-hidden="true" viewBox="0 0 24 24"><path d="M9 6l6 6l-6 6"/></svg>
+          </button>
+          <div class="ina-submenu">
+            <a href="../perencanaan/monev.html" class="ina-submenu-link">Monev Realisasi</a>
+            <a href="../perencanaan/aset.html" class="ina-submenu-link">Aset Daerah (BMD)</a>
+          </div>
+        </li>
+        <li class="ina-nav-group-label">Tata Kelola Sistem</li>
+        <li class="ina-nav-item" data-submenu>
+          <button type="button" class="ina-nav-link">
+            <svg class="ina-icon ina-icon-20 ina-nav-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M11.46 20.846a12 12 0 0 1 -7.96 -14.846a12 12 0 0 0 8.5 -3a12 12 0 0 0 8.5 3a12 12 0 0 1 -.09 7.06M15 19l2 2l4 -4"/></svg>
+            <span class="ina-nav-link-text">Administrasi Sistem</span>
+            <svg class="ina-icon ina-icon-16 ina-nav-chevron" aria-hidden="true" viewBox="0 0 24 24"><path d="M9 6l6 6l-6 6"/></svg>
+          </button>
+          <div class="ina-submenu">
+            <a href="pengguna.html" class="ina-submenu-link">Pengguna</a>
+            <a href="peran.html" class="ina-submenu-link">Peran & Izin</a>
+            <a href="audit.html" class="ina-submenu-link">Log Audit</a>
+            <a href="pengaturan.html" class="ina-submenu-link">Pengaturan Aplikasi</a>
+          </div>
+        </li>
+        <li class="ina-nav-item" data-submenu>
+          <button type="button" class="ina-nav-link">
+            <svg class="ina-icon ina-icon-20 ina-nav-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0M12 16v.01M12 13a2 2 0 0 0 .914 -3.782a1.98 1.98 0 0 0 -2.414 .483"/></svg>
+            <span class="ina-nav-link-text">Pusat Bantuan</span>
+            <svg class="ina-icon ina-icon-16 ina-nav-chevron" aria-hidden="true" viewBox="0 0 24 24"><path d="M9 6l6 6l-6 6"/></svg>
+          </button>
+          <div class="ina-submenu">
+            <a href="../akun/notifikasi.html" class="ina-submenu-link">Notifikasi</a>
+            <a href="../bantuan/bantuan.html" class="ina-submenu-link">Bantuan &amp; FAQ</a>
+            <a href="../bantuan/tiket.html" class="ina-submenu-link">Tiket Helpdesk</a>
+            <a href="../bantuan/kebijakan-privasi.html" class="ina-submenu-link">Kebijakan Privasi</a>
+          </div>
+        </li>
+        <li class="ina-nav-item">
+          <a href="cetak.html" class="ina-nav-link">
+            <svg class="ina-icon ina-icon-20 ina-nav-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M17 17h2a2 2 0 0 0 2 -2v-4a2 2 0 0 0 -2 -2h-14a2 2 0 0 0 -2 2v4a2 2 0 0 0 2 2h2M17 9v-4a2 2 0 0 0 -2 -2h-6a2 2 0 0 0 -2 2v4M7 13m0 2a2 2 0 0 1 2 -2h6a2 2 0 0 1 2 2v4a2 2 0 0 1 -2 2h-6a2 2 0 0 1 -2 -2z"/></svg>
+            <span class="ina-nav-link-text">Cetak Laporan</span>
+          </a>
+        </li>
+        <li class="ina-nav-group-label">Contoh Penerapan</li>
+        <li class="ina-nav-item">
+          <a href="../artikel/katalog-artikel.html" class="ina-nav-link">
+            <svg class="ina-icon ina-icon-20 ina-nav-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M16 6h3a1 1 0 0 1 1 1v11a2 2 0 0 1 -4 0v-13a1 1 0 0 0 -1 -1h-10a1 1 0 0 0 -1 1v12a3 3 0 0 0 3 3h11M8 8l4 0M8 12l4 0M8 16l4 0"/></svg>
+            <span class="ina-nav-link-text">Katalog Artikel</span>
+          </a>
+        </li>
+        <li class="ina-nav-group-label">Komponen & UI Kit</li>
+        <li class="ina-nav-item" data-submenu>
+          <button type="button" class="ina-nav-link">
+            <svg class="ina-icon ina-icon-20 ina-nav-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M3 4m0 1a1 1 0 0 1 1 -1h16a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-16a1 1 0 0 1 -1 -1zM3 14m0 1a1 1 0 0 1 1 -1h16a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-16a1 1 0 0 1 -1 -1z"/></svg>
+            <span class="ina-nav-link-text">Manajemen Data</span>
+            <svg class="ina-icon ina-icon-16 ina-nav-chevron" aria-hidden="true" viewBox="0 0 24 24"><path d="M9 6l6 6l-6 6"/></svg>
+          </button>
+          <div class="ina-submenu">
+            <a href="../ui-kit/tables.html" class="ina-submenu-link">Tabel Data Pegawai</a>
+            <a href="../ui-kit/cards.html" class="ina-submenu-link">Card & Widgets</a>
+            <a href="../ui-kit/forms.html" class="ina-submenu-link">Formulir & Kontrol</a>
+            <a href="../ui-kit/components.html" class="ina-submenu-link">Katalog Komponen</a>
+          </div>
+        </li>
+        <li class="ina-nav-group-label">Autentikasi & Akun</li>
+        <li class="ina-nav-item" data-submenu>
+          <button type="button" class="ina-nav-link">
+            <svg class="ina-icon ina-icon-20 ina-nav-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3a12 12 0 0 0 8.5 3a12 12 0 0 1 -8.5 15a12 12 0 0 1 -8.5 -15a12 12 0 0 0 8.5 -3"/></svg>
+            <span class="ina-nav-link-text">Halaman Masuk</span>
+            <svg class="ina-icon ina-icon-16 ina-nav-chevron" aria-hidden="true" viewBox="0 0 24 24"><path d="M9 6l6 6l-6 6"/></svg>
+          </button>
+          <div class="ina-submenu">
+            <a href="../auth/login.html" class="ina-submenu-link">Masuk (Login)</a>
+            <a href="../auth/register.html" class="ina-submenu-link">Registrasi</a>
+            <a href="../auth/forgot-password.html" class="ina-submenu-link">Lupa Sandi</a>
+            <a href="../auth/otp.html" class="ina-submenu-link">Verifikasi OTP</a>
+            <a href="../auth/lock-screen.html" class="ina-submenu-link">Kunci Layar</a>
+            <a href="../auth/pilih-unit.html" class="ina-submenu-link">Pilih Unit Kerja</a>
+            <a href="../auth/verifikasi-identitas.html" class="ina-submenu-link">Verifikasi Identitas</a>
+            <a href="../auth/persetujuan-privasi.html" class="ina-submenu-link">Persetujuan Privasi</a>
+            <a href="../auth/onboarding.html" class="ina-submenu-link">Onboarding Instansi</a>
+          </div>
+        </li>
+        <li class="ina-nav-item">
+          <a href="../akun/profile.html" class="ina-nav-link">
+            <svg class="ina-icon ina-icon-20 ina-nav-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"/></svg>
+            <span class="ina-nav-link-text">Profil & Pengaturan</span>
+          </a>
+        </li>
+        <li class="ina-nav-item" data-submenu>
+          <button type="button" class="ina-nav-link">
+            <svg class="ina-icon ina-icon-20 ina-nav-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0M12 8v4M12 16h.01"/></svg>
+            <span class="ina-nav-link-text">Halaman Status</span>
+            <svg class="ina-icon ina-icon-16 ina-nav-chevron" aria-hidden="true" viewBox="0 0 24 24"><path d="M9 6l6 6l-6 6"/></svg>
+          </button>
+          <div class="ina-submenu">
+            <a href="../status/404.html" class="ina-submenu-link">404 Tidak Ditemukan</a>
+            <a href="../status/403.html" class="ina-submenu-link">403 Akses Ditolak</a>
+            <a href="../status/500.html" class="ina-submenu-link">500 Gangguan Server</a>
+            <a href="../status/maintenance.html" class="ina-submenu-link">Pemeliharaan</a>
+            <a href="../kios/kios-antrian.html" class="ina-submenu-link">Kios Antrian (layar besar)</a>
+            <a href="../kios/situation-room.html" class="ina-submenu-link">Situation Room (layar besar)</a>
+          </div>
+        </li>
+      </ul>
+
+      <div class="ina-sidebar-footer">
+        <span class="ina-caption-small">IDDS v1.9.0</span>
+        <button type="button" class="ina-btn-link ina-caption-small" data-toast="Sistem beroperasi normal (SLA 99,9%)" data-toast-type="success">Status sistem</button>
+      </div>
+    </aside>
+
+    <!-- Main Wrapper -->
+    <div class="ina-main-wrapper">
+      <!-- Topbar / Header -->
+      <header class="ina-header">
+        <div class="ina-header-left">
+          <button type="button" class="ina-icon-btn" data-toggle-sidebar aria-label="Buka/Tutup Sidebar" data-tooltip="Sidebar" data-tooltip-pos="bottom">
+            <svg class="ina-icon ina-icon-20" aria-hidden="true" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+          <button type="button" class="ina-header-search-btn" data-modal-target="searchModal" aria-label="Pencarian cepat (Ctrl+K)">
+            <svg class="ina-icon ina-icon-16" aria-hidden="true" viewBox="0 0 24 24"><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0M21 21l-6 -6"/></svg>
+            <span>Cari layanan, dokumen, atau NIP...</span>
+            <span class="ina-kbd">Ctrl K</span>
+          </button>
+        </div>
+
+        <div class="ina-header-right">
+          <!-- Brand Switcher -->
+          <select class="ina-brand-select" aria-label="Pilih Brand Instansi">
+            <option value="hss" selected>Pemkab HSS</option>
+            <option value="inagov">INA Gov</option>
+            <option value="panrb">PAN-RB</option>
+            <option value="bkn">BKN</option>
+            <option value="lan">LAN</option>
+            <option value="inapas">INAPAS</option>
+            <option value="inaku">INAKU</option>
+            <option value="bgn">BGN</option>
+          </select>
+
+          <!-- Theme Switcher -->
+          <button type="button" class="ina-icon-btn" data-toggle-theme aria-label="Ganti Mode Gelap/Terang" data-tooltip="Mode Gelap/Terang" data-tooltip-pos="bottom">
+            <svg class="ina-icon ina-icon-20 ina-icon-moon" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"/></svg>
+            <svg class="ina-icon ina-icon-20 ina-icon-sun" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0M3 12h1M20 12h1M12 3v1M12 20v1M5.6 5.6l.7 .7M17.7 17.7l.7 .7M5.6 18.4l.7 -.7M17.7 6.3l.7 -.7"/></svg>
+          </button>
+
+          <!-- Notification Dropdown -->
+          <div class="ina-dropdown">
+            <button type="button" class="ina-icon-btn" data-toggle-dropdown aria-label="Notifikasi">
+              <svg class="ina-icon ina-icon-20" aria-hidden="true" viewBox="0 0 24 24"><path d="M10 5a2 2 0 0 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6M9 17v1a3 3 0 0 0 6 0v-1"/></svg>
+              <span class="ina-badge-dot-indicator"></span>
+            </button>
+            <div class="ina-dropdown-menu ina-dropdown-menu-lg">
+              <div class="ina-dropdown-header ina-flex ina-items-center ina-justify-between">
+                <strong>Notifikasi Dinas</strong>
+                <span class="ina-badge ina-badge-sm ina-badge-soft-brand">3 baru</span>
+              </div>
+              <a href="../komunikasi/mail.html" class="ina-dropdown-item">
+                <div class="ina-stat-icon-wrap ina-stat-icon-primary ina-stat-icon-sm"><svg class="ina-icon ina-icon-16" aria-hidden="true" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10zM3 7l9 6l9 -6"/></svg></div>
+                <div class="ina-flex-1">
+                  <div class="ina-caption ina-label">Disposisi Surat Masuk No. 482</div>
+                  <div class="ina-caption-small ina-text-muted">Dari Sekretaris Daerah · 10 mnt lalu</div>
+                </div>
+              </a>
+              <a href="../dashboard/keuangan.html" class="ina-dropdown-item">
+                <div class="ina-stat-icon-wrap ina-stat-icon-success ina-stat-icon-sm"><svg class="ina-icon ina-icon-16" aria-hidden="true" viewBox="0 0 24 24"><path d="M17 8v-3a1 1 0 0 0 -1 -1h-10a2 2 0 0 0 0 4h12a1 1 0 0 1 1 1v3m0 4v3a1 1 0 0 1 -1 1h-12a2 2 0 0 1 -2 -2v-12M20 12v4h-4a2 2 0 0 1 0 -4h4"/></svg></div>
+                <div class="ina-flex-1">
+                  <div class="ina-caption ina-label">Penerbitan SP2D Tahap 3</div>
+                  <div class="ina-caption-small ina-text-muted">BKAD HSS · 1 jam lalu</div>
+                </div>
+              </a>
+              <a href="../komunikasi/chat.html" class="ina-dropdown-item">
+                <div class="ina-stat-icon-wrap ina-stat-icon-warning ina-stat-icon-sm"><svg class="ina-icon ina-icon-16" aria-hidden="true" viewBox="0 0 24 24"><path d="M3 20l1.3 -3.9a9 8 0 1 1 3.4 2.9l-4.7 1zM12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"/></svg></div>
+                <div class="ina-flex-1">
+                  <div class="ina-caption ina-label">3 pesan baru Tim SPBE</div>
+                  <div class="ina-caption-small ina-text-muted">Grup Koordinasi · 2 jam lalu</div>
+                </div>
+              </a>
+              <div class="ina-dropdown-divider"></div>
+              <a href="../akun/notifikasi.html" class="ina-dropdown-item ina-justify-center ina-text-info">Lihat semua notifikasi</a>
+            </div>
+          </div>
+
+          <!-- User Menu Dropdown -->
+          <div class="ina-dropdown">
+            <button type="button" class="ina-btn ina-btn-tertiary ina-btn-sm ina-gap-2" data-toggle-dropdown aria-label="Menu pengguna">
+              <div class="ina-avatar ina-avatar-sm">AS</div>
+              <span class="ina-caption ina-label ina-header-user-name">A. Syahrani</span>
+              <svg class="ina-icon ina-icon-14" aria-hidden="true" viewBox="0 0 24 24"><path d="M6 9l6 6l6 -6"/></svg>
+            </button>
+            <div class="ina-dropdown-menu">
+              <div class="ina-dropdown-header">
+                <div class="ina-label">Ahmad Syahrani, S.Kom</div>
+                <div class="ina-caption-small ina-tabular ina-text-muted">NIP: 19880412 201101 1 003</div>
+              </div>
+              <a href="../akun/profile.html" class="ina-dropdown-item">
+                <svg class="ina-icon ina-icon-16" aria-hidden="true" viewBox="0 0 24 24"><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"/></svg>
+                Profil Saya
+              </a>
+              <a href="../akun/profile.html#keamanan" class="ina-dropdown-item">
+                <svg class="ina-icon ina-icon-16" aria-hidden="true" viewBox="0 0 24 24"><path d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065zM9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"/></svg>
+                Pengaturan Akun
+              </a>
+              <a href="../auth/lock-screen.html" class="ina-dropdown-item">
+                <svg class="ina-icon ina-icon-16" aria-hidden="true" viewBox="0 0 24 24"><path d="M5 11m0 2a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2zM8 11v-4a4 4 0 0 1 8 0v4"/></svg>
+                Kunci Layar
+              </a>
+              <div class="ina-dropdown-divider"></div>
+              <a href="../auth/login.html" class="ina-dropdown-item ina-text-danger">
+                <svg class="ina-icon ina-icon-16" aria-hidden="true" viewBox="0 0 24 24"><path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2M9 12h12l-3 -3M18 15l3 -3"/></svg>
+                Keluar Sesi
+              </a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content Area -->
+      <main class="ina-content" id="main">
+        <!-- Page Header & Breadcrumb -->
+        <div class="ina-page-header">
+          <div class="ina-page-title-wrap">
+            <nav class="ina-breadcrumb" aria-label="Breadcrumb">
+              <a href="../../index.html" class="ina-breadcrumb-item">Beranda</a>
+              <span class="ina-breadcrumb-sep">/</span>
+              <span class="ina-breadcrumb-item ina-active" aria-current="page">Disposisi Berkas</span>
+            </nav>
+            <h1 class="ina-page-title">Disposisi &amp; Persetujuan Berjenjang</h1>
+            <p class="ina-page-desc">Berkas yang menunggu tindakan Anda sebagai Kepala Bidang Aplikasi &amp; Informatika. Setiap keputusan tercatat dalam log audit dan diteruskan otomatis ke jenjang berikutnya.</p>
+          </div>
+          <div class="ina-flex ina-gap-2 ina-flex-wrap">
+            <button type="button" class="ina-btn ina-btn-secondary ina-btn-md" data-modal-target="delegasiModal"><svg class="ina-icon ina-icon-16" aria-hidden="true" viewBox="0 0 24 24"><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0M16 19h6M19 16v6M6 21v-2a4 4 0 0 1 4 -4h4"/></svg><span>Delegasikan</span></button>
+          </div>
+        </div>
+
+        <div class="ina-grid ina-grid-4">
+          <div class="ina-card ina-stat-card">
+            <div class="ina-stat-top"><span class="ina-stat-label">Menunggu Saya</span><div class="ina-stat-icon-wrap ina-stat-icon-warning"><svg class="ina-icon ina-icon-24" aria-hidden="true" viewBox="0 0 24 24"><path d="M3.5 5.5l1.5 1.5l2.5 -2.5M3.5 11.5l1.5 1.5l2.5 -2.5M3.5 17.5l1.5 1.5l2.5 -2.5M11 6l9 0M11 12l9 0M11 18l9 0"/></svg></div></div>
+            <div class="ina-stat-value ina-tabular">5</div>
+            <div class="ina-stat-trend"><span class="ina-text-danger">2 lewat tenggat</span></div>
+          </div>
+          <div class="ina-card ina-stat-card">
+            <div class="ina-stat-top"><span class="ina-stat-label">Tenggat Hari Ini</span><div class="ina-stat-icon-wrap ina-stat-icon-danger"><svg class="ina-icon ina-icon-24" aria-hidden="true" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0M12 7v5l3 3"/></svg></div></div>
+            <div class="ina-stat-value ina-tabular">1</div>
+            <div class="ina-stat-trend"><span class="ina-text-muted">Nota dinas pengadaan server</span></div>
+          </div>
+          <div class="ina-card ina-stat-card">
+            <div class="ina-stat-top"><span class="ina-stat-label">Disetujui Bulan Ini</span><div class="ina-stat-icon-wrap ina-stat-icon-success"><svg class="ina-icon ina-icon-24" aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12l5 5l10 -10"/></svg></div></div>
+            <div class="ina-stat-value ina-tabular">38</div>
+            <div class="ina-stat-trend"><span class="ina-trend-up ina-nowrap">1,4 hari</span><span>rata-rata waktu respons</span></div>
+          </div>
+          <div class="ina-card ina-stat-card">
+            <div class="ina-stat-top"><span class="ina-stat-label">Dikembalikan / Ditolak</span><div class="ina-stat-icon-wrap ina-stat-icon-info"><svg class="ina-icon ina-icon-24" aria-hidden="true" viewBox="0 0 24 24"><path d="M9 14l-4 -4l4 -4M5 10h11a4 4 0 1 1 0 8h-1"/></svg></div></div>
+            <div class="ina-stat-value ina-tabular">6</div>
+            <div class="ina-stat-trend"><span class="ina-text-muted">4 dikembalikan · 2 ditolak</span></div>
+          </div>
+        </div>
+
+        <div class="ina-grid ina-grid-12">
+          <!-- Daftar berkas -->
+          <div class="ina-col-5">
+            <div class="ina-card">
+              <div class="ina-card-header ina-card-header-tabs">
+                <div class="ina-tabs ina-tabs-borderless" data-tab-group>
+                  <button type="button" class="ina-tab-btn ina-active" data-tab-target="tabMenunggu">Menunggu <span class="ina-badge ina-badge-sm ina-badge-fill-warning">5</span></button>
+                  <button type="button" class="ina-tab-btn" data-tab-target="tabDiteruskan">Diteruskan</button>
+                  <button type="button" class="ina-tab-btn" data-tab-target="tabSelesai">Selesai</button>
+                </div>
+              </div>
+              <div class="ina-card-body ina-p-0">
+                <div id="tabMenunggu" class="ina-tab-content ina-active">
+                  <a href="#berkasDetail" class="ina-dropdown-item ina-items-start ina-py-3" style="background-color:var(--ina-background-brand-subtle);" aria-current="true">
+                    <div class="ina-flex-1">
+                      <div class="ina-flex ina-items-center ina-justify-between ina-gap-2"><span class="ina-caption-small ina-tabular ina-text-muted">ND/027/DISKOMINFO/IX/2026</span><span class="ina-badge ina-badge-sm ina-badge-fill-danger">Segera</span></div>
+                      <div class="ina-label ina-clamp-1">Usulan pengadaan server &amp; storage pusat data 2027</div>
+                      <div class="ina-caption-small ina-text-muted">Kasi Infrastruktur TIK · tenggat hari ini 15.00</div>
+                    </div>
+                  </a>
+                  <a href="#berkasDetail" class="ina-dropdown-item ina-items-start ina-py-3">
+                    <div class="ina-flex-1">
+                      <div class="ina-flex ina-items-center ina-justify-between ina-gap-2"><span class="ina-caption-small ina-tabular ina-text-muted">SPPD/114/IX/2026</span><span class="ina-badge ina-badge-sm ina-badge-soft-warning">Lewat tenggat</span></div>
+                      <div class="ina-label ina-clamp-1">Perjalanan dinas bimtek SPBE Banjarmasin, 3 orang</div>
+                      <div class="ina-caption-small ina-text-muted">Staf Umum · tenggat 18 Sep</div>
+                    </div>
+                  </a>
+                  <a href="#berkasDetail" class="ina-dropdown-item ina-items-start ina-py-3">
+                    <div class="ina-flex-1">
+                      <div class="ina-flex ina-items-center ina-justify-between ina-gap-2"><span class="ina-caption-small ina-tabular ina-text-muted">CUTI/2026/0219</span><span class="ina-badge ina-badge-sm ina-badge-soft-warning">Lewat tenggat</span></div>
+                      <div class="ina-label ina-clamp-1">Cuti tahunan Ahmad Fadhillah, 6–8 Okt 2026</div>
+                      <div class="ina-caption-small ina-text-muted">Pranata Komputer · tenggat 18 Sep</div>
+                    </div>
+                  </a>
+                  <a href="#berkasDetail" class="ina-dropdown-item ina-items-start ina-py-3">
+                    <div class="ina-flex-1">
+                      <div class="ina-flex ina-items-center ina-justify-between ina-gap-2"><span class="ina-caption-small ina-tabular ina-text-muted">TOR/008/APTIKA/2026</span><span class="ina-badge ina-badge-sm ina-badge-soft-neutral">Normal</span></div>
+                      <div class="ina-label ina-clamp-1">KAK pengembangan modul integrasi SIPD–SAKTI</div>
+                      <div class="ina-caption-small ina-text-muted">Kasi Aplikasi · tenggat 24 Sep</div>
+                    </div>
+                  </a>
+                  <a href="#berkasDetail" class="ina-dropdown-item ina-items-start ina-py-3">
+                    <div class="ina-flex-1">
+                      <div class="ina-flex ina-items-center ina-justify-between ina-gap-2"><span class="ina-caption-small ina-tabular ina-text-muted">SM/482/SETDA/IX/2026</span><span class="ina-badge ina-badge-sm ina-badge-soft-neutral">Normal</span></div>
+                      <div class="ina-label ina-clamp-1">Undangan rakor evaluasi SPBE — konfirmasi kehadiran</div>
+                      <div class="ina-caption-small ina-text-muted">Disposisi Kadis · tenggat 23 Sep</div>
+                    </div>
+                  </a>
+                </div>
+                <div id="tabDiteruskan" class="ina-tab-content">
+                  <a href="#berkasDetail" class="ina-dropdown-item ina-items-start ina-py-3">
+                    <div class="ina-flex-1">
+                      <div class="ina-caption-small ina-tabular ina-text-muted">ND/025/DISKOMINFO/IX/2026</div>
+                      <div class="ina-label ina-clamp-1">Perpanjangan langganan bandwidth 2027</div>
+                      <div class="ina-caption-small ina-text-muted">Menunggu Kepala Dinas · diteruskan 17 Sep</div>
+                    </div>
+                  </a>
+                  <a href="#berkasDetail" class="ina-dropdown-item ina-items-start ina-py-3">
+                    <div class="ina-flex-1">
+                      <div class="ina-caption-small ina-tabular ina-text-muted">TOR/007/APTIKA/2026</div>
+                      <div class="ina-label ina-clamp-1">KAK audit keamanan aplikasi layanan publik</div>
+                      <div class="ina-caption-small ina-text-muted">Menunggu Sekretaris Dinas · diteruskan 16 Sep</div>
+                    </div>
+                  </a>
+                </div>
+                <div id="tabSelesai" class="ina-tab-content">
+                  <a href="#berkasDetail" class="ina-dropdown-item ina-items-start ina-py-3">
+                    <div class="ina-flex-1">
+                      <div class="ina-flex ina-items-center ina-justify-between ina-gap-2"><span class="ina-caption-small ina-tabular ina-text-muted">CUTI/2026/0201</span><span class="ina-badge ina-badge-sm ina-badge-soft-success">Disetujui</span></div>
+                      <div class="ina-label ina-clamp-1">Cuti sakit Noor Hikmah, 2 hari</div>
+                      <div class="ina-caption-small ina-text-muted">Selesai 15 Sep</div>
+                    </div>
+                  </a>
+                  <a href="#berkasDetail" class="ina-dropdown-item ina-items-start ina-py-3">
+                    <div class="ina-flex-1">
+                      <div class="ina-flex ina-items-center ina-justify-between ina-gap-2"><span class="ina-caption-small ina-tabular ina-text-muted">SPPD/109/IX/2026</span><span class="ina-badge ina-badge-sm ina-badge-soft-danger">Dikembalikan</span></div>
+                      <div class="ina-label ina-clamp-1">Perjalanan dinas monitoring jaringan desa</div>
+                      <div class="ina-caption-small ina-text-muted">Dikembalikan 14 Sep · rincian biaya tidak sesuai SBU</div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Detail berkas -->
+          <div class="ina-col-7 ina-flex-col ina-gap-6" id="berkasDetail">
+            <div class="ina-card">
+              <div class="ina-card-header">
+                <div>
+                  <div class="ina-flex ina-items-center ina-gap-2 ina-flex-wrap ina-mb-1">
+                    <span class="ina-caption-small ina-tabular ina-text-muted">ND/027/DISKOMINFO/IX/2026</span>
+                    <span class="ina-badge ina-badge-sm ina-badge-fill-danger">Segera</span>
+                    <span class="ina-badge ina-badge-sm ina-badge-soft-neutral">Nota dinas</span>
+                  </div>
+                  <h2 class="ina-card-title">Usulan pengadaan server &amp; storage pusat data 2027</h2>
+                  <span class="ina-card-subtitle">Diajukan Rahmat Hidayat, S.T. (Kasi Infrastruktur TIK) · 17 Sep 2026 · nilai usulan <span class="ina-tabular">Rp 1.850.000.000</span></span>
+                </div>
+                <div class="ina-card-header-actions">
+                  <button type="button" class="ina-icon-btn" data-tooltip="Cetak" data-go="cetak.html" aria-label="Cetak berkas"><svg class="ina-icon ina-icon-20" aria-hidden="true" viewBox="0 0 24 24"><path d="M17 17h2a2 2 0 0 0 2 -2v-4a2 2 0 0 0 -2 -2h-14a2 2 0 0 0 -2 2v4a2 2 0 0 0 2 2h2M17 9v-4a2 2 0 0 0 -2 -2h-6a2 2 0 0 0 -2 2v4M7 13m0 2a2 2 0 0 1 2 -2h6a2 2 0 0 1 2 2v4a2 2 0 0 1 -2 2h-6a2 2 0 0 1 -2 -2z"/></svg></button>
+                  <div class="ina-dropdown">
+                    <button type="button" class="ina-icon-btn" data-toggle-dropdown aria-label="Menu lainnya"><svg class="ina-icon ina-icon-20" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0M12 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0M12 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"/></svg></button>
+                    <div class="ina-dropdown-menu">
+                      <button type="button" class="ina-dropdown-item" data-modal-target="teruskanModal">Teruskan ke pejabat lain</button>
+                      <button type="button" class="ina-dropdown-item" data-toast="Berkas ditandai untuk ditinjau ulang besok 08.00." data-toast-type="info">Ingatkan saya besok</button>
+                      <button type="button" class="ina-dropdown-item" data-toast="Tautan berkas disalin." data-toast-type="success">Salin tautan berkas</button>
+                      <div class="ina-dropdown-divider"></div>
+                      <a href="audit.html" class="ina-dropdown-item">Lihat jejak audit</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="ina-card-body ina-gap-4">
+                <div class="ina-alert ina-alert-danger">
+                  <svg class="ina-icon ina-icon-20" aria-hidden="true" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0M12 7v5l3 3"/></svg>
+                  <div class="ina-alert-content"><div class="ina-alert-desc">Tenggat tindakan <strong>hari ini pukul 15.00 WITA</strong> agar usulan masuk batas akhir input RKA di SIPD. Setelah tenggat, berkas dieskalasi otomatis ke Kepala Dinas.</div></div>
+                </div>
+
+                <div class="ina-tabs" data-tab-group>
+                  <button type="button" class="ina-tab-btn ina-active" data-tab-target="tabRingkas">Ringkasan</button>
+                  <button type="button" class="ina-tab-btn" data-tab-target="tabDok">Dokumen <span class="ina-badge ina-badge-sm ina-badge-soft-brand">4</span></button>
+                  <button type="button" class="ina-tab-btn" data-tab-target="tabRiwayat">Riwayat persetujuan</button>
+                  <button type="button" class="ina-tab-btn" data-tab-target="tabKomentar">Catatan <span class="ina-badge ina-badge-sm ina-badge-soft-neutral">2</span></button>
+                </div>
+
+                <div id="tabRingkas" class="ina-tab-content ina-active">
+                  <div class="ina-kv-grid ina-kv-grid-wide ina-mb-4">
+                    <span class="ina-label">Perihal</span><span>Usulan pengadaan 2 unit server rack, 1 unit storage 100 TB, dan UPS untuk pusat data Diskominfo pada APBD 2027.</span>
+                    <span class="ina-label">Program / kegiatan</span><span>Pengelolaan e-Government · Penyelenggaraan Sistem Jaringan Intra Pemda (2.16.03.2.02)</span>
+                    <span class="ina-label">Nilai usulan</span><span class="ina-tabular">Rp 1.850.000.000 (belanja modal)</span>
+                    <span class="ina-label">Dasar</span><span>Rekomendasi audit infrastruktur 2026: kapasitas storage 91%, server produksi berusia 7 tahun</span>
+                    <span class="ina-label">Alur persetujuan</span><span>Kasi → <strong>Kabid Aptika</strong> → Sekretaris Dinas → Kepala Dinas</span>
+                  </div>
+                  <p class="ina-body-small">Dengan hormat, sehubungan dengan hasil audit infrastruktur pusat data tahun 2026 yang menunjukkan kapasitas penyimpanan telah mencapai 91% dan dua server produksi telah melewati masa pakai teknis, bersama ini diusulkan pengadaan sebagaimana rincian terlampir. Spesifikasi telah mengacu pada standar Arsitektur SPBE Nasional dan katalog elektronik LKPP.</p>
+                </div>
+
+                <div id="tabDok" class="ina-tab-content">
+                  <div class="ina-file-list">
+                    <div class="ina-file-item"><svg class="ina-icon ina-icon-20" aria-hidden="true" viewBox="0 0 24 24"><path d="M14 3v4a1 1 0 0 0 1 1h4M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"/></svg><div class="ina-flex-1"><div class="ina-file-item-name">nota-dinas-027-usulan-server.pdf</div><div class="ina-caption-small ina-text-muted">Nota dinas · 2 halaman · 318 KB · TTE Kasi ✓</div></div><button type="button" class="ina-icon-btn ina-icon-btn-sm" data-toast="Membuka pratinjau nota dinas" data-toast-type="info" aria-label="Lihat"><svg class="ina-icon ina-icon-16" aria-hidden="true" viewBox="0 0 24 24"><path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6"/></svg></button></div>
+                    <div class="ina-file-item"><svg class="ina-icon ina-icon-20" aria-hidden="true" viewBox="0 0 24 24"><path d="M14 3v4a1 1 0 0 0 1 1h4M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"/></svg><div class="ina-flex-1"><div class="ina-file-item-name">rab-server-storage-2027.xlsx</div><div class="ina-caption-small ina-text-muted">RAB · harga e-katalog · 84 KB</div></div><button type="button" class="ina-icon-btn ina-icon-btn-sm" data-toast="Mengunduh RAB" data-toast-type="info" aria-label="Unduh"><svg class="ina-icon ina-icon-16" aria-hidden="true" viewBox="0 0 24 24"><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2M7 11l5 5l5 -5M12 4v12"/></svg></button></div>
+                    <div class="ina-file-item"><svg class="ina-icon ina-icon-20" aria-hidden="true" viewBox="0 0 24 24"><path d="M14 3v4a1 1 0 0 0 1 1h4M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"/></svg><div class="ina-flex-1"><div class="ina-file-item-name">spesifikasi-teknis.pdf</div><div class="ina-caption-small ina-text-muted">Spesifikasi · 11 halaman · 1,2 MB</div></div><button type="button" class="ina-icon-btn ina-icon-btn-sm" data-toast="Membuka spesifikasi teknis" data-toast-type="info" aria-label="Lihat"><svg class="ina-icon ina-icon-16" aria-hidden="true" viewBox="0 0 24 24"><path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6"/></svg></button></div>
+                    <div class="ina-file-item"><svg class="ina-icon ina-icon-20" aria-hidden="true" viewBox="0 0 24 24"><path d="M14 3v4a1 1 0 0 0 1 1h4M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"/></svg><div class="ina-flex-1"><div class="ina-file-item-name">laporan-audit-infrastruktur-2026.pdf</div><div class="ina-caption-small ina-text-muted">Dokumen pendukung · 3,4 MB</div></div><button type="button" class="ina-icon-btn ina-icon-btn-sm" data-toast="Membuka laporan audit" data-toast-type="info" aria-label="Lihat"><svg class="ina-icon ina-icon-16" aria-hidden="true" viewBox="0 0 24 24"><path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6"/></svg></button></div>
+                  </div>
+                </div>
+
+                <div id="tabRiwayat" class="ina-tab-content">
+                  <ol class="ina-timeline">
+                    <li class="ina-timeline-item">
+                      <div class="ina-timeline-marker ina-timeline-marker-warning"><svg class="ina-icon ina-icon-16" aria-hidden="true" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0M12 7v5l3 3"/></svg></div>
+                      <div class="ina-timeline-content"><span class="ina-timeline-title">Menunggu Kepala Bidang Aptika (Anda)</span><span class="ina-timeline-desc">Jenjang 2 dari 4 · tenggat hari ini 15.00</span><span class="ina-timeline-time">Sejak 17 Sep, 16.20</span></div>
+                    </li>
+                    <li class="ina-timeline-item">
+                      <div class="ina-timeline-marker ina-timeline-marker-success"><svg class="ina-icon ina-icon-16" aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12l5 5l10 -10"/></svg></div>
+                      <div class="ina-timeline-content"><span class="ina-timeline-title">Diajukan &amp; ditandatangani Kasi Infrastruktur TIK</span><span class="ina-timeline-desc">Rahmat Hidayat, S.T. · TTE BSrE terverifikasi</span><span class="ina-timeline-time">17 Sep, 16.20</span></div>
+                    </li>
+                    <li class="ina-timeline-item">
+                      <div class="ina-timeline-marker"><svg class="ina-icon ina-icon-16" aria-hidden="true" viewBox="0 0 24 24"><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"/></svg></div>
+                      <div class="ina-timeline-content"><span class="ina-timeline-title">Sekretaris Dinas</span><span class="ina-timeline-desc">Jenjang 3 · belum sampai</span><span class="ina-timeline-time">—</span></div>
+                    </li>
+                    <li class="ina-timeline-item">
+                      <div class="ina-timeline-marker"><svg class="ina-icon ina-icon-16" aria-hidden="true" viewBox="0 0 24 24"><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"/></svg></div>
+                      <div class="ina-timeline-content"><span class="ina-timeline-title">Kepala Dinas</span><span class="ina-timeline-desc">Jenjang 4 · penandatangan akhir</span><span class="ina-timeline-time">—</span></div>
+                    </li>
+                  </ol>
+                </div>
+
+                <div id="tabKomentar" class="ina-tab-content">
+                  <div class="ina-flex-col ina-gap-3">
+                    <div class="ina-flex ina-gap-3 ina-items-start">
+                      <div class="ina-avatar ina-avatar-sm">RH</div>
+                      <div class="ina-card ina-card-flat ina-flex-1"><div class="ina-card-body ina-gap-1"><div class="ina-flex ina-items-center ina-justify-between"><span class="ina-label">Rahmat Hidayat</span><span class="ina-caption-small ina-text-muted">17 Sep, 16.18</span></div><p class="ina-caption">Mohon prioritas, Pak. Batas input RKA di SIPD 19 September. Harga sudah cek e-katalog per 15 Sep.</p></div></div>
+                    </div>
+                    <div class="ina-flex ina-gap-3 ina-items-start">
+                      <div class="ina-avatar ina-avatar-sm">MY</div>
+                      <div class="ina-card ina-card-flat ina-flex-1"><div class="ina-card-body ina-gap-1"><div class="ina-flex ina-items-center ina-justify-between"><span class="ina-label">Maulida Yanti (Perencana)</span><span class="ina-caption-small ina-text-muted">18 Sep, 09.02</span></div><p class="ina-caption">Pagu indikatif Aptika 2027 masih tersedia Rp 2,1 M untuk belanja modal. Aman bila disetujui.</p></div></div>
+                    </div>
+                    <form class="ina-flex ina-gap-2 ina-items-start" data-demo-submit="Catatan ditambahkan.">
+                      <div class="ina-avatar ina-avatar-sm">AS</div>
+                      <textarea class="ina-textarea ina-flex-1" rows="2" placeholder="Tulis catatan untuk pengusul atau pejabat berikutnya..." aria-label="Catatan"></textarea>
+                      <button type="submit" class="ina-btn ina-btn-secondary ina-btn-md" aria-label="Kirim catatan"><svg class="ina-icon ina-icon-16" aria-hidden="true" viewBox="0 0 24 24"><path d="M10 14l11 -11M21 3l-6.5 18a.55 .55 0 0 1 -1 0l-3.5 -7l-7 -3.5a.55 .55 0 0 1 0 -1l18 -6.5"/></svg></button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <div class="ina-card-footer ina-justify-between ina-flex-wrap ina-gap-2">
+                <div class="ina-flex ina-gap-2 ina-flex-wrap">
+                  <button type="button" class="ina-btn ina-btn-danger ina-btn-md" data-modal-target="tolakModal"><svg class="ina-icon ina-icon-16" aria-hidden="true" viewBox="0 0 24 24"><path d="M18 6l-12 12M6 6l12 12"/></svg> Tolak</button>
+                  <button type="button" class="ina-btn ina-btn-secondary ina-btn-md" data-modal-target="kembalikanModal"><svg class="ina-icon ina-icon-16" aria-hidden="true" viewBox="0 0 24 24"><path d="M9 14l-4 -4l4 -4M5 10h11a4 4 0 1 1 0 8h-1"/></svg> Kembalikan</button>
+                </div>
+                <button type="button" class="ina-btn ina-btn-primary ina-btn-md" data-modal-target="setujuModal"><svg class="ina-icon ina-icon-20" aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12l5 5l10 -10"/></svg> Setujui &amp; teruskan</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="ina-footer">
+        <div>&copy; 2026 Pemerintah Kabupaten Hulu Sungai Selatan. Seluruh hak cipta dilindungi.</div>
+        <div class="ina-flex ina-items-center ina-gap-3 ina-flex-wrap">
+          <span id="inaClock" class="ina-tabular"></span>
+          <span class="ina-badge ina-badge-sm ina-badge-soft-success">● Normal</span>
+          <span>IDDS v1.9.0</span>
+        </div>
+      </footer>
+
+    </div>
+  </div>
+
+
+  <!-- Search Modal (Ctrl+K) -->
+  <div class="ina-modal-overlay" id="searchModal">
+    <div class="ina-modal ina-modal-md">
+      <div class="ina-modal-header">
+        <h3 class="ina-modal-title">Pencarian Cepat Sistem</h3>
+        <button type="button" class="ina-alert-close" data-modal-close aria-label="Tutup"><svg class="ina-icon ina-icon-16" aria-hidden="true" viewBox="0 0 24 24"><path d="M18 6l-12 12M6 6l12 12"/></svg></button>
+      </div>
+      <div class="ina-modal-body">
+        <div class="ina-input-group">
+          <svg class="ina-icon ina-icon-20 ina-input-icon-left" aria-hidden="true" viewBox="0 0 24 24"><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0M21 21l-6 -6"/></svg>
+          <input type="search" class="ina-input ina-input-with-icon-left" placeholder="Ketik kata kunci (misal: IMB, NIP, disposisi, audit)..." aria-label="Kata kunci pencarian">
+        </div>
+        <div class="ina-flex-col ina-gap-1">
+          <div class="ina-caption-small ina-text-muted ina-label ina-mb-1">Tautan Pintas</div>
+          <a href="../../index.html" class="ina-dropdown-item" data-search-item><svg class="ina-icon ina-icon-16" aria-hidden="true" viewBox="0 0 24 24"><path d="M3 13a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1zM15 9a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1zM9 5a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v14a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"/></svg> Dashboard Utama</a>
+          <a href="../layanan/layanan.html" class="ina-dropdown-item" data-search-item><svg class="ina-icon ina-icon-16" aria-hidden="true" viewBox="0 0 24 24"><path d="M4 4h6v6h-6zM14 4h6v6h-6zM4 14h6v6h-6zM14 14h6v6h-6z"/></svg> Katalog Layanan Terpadu</a>
+          <a href="../layanan/permohonan.html" class="ina-dropdown-item" data-search-item><svg class="ina-icon ina-icon-16" aria-hidden="true" viewBox="0 0 24 24"><path d="M14 3v4a1 1 0 0 0 1 1h4M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"/></svg> Ajukan Permohonan Layanan</a>
+          <a href="../layanan/lacak.html" class="ina-dropdown-item" data-search-item><svg class="ina-icon ina-icon-16" aria-hidden="true" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0M12 7v5l3 3"/></svg> Lacak Status Permohonan</a>
+          <a href="disposisi.html" class="ina-dropdown-item" data-search-item><svg class="ina-icon ina-icon-16" aria-hidden="true" viewBox="0 0 24 24"><path d="M3.5 5.5l1.5 1.5l2.5 -2.5M3.5 11.5l1.5 1.5l2.5 -2.5M3.5 17.5l1.5 1.5l2.5 -2.5M11 6l9 0M11 12l9 0M11 18l9 0"/></svg> Disposisi & Persetujuan Berkas</a>
+          <a href="../dashboard/keuangan.html" class="ina-dropdown-item" data-search-item><svg class="ina-icon ina-icon-16" aria-hidden="true" viewBox="0 0 24 24"><path d="M17 8v-3a1 1 0 0 0 -1 -1h-10a2 2 0 0 0 0 4h12a1 1 0 0 1 1 1v3m0 4v3a1 1 0 0 1 -1 1h-12a2 2 0 0 1 -2 -2v-12M20 12v4h-4a2 2 0 0 1 0 -4h4"/></svg> Keuangan, APBD & SP2D</a>
+          <a href="pengguna.html" class="ina-dropdown-item" data-search-item><svg class="ina-icon ina-icon-16" aria-hidden="true" viewBox="0 0 24 24"><path d="M9 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2M16 3.13a4 4 0 0 1 0 7.75M21 21v-2a4 4 0 0 0 -3 -3.85"/></svg> Manajemen Pengguna & Peran</a>
+          <a href="audit.html" class="ina-dropdown-item" data-search-item><svg class="ina-icon ina-icon-16" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 8l0 4l2 2M3.05 11a9 9 0 1 1 .5 4m-.5 5v-5h5"/></svg> Log Audit Sistem</a>
+          <a href="pengaturan.html" class="ina-dropdown-item" data-search-item><svg class="ina-icon ina-icon-16" aria-hidden="true" viewBox="0 0 24 24"><path d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065zM9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"/></svg> Pengaturan Aplikasi</a>
+        </div>
+      </div>
+      <div class="ina-modal-footer ina-justify-between">
+        <span class="ina-caption-small ina-text-muted">Navigasi: <span class="ina-kbd">↑</span> <span class="ina-kbd">↓</span> · Buka: <span class="ina-kbd">Enter</span></span>
+        <span class="ina-caption-small ina-text-muted">Tutup: <span class="ina-kbd">Esc</span></span>
+      </div>
+    </div>
+  </div>
+  <div class="ina-modal-overlay" id="setujuModal">
+    <div class="ina-modal ina-modal-md">
+      <div class="ina-modal-header">
+        <h3 class="ina-modal-title">Setujui &amp; Teruskan Berkas</h3>
+        <button type="button" class="ina-alert-close" data-modal-close aria-label="Tutup"><svg class="ina-icon ina-icon-16" aria-hidden="true" viewBox="0 0 24 24"><path d="M18 6l-12 12M6 6l12 12"/></svg></button>
+      </div>
+      <form data-demo-submit="Berkas ND/027 disetujui dan diteruskan ke Sekretaris Dinas." onsubmit="InaModal.close('setujuModal')">
+        <div class="ina-modal-body">
+          <div class="ina-kv-grid ina-kv-grid-wide">
+            <span class="ina-label">Berkas</span><span class="ina-tabular">ND/027/DISKOMINFO/IX/2026</span>
+            <span class="ina-label">Diteruskan ke</span><span>Sekretaris Dinas (jenjang 3 dari 4)</span>
+          </div>
+          <div class="ina-form-group">
+            <label class="ina-form-label" for="setujuCatatan">Catatan disposisi</label>
+            <textarea class="ina-textarea" id="setujuCatatan" rows="3">Setuju diusulkan. Mohon pastikan spesifikasi mengacu e-katalog dan masuk RKA 2027 sebelum 19 September.</textarea>
+          </div>
+          <div class="ina-form-group">
+            <span class="ina-form-label">Instruksi standar</span>
+            <div class="ina-flex ina-gap-4 ina-flex-wrap">
+              <label class="ina-checkbox-label"><input type="checkbox" class="ina-checkbox" checked><span>Tindak lanjuti</span></label>
+              <label class="ina-checkbox-label"><input type="checkbox" class="ina-checkbox"><span>Koordinasikan</span></label>
+              <label class="ina-checkbox-label"><input type="checkbox" class="ina-checkbox" checked><span>Laporkan hasil</span></label>
+              <label class="ina-checkbox-label"><input type="checkbox" class="ina-checkbox"><span>Arsipkan</span></label>
+            </div>
+          </div>
+          <div class="ina-form-group">
+            <label class="ina-form-label" for="setujuPassphrase">Passphrase TTE <span class="ina-form-required">*</span></label>
+            <div class="ina-input-group">
+              <input type="password" class="ina-input ina-input-with-icon-right" id="setujuPassphrase" placeholder="Passphrase sertifikat BSrE" required autocomplete="off">
+              <button type="button" class="ina-input-icon-right ina-bg-none" data-toggle-password="setujuPassphrase" aria-label="Tampilkan passphrase"><svg class="ina-icon ina-icon-20 ina-icon-eye" aria-hidden="true" viewBox="0 0 24 24"><path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6"/></svg><svg class="ina-icon ina-icon-20 ina-icon-eye-off" aria-hidden="true" viewBox="0 0 24 24" style="display:none"><path d="M10.585 10.587a2 2 0 0 0 2.829 2.828M16.681 16.673a8.717 8.717 0 0 1 -4.681 1.327c-3.6 0 -6.6 -2 -9 -6c1.272 -2.12 2.712 -3.678 4.32 -4.674m2.86 -1.146a9.055 9.055 0 0 1 1.82 -.18c3.6 0 6.6 2 9 6c-.666 1.11 -1.379 2.067 -2.138 2.87M3 3l18 18"/></svg></button>
+            </div>
+            <span class="ina-form-help">Persetujuan ditandatangani elektronik atas nama Ahmad Syahrani, S.Kom — sertifikat berlaku s.d. 03/2027.</span>
+          </div>
+        </div>
+        <div class="ina-modal-footer">
+          <button type="button" class="ina-btn ina-btn-tertiary ina-btn-md" data-modal-close>Batal</button>
+          <button type="submit" class="ina-btn ina-btn-primary ina-btn-md">Tanda tangani &amp; teruskan</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="ina-modal-overlay" id="kembalikanModal">
+    <div class="ina-modal ina-modal-md">
+      <div class="ina-modal-header">
+        <h3 class="ina-modal-title">Kembalikan ke Pengusul</h3>
+        <button type="button" class="ina-alert-close" data-modal-close aria-label="Tutup"><svg class="ina-icon ina-icon-16" aria-hidden="true" viewBox="0 0 24 24"><path d="M18 6l-12 12M6 6l12 12"/></svg></button>
+      </div>
+      <form data-demo-submit="Berkas dikembalikan ke Kasi Infrastruktur TIK dengan catatan perbaikan." onsubmit="InaModal.close('kembalikanModal')">
+        <div class="ina-modal-body">
+          <div class="ina-alert ina-alert-info">
+            <svg class="ina-icon ina-icon-20" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 9v4M12 17h.01M12 3a9 9 0 1 0 9 9a9 9 0 0 0 -9 -9"/></svg>
+            <div class="ina-alert-content"><div class="ina-alert-desc">Berkas kembali ke jenjang 1 untuk diperbaiki, tanpa menghapus riwayat. Pengusul dapat mengajukan ulang dengan nomor yang sama.</div></div>
+          </div>
+          <div class="ina-form-group">
+            <label class="ina-form-label" for="kembaliAlasan">Alasan pengembalian <span class="ina-form-required">*</span></label>
+            <select class="ina-select" id="kembaliAlasan" required><option>Dokumen pendukung tidak lengkap</option><option>Rincian anggaran perlu penyesuaian</option><option>Spesifikasi teknis perlu klarifikasi</option><option>Salah alur / tujuan disposisi</option><option>Lainnya</option></select>
+          </div>
+          <div class="ina-form-group">
+            <label class="ina-form-label" for="kembaliCatatan">Catatan perbaikan <span class="ina-form-required">*</span></label>
+            <textarea class="ina-textarea" id="kembaliCatatan" rows="3" placeholder="Jelaskan bagian yang harus diperbaiki agar pengusul tidak menebak." required></textarea>
+          </div>
+          <div class="ina-form-group">
+            <label class="ina-form-label" for="kembaliTenggat">Tenggat perbaikan</label>
+            <input type="date" class="ina-input ina-tabular" id="kembaliTenggat" value="2026-09-22">
+          </div>
+        </div>
+        <div class="ina-modal-footer">
+          <button type="button" class="ina-btn ina-btn-tertiary ina-btn-md" data-modal-close>Batal</button>
+          <button type="submit" class="ina-btn ina-btn-primary ina-btn-md">Kembalikan berkas</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="ina-modal-overlay" id="tolakModal">
+    <div class="ina-modal ina-modal-sm">
+      <div class="ina-modal-header">
+        <h3 class="ina-modal-title">Tolak Usulan</h3>
+        <button type="button" class="ina-alert-close" data-modal-close aria-label="Tutup"><svg class="ina-icon ina-icon-16" aria-hidden="true" viewBox="0 0 24 24"><path d="M18 6l-12 12M6 6l12 12"/></svg></button>
+      </div>
+      <form data-demo-submit="Usulan ditolak. Pengusul dan atasan Anda menerima notifikasi." onsubmit="InaModal.close('tolakModal')">
+        <div class="ina-modal-body">
+          <div class="ina-stat-icon-wrap ina-stat-icon-danger ina-stat-icon-lg" style="margin:var(--ina-spacing-0) auto;"><svg class="ina-icon ina-icon-24" aria-hidden="true" viewBox="0 0 24 24"><path d="M18 6l-12 12M6 6l12 12"/></svg></div>
+          <p class="ina-body-small ina-text-center">Penolakan bersifat final untuk nomor berkas ini dan dilaporkan ke Kepala Dinas. Pengusul harus membuat usulan baru bila ingin mengajukan kembali.</p>
+          <div class="ina-form-group">
+            <label class="ina-form-label" for="tolakAlasan">Alasan penolakan <span class="ina-form-required">*</span></label>
+            <textarea class="ina-textarea" id="tolakAlasan" rows="3" required placeholder="Wajib diisi, tercatat di log audit."></textarea>
+          </div>
+        </div>
+        <div class="ina-modal-footer">
+          <button type="button" class="ina-btn ina-btn-tertiary ina-btn-md" data-modal-close>Batal</button>
+          <button type="submit" class="ina-btn ina-btn-danger ina-btn-md">Ya, tolak</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="ina-modal-overlay" id="teruskanModal">
+    <div class="ina-modal ina-modal-sm">
+      <div class="ina-modal-header">
+        <h3 class="ina-modal-title">Teruskan ke Pejabat Lain</h3>
+        <button type="button" class="ina-alert-close" data-modal-close aria-label="Tutup"><svg class="ina-icon ina-icon-16" aria-hidden="true" viewBox="0 0 24 24"><path d="M18 6l-12 12M6 6l12 12"/></svg></button>
+      </div>
+      <form data-demo-submit="Berkas diteruskan untuk mendapat masukan; alur persetujuan tidak berubah." onsubmit="InaModal.close('teruskanModal')">
+        <div class="ina-modal-body">
+          <div class="ina-form-group">
+            <label class="ina-form-label" for="teruskanKe">Tujuan</label>
+            <select class="ina-select" id="teruskanKe"><option>Kabid Statistik &amp; Persandian</option><option>Kasubbag Perencanaan &amp; Keuangan</option><option>Tim Teknis Pusat Data</option><option>Inspektorat (konsultasi)</option></select>
+          </div>
+          <div class="ina-form-group">
+            <label class="ina-form-label" for="teruskanTujuan">Untuk</label>
+            <select class="ina-select" id="teruskanTujuan"><option>Diminta pendapat / telaah</option><option>Diketahui</option><option>Dikoordinasikan</option></select>
+          </div>
+        </div>
+        <div class="ina-modal-footer">
+          <button type="button" class="ina-btn ina-btn-tertiary ina-btn-md" data-modal-close>Batal</button>
+          <button type="submit" class="ina-btn ina-btn-primary ina-btn-md">Teruskan</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="ina-modal-overlay" id="delegasiModal">
+    <div class="ina-modal ina-modal-sm">
+      <div class="ina-modal-header">
+        <h3 class="ina-modal-title">Delegasi Kewenangan Sementara</h3>
+        <button type="button" class="ina-alert-close" data-modal-close aria-label="Tutup"><svg class="ina-icon ina-icon-16" aria-hidden="true" viewBox="0 0 24 24"><path d="M18 6l-12 12M6 6l12 12"/></svg></button>
+      </div>
+      <form data-demo-submit="Delegasi aktif. Berkas baru dialihkan ke Plh. selama periode yang ditentukan." onsubmit="InaModal.close('delegasiModal')">
+        <div class="ina-modal-body">
+          <div class="ina-form-group">
+            <label class="ina-form-label" for="delegasiKe">Pelaksana harian (Plh.)</label>
+            <select class="ina-select" id="delegasiKe"><option>Rahmat Hidayat, S.T. — Kasi Infrastruktur TIK</option><option>Dewi Anggraini, S.Kom — Kasi Aplikasi</option></select>
+          </div>
+          <div class="ina-grid ina-grid-2" style="gap:var(--ina-spacing-4);">
+            <div class="ina-form-group"><label class="ina-form-label" for="delegasiMulai">Mulai</label><input type="date" class="ina-input ina-tabular" id="delegasiMulai" value="2026-09-22"></div>
+            <div class="ina-form-group"><label class="ina-form-label" for="delegasiSelesai">Selesai</label><input type="date" class="ina-input ina-tabular" id="delegasiSelesai" value="2026-09-24"></div>
+          </div>
+          <div class="ina-alert ina-alert-warning">
+            <svg class="ina-icon ina-icon-20" aria-hidden="true" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0M12 8v4M12 16h.01"/></svg>
+            <div class="ina-alert-content"><div class="ina-alert-desc">Delegasi tidak mencakup penandatanganan dokumen bernilai &gt; Rp 500 juta; berkas tersebut tetap menunggu Anda.</div></div>
+          </div>
+        </div>
+        <div class="ina-modal-footer">
+          <button type="button" class="ina-btn ina-btn-tertiary ina-btn-md" data-modal-close>Batal</button>
+          <button type="submit" class="ina-btn ina-btn-primary ina-btn-md">Aktifkan delegasi</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="../../assets/idds-admin.js"></script>
+</body>
+</html>

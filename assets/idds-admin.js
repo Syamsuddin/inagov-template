@@ -19,6 +19,11 @@
   /* ---- helpers ---- */
   function $(sel, root) { return (root || document).querySelector(sel); }
   function $$(sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); }
+  // Basis relatif aset: dihitung dari src skrip ini agar laman di pages/<modul>/ tetap menemukan assets/
+  var ASSET_BASE = (function () {
+    var el = document.currentScript; var src = el ? (el.getAttribute('src') || '') : '';
+    var i = src.indexOf('assets/'); return i >= 0 ? src.slice(0, i) : '';
+  })();
   function cssVar(name) { return getComputedStyle(document.documentElement).getPropertyValue(name).trim(); }
   function debounce(fn, wait) {
     var t; return function () { var a = arguments, c = this; clearTimeout(t); t = setTimeout(function () { fn.apply(c, a); }, wait); };
@@ -1144,7 +1149,7 @@
    * ============================================================ */
   function kartuArtikel(a) {
     return '<article class="ina-card ina-card-basic ina-card-clickable" data-category="' + a.kategori + '">' +
-      '<div class="ina-card-media"><img src="' + a.gambar + '" alt="" width="328" height="202" loading="lazy"></div>' +
+      '<div class="ina-card-media"><img src="' + ASSET_BASE + a.gambar + '" alt="" width="328" height="202" loading="lazy"></div>' +
       '<div class="ina-card-body ina-gap-2">' +
       '<div class="ina-flex ina-items-center ina-justify-between ina-gap-2"><span class="ina-badge ina-badge-sm ' +
       ({ layanan: 'ina-badge-soft-info', kebijakan: 'ina-badge-soft-warning', panduan: 'ina-badge-soft-success' }[a.kategori] || 'ina-badge-soft-neutral') +
@@ -1173,7 +1178,7 @@
     set('[data-a="kategori"]', escapeHtml(a.kategoriLabel));
     var badge = $('[data-a="kategori"]', root);
     if (badge) badge.className = 'ina-badge ina-badge-md ina-fit ' + ({ layanan: 'ina-badge-soft-info', kebijakan: 'ina-badge-soft-warning', panduan: 'ina-badge-soft-success' }[a.kategori] || 'ina-badge-soft-neutral');
-    var img = $('[data-a="gambar"]', root); if (img) { img.src = a.gambar; img.alt = a.judul; }
+    var img = $('[data-a="gambar"]', root); if (img) { img.src = ASSET_BASE + a.gambar; img.alt = a.judul; }
     set('[data-a="sumber"]', 'Sumber: ' + escapeHtml(a.sumber));
     // isi artikel: teks dari berkas data paket (sudah tepercaya); <b> dipertahankan, tag lain dibuang
     set('[data-a="isi"]', a.isi.map(function (p) { return '<p>' + p.replace(/<(?!\/?b>)[^>]+>/g, '') + '</p>'; }).join(''));

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light" data-brand="hss">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kunci layar sesi aman dengan avatar pengguna dan input PIN/sandi cepat — Portal Terpadu Pemkab HSS">
+  <title>Kunci Layar — Portal Terpadu Pemkab HSS</title>
+  <link rel="stylesheet" href="../../assets/idds-tokens.css">
+  <link rel="stylesheet" href="../../assets/idds-utilities.css">
+  <link rel="stylesheet" href="../../assets/idds-admin.css">
+</head>
+<body class="ina-auth-page">
+  <button type="button" class="ina-icon-btn ina-auth-theme-toggle" data-toggle-theme aria-label="Ganti Mode Gelap/Terang">
+    <svg class="ina-icon ina-icon-20 ina-icon-moon" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"/></svg>
+    <svg class="ina-icon ina-icon-20 ina-icon-sun" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0M3 12h1M20 12h1M12 3v1M12 20v1M5.6 5.6l.7 .7M17.7 17.7l.7 .7M5.6 18.4l.7 -.7M17.7 6.3l.7 -.7"/></svg>
+  </button>
+
+  <div class="ina-auth-box ina-text-center">
+    <div class="ina-flex-col ina-items-center ina-gap-3 ina-text-center">
+      <div class="ina-avatar ina-avatar-lg">AS<span class="ina-status-dot ina-status-away ina-status-dot-lg" title="Tidak aktif"></span></div>
+      <div>
+        <h1 class="ina-h4">Ahmad Syahrani, S.Kom</h1>
+        <div class="ina-caption-small ina-tabular ina-text-muted">NIP: 19880412 201101 1 003 · Diskominfo HSS</div>
+      </div>
+      <span class="ina-badge ina-badge-sm ina-badge-soft-warning"><svg class="ina-icon ina-icon-12" aria-hidden="true" viewBox="0 0 24 24"><path d="M5 11m0 2a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2zM8 11v-4a4 4 0 0 1 8 0v4"/></svg> Terkunci</span> <span class="ina-caption-small ina-text-muted">sejak <span class="ina-tabular">14:32 WITA</span></span>
+    </div>
+    <form class="ina-auth-form" onsubmit="event.preventDefault(); window.location.href='../../index.html';">
+      <div class="ina-form-group">
+        <div class="ina-flex ina-justify-between ina-items-center">
+          <label class="ina-form-label" for="lockPass">Kata Sandi atau PIN <span class="ina-form-required">*</span></label>
+          
+        </div>
+        <div class="ina-input-group">
+          <svg class="ina-icon ina-icon-20 ina-input-icon-left" aria-hidden="true" viewBox="0 0 24 24"><path d="M5 11m0 2a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2zM8 11v-4a4 4 0 0 1 8 0v4"/></svg>
+          <input type="password" class="ina-input ina-input-with-icon-left ina-input-with-icon-right" id="lockPass" placeholder="Masukkan sandi untuk melanjutkan" required autocomplete="current-password">
+          <button type="button" class="ina-input-icon-right ina-bg-none" data-toggle-password="lockPass" aria-label="Tampilkan sandi"><svg class="ina-icon ina-icon-20 ina-icon-eye" aria-hidden="true" viewBox="0 0 24 24"><path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6"/></svg><svg class="ina-icon ina-icon-20 ina-icon-eye-off" aria-hidden="true" viewBox="0 0 24 24" style="display:none"><path d="M10.585 10.587a2 2 0 0 0 2.829 2.828M16.681 16.673a8.717 8.717 0 0 1 -4.681 1.327c-3.6 0 -6.6 -2 -9 -6c1.272 -2.12 2.712 -3.678 4.32 -4.674m2.86 -1.146a9.055 9.055 0 0 1 1.82 -.18c3.6 0 6.6 2 9 6c-.666 1.11 -1.379 2.067 -2.138 2.87M3 3l18 18"/></svg></button>
+        </div>
+      </div>
+      <button type="submit" class="ina-btn ina-btn-primary ina-btn-lg ina-w-full">
+        <svg class="ina-icon ina-icon-20" aria-hidden="true" viewBox="0 0 24 24"><path d="M5 11m0 2a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2zM8 11v-4a4 4 0 0 1 8 0v4"/></svg>
+        <span>Buka kunci layar</span>
+      </button>
+      <div class="ina-flex ina-justify-between ina-caption-small">
+        <a href="login.html">Ganti pengguna lain</a>
+        <a href="forgot-password.html">Lupa sandi?</a>
+      </div>
+    </form>
+    <div class="ina-alert ina-alert-neutral">
+      <svg class="ina-icon ina-icon-16" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 9v4M12 17h.01M12 3a9 9 0 1 0 9 9a9 9 0 0 0 -9 -9"/></svg>
+      <div class="ina-alert-content"><div class="ina-alert-desc ina-caption-small">Layar dikunci otomatis setelah 15 menit tidak aktif untuk melindungi data kedinasan.</div></div>
+    </div>
+  </div>
+
+  <script src="../../assets/idds-admin.js"></script>
+</body>
+</html>
