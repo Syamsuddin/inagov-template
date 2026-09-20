@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/img/readme-hero.png" alt="Dashboard utama idds-ui-pack — Ringkasan Eksekutif Kabupaten dengan KPI, grafik realisasi, status tiket pengaduan, dan tabel pengajuan" width="100%">
+  <img src="assets/img/readme-hero.png" alt="Dashboard utama idds-ui-pack — Ringkasan Eksekutif Kabupaten dengan KPI, grafik realisasi, status tiket pengaduan, dan tabel pengajuan" width="100%">
 </p>
 
 <h1 align="center">inagov-template · idds-ui-pack</h1>
@@ -27,7 +27,7 @@ Membangun aplikasi pemda biasanya dimulai dari nol: tiap OPD punya tampilan send
 - **Cakupan proses bisnis pemda yang nyata.** Bukan sekadar dashboard generik: ada standar pelayanan 6 komponen (Permenpan 15/2014), SKM 9 unsur (Permenpan 14/2017), disposisi berjenjang dengan TTE BSrE, pohon kinerja (Permenpan 89/2021), DIP PPID (UU 14/2008), JDIH, Satu Data (Perpres 39/2019), BMD per KIB, monev fisik–keuangan, sampai persetujuan privasi UU 27/2022.
 - **Buka langsung di peramban.** Tidak ada npm, bundler, atau framework. Salin folder, buka `index.html`, selesai. Cocok untuk demo ke pimpinan, prototipe cepat, maupun basis kode produksi (PHP native, Laravel, atau apa pun).
 - **Satu sumber kebenaran visual.** Semua warna, jarak, radius, tipografi lewat token `@idds/styles` — tidak ada nilai hex/px liar. Ganti brand instansi dengan satu perintah; kontras tiap pasangan warna diuji otomatis untuk tema terang **dan** gelap.
-- **Terverifikasi, bukan dijanjikan.** `docs/scripts/verify.sh` memeriksa keutuhan paket, kontras token, dan kepatuhan kode terhadap konvensi (tanpa warna literal, tanpa token primitif, tanpa `outline:none`, satu primary button per layar, dll.).
+- **Terverifikasi, bukan dijanjikan.** Setiap laman melewati pemeriksaan otomatis: keutuhan paket, kontras token AA untuk kedua tema, dan kepatuhan kode terhadap konvensi (tanpa warna literal, tanpa token primitif, tanpa `outline:none`, satu primary button per layar, dll.).
 
 ## Mulai dalam 30 detik
 
@@ -37,12 +37,14 @@ cd inagov-template
 open index.html          # macOS · Windows: start index.html · Linux: xdg-open index.html
 ```
 
-Untuk memasang ke proyek aplikasi (dengan atau tanpa skill VCBD Claude Code):
+Untuk memasang ke proyek aplikasi, salin folder `assets/` ke direktori publik proyek (mis. `public/assets/`) dan muat tiga stylesheet + satu skrip seperti pada `<head>` dan akhir `<body>` tiap laman:
 
-```bash
-cp -r inagov-template /path/proyek/.idds
-bash /path/proyek/.idds/docs/install.sh        # --native untuk PHP tanpa framework
-bash /path/proyek/.idds/docs/scripts/verify.sh # uji keutuhan + kepatuhan token
+```html
+<link rel="stylesheet" href="assets/idds-tokens.css">
+<link rel="stylesheet" href="assets/idds-utilities.css">
+<link rel="stylesheet" href="assets/idds-admin.css">
+…
+<script src="assets/idds-admin.js"></script>
 ```
 
 Satu hal yang gampang terlewat: brand tidak aktif tanpa atribut di `<html>`:
@@ -51,7 +53,7 @@ Satu hal yang gampang terlewat: brand tidak aktif tanpa atribut di `<html>`:
 <html lang="id" data-theme="light" data-brand="hss">
 ```
 
-Panduan lengkap (prompt VCBD, urutan langkah, slot `[ISI:]` yang wajib diisi) ada di [`docs/INSTALL.md`](docs/INSTALL.md); konvensi UI di [`docs/26_UI_CONVENTIONS.md`](docs/26_UI_CONVENTIONS.md); rincian teknis paket di [`docs/README.md`](docs/README.md).
+Dokumentasi teknis paket (panduan pasang untuk skill VCBD, konvensi UI 26_UI_CONVENTIONS, manifest & skrip verifikasi) berada di folder `docs/` yang **didistribusikan terpisah** dan tidak diunggah ke repositori ini.
 
 ## Apa saja di dalamnya — 67 laman
 
@@ -73,8 +75,8 @@ Setiap laman admin memakai kerangka yang identik (sidebar berjenjang, topbar den
 | Aspek | Ketentuan |
 |---|---|
 | Token | Warna, spasi, radius, tipografi, bayangan, z-index — semua dari `assets/idds-tokens.css` (kunci `@idds/styles` 1.6.36 + lapisan semantik turunan). Kode tidak boleh memanggil token primitif (`blue-500`) maupun nilai literal. |
-| Brand | 8 brand siap pakai (HSS, INA Gov, PAN-RB, BKN, LAN, INApas, INAku, BGN). Brand daerah baru dibuat dari satu hex logo dengan `docs/scripts/build-brand.py` (ramp 11 langkah di ruang OKLCH). |
-| Kontras | Setiap pasangan label–latar diuji WCAG 2.1 AA untuk tema terang dan gelap; hasilnya di `docs/data/aturan-kontras.json`. Latar kuning wajib teks gelap. |
+| Brand | 8 brand siap pakai (HSS, INA Gov, PAN-RB, BKN, LAN, INApas, INAku, BGN). Brand daerah baru diturunkan dari satu hex logo sebagai ramp 11 langkah di ruang OKLCH (lihat pola `assets/brand-hss.css`). |
+| Kontras | Setiap pasangan label–latar diuji WCAG 2.1 AA untuk tema terang dan gelap. Latar kuning wajib teks gelap. |
 | Tombol | Hierarki mengikuti npm (`primary` / `secondary` / `tertiary` / `danger`), label **Sentence case**, satu primary button per layar. |
 | Ikon | Tabler Icons (MIT), inline SVG, ukuran & stroke sesuai tabel konvensi; tanpa emoji/glyph. |
 | Aksesibilitas | Focus ring token pada semua elemen interaktif, `aria-*` pada kontrol, skip link di kerangka publik, `prefers-reduced-motion` dihormati. |
@@ -84,9 +86,9 @@ Setiap laman admin memakai kerangka yang identik (sidebar berjenjang, topbar den
 
 Brand didefinisikan sebagai blok CSS terpisah (`assets/brand-hss.css`) berisi ramp 11 langkah `primary-25…950` plus pemetaan `primary-primary` untuk tema terang dan gelap, dan diaktifkan lewat `data-brand="…"` pada `<html>`. Untuk daerah lain:
 
-1. Sampel warna utama dan aksen **dari berkas logo** (bukan dari deskripsi verbal lambang) — catatan caranya di [`docs/README.md`](docs/README.md).
-2. Turunkan ramp 11 langkah di ruang OKLCH dengan profil lightness ramp brand resmi IDDS, tulis ke `assets/brand-<nama>.css` dan `docs/data/brand-<nama>.json` mengikuti pola berkas HSS. Skrip `docs/scripts/build-brand.py` yang mengotomatiskan langkah ini masih ditandai ⬜ di MANIFEST dan akan disertakan pada rilis berikutnya.
-3. Jalankan `python3 docs/scripts/build-kontras.py --check` — setiap pasangan label–latar brand baru diuji AA untuk kedua tema; yang gagal ditampilkan dengan angka kontrasnya.
+1. Sampel warna utama dan aksen **dari berkas logo**, bukan dari deskripsi verbal lambang (deskripsi sering menyebut "biru tua" padahal artwork-nya biru sedang).
+2. Turunkan ramp 11 langkah di ruang OKLCH dengan profil lightness yang sama seperti ramp brand resmi IDDS, tulis ke `assets/brand-<nama>.css` mengikuti pola berkas HSS, lalu daftarkan di `idds-tokens.css`.
+3. Uji kontras setiap pasangan label–latar (label putih di atas `primary-primary` ≥ 4,5:1 di tema terang; tema gelap memakai langkah ramp yang lebih terang). Untuk HSS, `primary-500` dipakai di tema gelap karena `primary-400` hanya 3,61:1.
 
 ## Struktur repositori
 
@@ -97,17 +99,13 @@ Brand didefinisikan sebagai blok CSS terpisah (`assets/brand-hss.css`) berisi ra
 │   ├── idds-utilities.css tipografi, ikon, focus ring
 │   ├── idds-admin.css     tata letak + komponen (Fase 1–6), semua lewat token
 │   ├── idds-admin.js      tema, brand, sidebar, modal, toast, chart, tabel, stepper, tree, …
-│   └── brand-hss.css      blok brand contoh
-├── docs/
-│   ├── README.md          dokumen teknis paket
-│   ├── INSTALL.md         langkah pasang + prompt VCBD
-│   ├── 26_UI_CONVENTIONS.md konvensi UI (mengisi slot 26 VCBD)
-│   ├── Implementation_Plan.md rencana & fase 2–6
-│   ├── MANIFEST.json      rute pemuatan, SHA, status berkas, riwayat versi
-│   ├── data/              aturan-kontras.json, brand-hss.json
-│   └── scripts/           build-kontras.py, verify.sh, install.sh
+│   ├── brand-hss.css      blok brand contoh
+│   ├── artikel-data.js    data contoh katalog/detail artikel
+│   └── img/               foto artikel contoh, gambar README
 ├── CHANGELOG.md · VERSION · LICENSE
 ```
+
+Folder `docs/` (dokumen teknis, manifest, skrip verifikasi, data kontras) sengaja tidak diunggah — lihat `.gitignore`.
 
 ## Peta jalan
 
@@ -115,9 +113,9 @@ Brand didefinisikan sebagai blok CSS terpisah (`assets/brand-hss.css`) berisi ra
 - [ ] GeoJSON batas kecamatan untuk peta (kelas `.ina-tile-1..5` siap dipakai ulang pada `<path>`)
 - [ ] Mode kios yang mengunci tema dari sisi server
 - [ ] Contoh integrasi ke Laravel Blade dan PHP native (partial header/sidebar/footer)
-- [ ] Sprite Tabler kustom & font Inter lokal (berkas ⬜ di MANIFEST)
+- [ ] Sprite Tabler kustom & font Inter lokal
 
-Kontribusi dipersilakan — buka *issue* untuk laman/komponen yang belum ada atau kirim *pull request* yang lolos `verify.sh`.
+Kontribusi dipersilakan — buka *issue* untuk laman/komponen yang belum ada atau kirim *pull request* yang mematuhi kontrak desain di atas.
 
 ## Klasifikasi, lisensi, dan kredit
 

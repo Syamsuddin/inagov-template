@@ -1,6 +1,6 @@
 # Changelog
 
-Format mengikuti [Keep a Changelog](https://keepachangelog.com/id/1.1.0/); versi mengikuti SemVer. Sumber kebenaran riwayat: `docs/MANIFEST.json` → `riwayat`.
+Format mengikuti [Keep a Changelog](https://keepachangelog.com/id/1.1.0/); versi mengikuti SemVer. Riwayat rinci per berkas dikelola di manifest paket (tidak diunggah).
 
 ## [1.8.0] — 2026-09-20
 
