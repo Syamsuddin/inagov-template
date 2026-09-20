@@ -70,6 +70,29 @@ Setiap laman admin memakai kerangka yang identik (sidebar berjenjang, topbar den
 | **Bantuan & status** | `notifikasi`, `bantuan`, `tiket`, `kebijakan-privasi`, `404`, `403`, `500`, `maintenance` | pusat notifikasi + preferensi kanal, FAQ + panduan + status layanan, tiket helpdesk dengan SLA, dokumen privasi dengan daftar isi lengket, halaman status pola Empty State |
 | **Publik & layar besar** | `publik-beranda`, `publik-layanan`, `publik-lacak`, `publik-pengaduan`, `kios-antrian`, `situation-room` | kerangka warga tanpa sidebar (header lengket, menu mobile tanpa JS, footer 4 kolom, skip link), papan antrian layar besar, situation room Bupati tema gelap |
 
+## Vibe coding dengan agen AI
+
+Paket ini dirancang sebagai **kontrak desain untuk agen** (Antigravity, VS Code + Copilot/Claude Code/Gemini, Cursor): agen menulis kode, template membatasi hasilnya, Anda memutuskan.
+
+<p>
+  <a href="panduan/vibe-coding.md"><img alt="Baca panduan vibe coding" src="https://img.shields.io/badge/📘_panduan-vibe_coding_(VS_Code_·_Antigravity_·_Claude_Code)-0063a8?style=for-the-badge"></a>
+  <a href="AGENTS.md"><img alt="AGENTS.md" src="https://img.shields.io/badge/🤖_AGENTS.md-aturan_agen_siap_pakai-004a92?style=for-the-badge"></a>
+</p>
+
+**Tiga langkah minimum**
+
+1. Buka folder repo sebagai *workspace* dan jalankan server lokal (`python3 -m http.server 8080` atau Live Server). Agen otomatis membaca [`AGENTS.md`](AGENTS.md); untuk Claude Code buat `CLAUDE.md` berisi `Ikuti @AGENTS.md`.
+2. Beri prompt yang **menyebut laman rujukan**, misalnya:
+   ```
+   Baca AGENTS.md. Buat pages/perizinan/izin-reklame.html dengan menyalin kerangka dari
+   pages/layanan/permohonan.html (sidebar, topbar, footer sama; item "Permohonan Baru" aktif).
+   Ganti langkah 2 dengan unggah desain reklame + titik lokasi; data contoh fiktif Kab. HSS.
+   Pakai hanya kelas ina-* dan atribut data-* yang ada. Laporkan hasil grep dari AGENTS.md.
+   ```
+3. Sebelum menerima hasil: buka di peramban (tema terang & gelap, lebar 768/480), pastikan tidak ada hex/px literal, satu `ina-btn-primary` per layar, dan semua tautan hidup — daftar periksa lengkap ada di panduan §6.
+
+Panduan lengkap memuat persiapan per IDE, 6 prompt yang terbukti bekerja (laman baru, sidebar, komponen, ganti brand, konversi Laravel, audit), peta 17 kebutuhan → laman rujukan, integrasi ke PHP/Laravel, dan masalah yang sering muncul.
+
 ## Kontrak desain yang dijaga
 
 | Aspek | Ketentuan |
@@ -122,6 +145,8 @@ Hanya `index.html` yang berada di akar; 66 laman lain dikelompokkan per modul di
 │   ├── brand-hss.css      blok brand contoh
 │   ├── artikel-data.js    data contoh katalog/detail artikel
 │   └── img/               foto artikel contoh, gambar README
+├── panduan/vibe-coding.md  panduan vibe coding (VS Code, Antigravity, Claude Code)
+├── AGENTS.md              aturan agen AI (dibaca IDE agentik)
 ├── CHANGELOG.md · VERSION · LICENSE
 ```
 
